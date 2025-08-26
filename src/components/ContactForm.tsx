@@ -38,6 +38,10 @@ export const ContactForm = () => {
 
       const response = await fetch('https://cctflcnhlfjtmlmywbcp.supabase.co/functions/v1/send-email', {
         method: 'POST',
+        headers: {
+          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNjdGZsY25obGZqdG1sbXl3YmNwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTYyNDE3NDIsImV4cCI6MjA3MTgxNzc0Mn0.ZFP6YVPutkeHWUx60hTpDYBGAj0_CBz0KwPk5AnK2uI',
+          'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNjdGZsY25obGZqdG1sbXl3YmNwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTYyNDE3NDIsImV4cCI6MjA3MTgxNzc0Mn0.ZFP6YVPutkeHWUx60hTpDYBGAj0_CBz0KwPk5AnK2uI'
+        },
         body: formDataToSend,
       });
 
