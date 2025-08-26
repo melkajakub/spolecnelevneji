@@ -39,8 +39,17 @@ const Index = () => {
                 <p className="text-xl text-muted-foreground leading-relaxed">
                   Ušetřete na energiích bez složitého papírování.
                   <strong className="text-primary">Primárně vyjednáváme u vašeho stávajícího dodavatele</strong> – změnu navrhujeme až když z něj nedokážeme dostat férovou cenu.
-                  Tento servis vás stojí jen <span className="text-secondary font-semibold">500 Kč ročně</span> za odběrné místo.
                 </p>
+                
+                {/* Price highlight */}
+                <div className="bg-gradient-primary text-primary-foreground p-6 rounded-xl shadow-glow max-w-md">
+                  <div className="text-center">
+                    <p className="text-lg font-medium mb-2">Náš poplatek:</p>
+                    <p className="text-4xl font-bold mb-1">500 Kč</p>
+                    <p className="text-lg opacity-90">ročně za odběrné místo</p>
+                    <p className="text-sm opacity-75 mt-2">Žádné další skryté poplatky</p>
+                  </div>
+                </div>
                 <Button onClick={scrollToContact} variant="hero" size="lg" className="text-lg">
                   Chci ušetřit
                 </Button>
@@ -51,9 +60,12 @@ const Index = () => {
                   alt="Úspora energií - moderní dům s solárními panely" 
                   className="rounded-lg shadow-glow w-full h-auto"
                 />
-                <div className="absolute -bottom-4 -right-4 bg-secondary text-secondary-foreground p-4 rounded-lg shadow-soft">
-                  <p className="font-semibold">Jen 500 Kč/rok</p>
-                  <p className="text-sm">za odběrné místo</p>
+                <div className="absolute -bottom-6 -right-6 bg-gradient-primary text-primary-foreground p-6 rounded-xl shadow-glow border-4 border-white">
+                  <div className="text-center">
+                    <p className="text-2xl font-bold">500 Kč</p>
+                    <p className="text-sm font-medium">ročně/místo</p>
+                    <p className="text-xs opacity-90 mt-1">Vše v ceně!</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -155,7 +167,7 @@ const Index = () => {
               {[
                 {
                   title: "Jednoduchý a férový roční poplatek",
-                  description: "500 Kč za odběrné místo",
+                  description: "Pouze 500 Kč za odběrné místo ročně • Žádné skryté poplatky • Platíte jen když ušetříme",
                   highlight: true
                 },
                 {
