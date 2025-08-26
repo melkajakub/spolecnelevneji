@@ -49,7 +49,7 @@ const Index = () => {
                     <p className="text-lg opacity-90">ročně za odběrné místo</p>
                     <p className="text-sm opacity-75 mt-3 border-t border-white/20 pt-3">
                       💡 První faktura až po dosažené úspoře<br/>
-                      🔄 Další roky = předplacení, nechcete? Prostě nezaplatíte
+                      🔄 Každý další rok jen předplacení • Nechcete pokračovat? Prostě nezaplatíte
                     </p>
                   </div>
                 </div>
