@@ -67,7 +67,13 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="flex justify-center lg:justify-start">
-                  <Button onClick={scrollToContact} variant="hero" size="lg" className="text-lg px-8 py-3">
+                  <Button 
+                    onClick={scrollToContact} 
+                    variant="hero" 
+                    size="lg" 
+                    className="text-lg px-8 py-3"
+                    style={{ backgroundImage: 'var(--gradient-hero)' }}
+                  >
                     Chci ušetřit
                   </Button>
                 </div>
