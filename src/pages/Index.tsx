@@ -78,13 +78,6 @@ const Index = () => {
                   alt="Úspora energií - moderní dům s solárními panely" 
                   className="rounded-lg shadow-glow w-full h-auto max-h-96 md:max-h-none object-cover"
                 />
-                <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-gradient-primary text-primary-foreground p-3 md:p-6 rounded-xl shadow-glow border-2 md:border-4 border-white">
-                  <div className="text-center">
-                    <p className="text-lg md:text-2xl font-bold">500 Kč</p>
-                    <p className="text-xs md:text-sm font-medium">ročně/odběrné místo</p>
-                    <p className="text-xs opacity-90 mt-1 hidden md:block">Vše v ceně!</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
