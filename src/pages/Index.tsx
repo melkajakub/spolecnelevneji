@@ -16,7 +16,13 @@ const Index = () => {
       <header className="bg-background/80 backdrop-blur-sm border-b border-border sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <h1 className="text-2xl font-bold text-primary">Společně levněji</h1>
+            <div className="flex items-center gap-3">
+              <img 
+                src="/lovable-uploads/dcd1b256-2e06-4aca-963c-251ffd8dee20.png" 
+                alt="Společně levněji logo" 
+                className="h-12 w-auto"
+              />
+            </div>
             <nav className="hidden md:flex space-x-6">
               <a href="#services" className="text-foreground hover:text-primary transition-colors">Služby</a>
               <a href="#how-it-works" className="text-foreground hover:text-primary transition-colors">Jak to funguje</a>
@@ -238,7 +244,14 @@ const Index = () => {
       <footer className="bg-primary text-primary-foreground py-12 px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center space-y-6">
-            <h3 className="text-2xl font-bold">Společně levněji</h3>
+            <div className="flex items-center justify-center gap-4">
+              <img 
+                src="/lovable-uploads/efaeae31-0aa8-4a27-bae2-0bc5d0274196.png" 
+                alt="Společně levněji symbol" 
+                className="h-16 w-16"
+              />
+              <h3 className="text-2xl font-bold">Společně levněji</h3>
+            </div>
             
             <div className="grid md:grid-cols-2 gap-8 text-left max-w-2xl mx-auto">
               <div className="space-y-3">
