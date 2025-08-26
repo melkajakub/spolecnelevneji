@@ -47,7 +47,10 @@ const Index = () => {
                     <p className="text-lg font-medium mb-2">Náš poplatek:</p>
                     <p className="text-4xl font-bold mb-1">500 Kč</p>
                     <p className="text-lg opacity-90">ročně za odběrné místo</p>
-                    <p className="text-sm opacity-75 mt-2">Žádné další skryté poplatky</p>
+                    <p className="text-sm opacity-75 mt-3 border-t border-white/20 pt-3">
+                      💡 První faktura až po dosažené úspoře<br/>
+                      🔄 Další roky = předplacení, nechcete? Prostě nezaplatíte
+                    </p>
                   </div>
                 </div>
                 <Button onClick={scrollToContact} variant="hero" size="lg" className="text-lg">
@@ -171,6 +174,11 @@ const Index = () => {
                   highlight: true
                 },
                 {
+                  title: "Maximální flexibilita",
+                  description: "první faktura až po dosažené úspoře • další roky jako předplacení • nechcete pokračovat? Prostě nezaplatíte",
+                  highlight: true
+                },
+                {
                   title: "Minimální papírování",
                   description: "primárně vyjednáváme u vašeho stávajícího dodavatele, změnu navrhujeme jen když musíme"
                 },
@@ -180,8 +188,7 @@ const Index = () => {
                 },
                 {
                   title: "Bez rizika",
-                  description: "pokud nenajdeme minimálně 1 000 Kč roční úspory, první rok máte zdarma",
-                  highlight: true
+                  description: "pokud nenajdeme minimálně 1 000 Kč roční úspory, první rok máte zdarma"
                 }
               ].map((item, index) => (
                 <Card key={index} className={`shadow-soft ${item.highlight ? 'border-secondary shadow-energy' : ''}`}>
