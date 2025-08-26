@@ -5,6 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import heroImage from "@/assets/energy-savings-hero.jpg";
 
 const Index = () => {
+  console.log("Index component rendering");
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
     contactSection?.scrollIntoView({ behavior: 'smooth' });
