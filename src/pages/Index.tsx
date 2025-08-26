@@ -61,7 +61,8 @@ const Index = () => {
                     <p className="text-xs md:text-sm opacity-75 mt-3 border-t border-white/20 pt-3">
                       💡 První faktura až po dosažené úspoře<br/>
                       🔄 Každá další roční faktura jako předplacení dalšího roku<br/>
-                      ✋ Nechcete pokračovat? Stačí přestat platit
+                      ✋ Nechcete pokračovat? Stačí přestat platit<br/>
+                      <strong className="opacity-100">🎯 Nenajdeme úsporu? První rok ZDARMA!</strong>
                     </p>
                   </div>
                 </div>
