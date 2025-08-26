@@ -49,7 +49,8 @@ const Index = () => {
                     <p className="text-lg opacity-90">ročně za odběrné místo</p>
                     <p className="text-sm opacity-75 mt-3 border-t border-white/20 pt-3">
                       💡 První faktura až po dosažené úspoře<br/>
-                      🔄 Každý další rok jen předplacení • Nechcete pokračovat? Prostě nezaplatíte
+                      🔄 Každá další roční faktura jako předplacení dalšího roku<br/>
+                      ✋ Nechcete pokračovat? Stačí přestat platit
                     </p>
                   </div>
                 </div>
@@ -175,7 +176,7 @@ const Index = () => {
                 },
                 {
                   title: "Maximální flexibilita",
-                  description: "první faktura až po dosažené úspoře • další roky jako předplacení • nechcete pokračovat? Prostě nezaplatíte",
+                  description: "první faktura až po dosažené úspoře • každá další roční faktura jako předplacení dalšího roku • nechcete pokračovat? Stačí přestat platit",
                   highlight: true
                 },
                 {
