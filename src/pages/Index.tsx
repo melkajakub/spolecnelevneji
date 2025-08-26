@@ -36,46 +36,52 @@ const Index = () => {
 
       <main>
         {/* Hero Section */}
-        <section className="py-20 px-4">
+        <section className="py-12 md:py-20 px-4">
           <div className="container mx-auto max-w-6xl">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-8">
-                <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight">
-                  Společně levněji – Vaše energie pod dohledem
+            <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+              <div className="space-y-6 md:space-y-8 text-center lg:text-left">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground leading-tight">
+                  <span className="block text-primary mb-2">Společně levněji</span>
+                  <span className="block text-2xl md:text-3xl lg:text-4xl font-medium text-muted-foreground">
+                    Vaše energie pod dohledem
+                  </span>
                 </h1>
-                <p className="text-xl text-muted-foreground leading-relaxed">
+                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0">
                   Ušetřete na energiích bez složitého papírování.
-                  <strong className="text-primary">Primárně vyjednáváme u vašeho stávajícího dodavatele</strong> – změnu navrhujeme až když z něj nedokážeme dostat férovou cenu.
+                  <strong className="text-primary block mt-2">Primárně vyjednáváme u vašeho stávajícího dodavatele</strong> 
+                  <span className="block">– změnu navrhujeme až když z něj nedokážeme dostat férovou cenu.</span>
                 </p>
                 
                 {/* Price highlight */}
-                <div className="bg-gradient-primary text-primary-foreground p-6 rounded-xl shadow-glow max-w-md">
+                <div className="bg-gradient-primary text-primary-foreground p-4 md:p-6 rounded-xl shadow-glow max-w-md mx-auto lg:mx-0">
                   <div className="text-center">
-                    <p className="text-lg font-medium mb-2">Náš poplatek:</p>
-                    <p className="text-4xl font-bold mb-1">500 Kč</p>
-                    <p className="text-lg opacity-90">ročně za odběrné místo</p>
-                    <p className="text-sm opacity-75 mt-3 border-t border-white/20 pt-3">
+                    <p className="text-base md:text-lg font-medium mb-2">Náš poplatek:</p>
+                    <p className="text-3xl md:text-4xl font-bold mb-1">500 Kč</p>
+                    <p className="text-base md:text-lg opacity-90">ročně za odběrné místo</p>
+                    <p className="text-xs md:text-sm opacity-75 mt-3 border-t border-white/20 pt-3">
                       💡 První faktura až po dosažené úspoře<br/>
                       🔄 Každá další roční faktura jako předplacení dalšího roku<br/>
                       ✋ Nechcete pokračovat? Stačí přestat platit
                     </p>
                   </div>
                 </div>
-                <Button onClick={scrollToContact} variant="hero" size="lg" className="text-lg">
-                  Chci ušetřit
-                </Button>
+                <div className="flex justify-center lg:justify-start">
+                  <Button onClick={scrollToContact} variant="hero" size="lg" className="text-lg px-8 py-3">
+                    Chci ušetřit
+                  </Button>
+                </div>
               </div>
-              <div className="relative">
+              <div className="relative order-first lg:order-last">
                 <img 
                   src={heroImage} 
                   alt="Úspora energií - moderní dům s solárními panely" 
-                  className="rounded-lg shadow-glow w-full h-auto"
+                  className="rounded-lg shadow-glow w-full h-auto max-h-96 md:max-h-none object-cover"
                 />
-                <div className="absolute -bottom-6 -right-6 bg-gradient-primary text-primary-foreground p-6 rounded-xl shadow-glow border-4 border-white">
+                <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-gradient-primary text-primary-foreground p-3 md:p-6 rounded-xl shadow-glow border-2 md:border-4 border-white">
                   <div className="text-center">
-                    <p className="text-2xl font-bold">500 Kč</p>
-                    <p className="text-sm font-medium">ročně/místo</p>
-                    <p className="text-xs opacity-90 mt-1">Vše v ceně!</p>
+                    <p className="text-lg md:text-2xl font-bold">500 Kč</p>
+                    <p className="text-xs md:text-sm font-medium">ročně/místo</p>
+                    <p className="text-xs opacity-90 mt-1 hidden md:block">Vše v ceně!</p>
                   </div>
                 </div>
               </div>
