@@ -81,7 +81,7 @@ export const ContactForm = () => {
   };
 
   return (
-    <Card className="max-w-lg mx-auto shadow-soft">
+    <Card className="max-w-lg mx-auto shadow-soft bg-gradient-card border-primary/10">{/* přidal jsem gradient pozadí */}
       <CardHeader>
         <CardTitle className="text-center text-foreground">
           Máte zájem o hlídání cen energií? Napište nám a začneme!

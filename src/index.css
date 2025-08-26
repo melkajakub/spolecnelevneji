@@ -42,7 +42,9 @@ Všechny barvy MUSÍ být HSL.
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
     --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-glow)));
     --gradient-hero: linear-gradient(135deg, hsl(140 85% 28%), hsl(140 70% 45%), hsl(45 95% 55%));
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 15% 98%));
+    --gradient-subtle: linear-gradient(180deg, hsl(210 25% 99%), hsl(140 20% 97%), hsl(45 30% 98%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 30% 98%));
+    --gradient-page: radial-gradient(ellipse at top, hsl(140 40% 96%) 0%, hsl(210 25% 98%) 50%, hsl(45 25% 97%) 100%);
 
     /* Stíny */
     --shadow-energy: 0 10px 30px -10px hsl(var(--primary) / 0.2);

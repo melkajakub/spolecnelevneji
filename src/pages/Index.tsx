@@ -12,7 +12,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen" style={{ backgroundImage: 'var(--gradient-subtle)' }}>
+    <div className="min-h-screen bg-gradient-page">{/* změnil jsem pozadí z gradient-subtle na gradient-page */}
       {/* Header / Navigation */}
       <header className="bg-background/80 backdrop-blur-sm border-b border-border sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
