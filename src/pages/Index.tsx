@@ -13,7 +13,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-subtle">
       {/* Header / Navigation */}
-      <header className="bg-background/80 backdrop-blur-sm border-b border-border sticky top-0 z-50">
+      <header className="bg-background/80 backdrop-blur-sm border-b border-border sticky top-0 z-50">{/* sync test */}
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-3">
