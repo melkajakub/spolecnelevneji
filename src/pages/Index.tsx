@@ -38,7 +38,7 @@ const Index = () => {
                 </h1>
                 <p className="text-xl text-muted-foreground leading-relaxed">
                   Ušetřete na energiích bez složitého papírování.
-                  Vyjednáme za vás férové ceny energií a pohlídáme, abyste zbytečně nepřepláceli.
+                  <strong className="text-primary">Primárně vyjednáváme u vašeho stávajícího dodavatele</strong> – změnu navrhujeme až když z něj nedokážeme dostat férovou cenu.
                   Tento servis vás stojí jen <span className="text-secondary font-semibold">500 Kč ročně</span> za odběrné místo.
                 </p>
                 <Button onClick={scrollToContact} variant="hero" size="lg" className="text-lg">
@@ -72,11 +72,18 @@ const Index = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
+                <div className="mb-6 p-4 bg-primary/5 border border-primary/20 rounded-lg">
+                  <p className="text-primary font-semibold mb-2">✓ Nejdříve se vždy snažíme vyjednat u vašeho stávajícího dodavatele</p>
+                  <p className="text-sm text-muted-foreground">
+                    Změnu dodavatele navrhujeme až ve chvíli, kdy ze stávajícího dodavatele nedokážeme dostat férovou aktuální cenu. 
+                    Takto vám ušetříme maximum starostí s papírováním.
+                  </p>
+                </div>
                 <ul className="space-y-4">
                   {[
                     "Sledujeme termíny vašich fixací.",
-                    "Vyjednáváme individuální nabídky přímo s dodavateli energií.",
-                    "Pokud je to výhodné, doporučíme změnu dodavatele.",
+                    "Vyjednáváme individuální nabídky primárně u vašeho stávajícího dodavatele.",
+                    "Změnu dodavatele navrhujeme jen pokud stávající nedá férovou cenu.",
                     "Vždy vám posíláme přehlednou kalkulaci e-mailem.",
                     "Vy rozhodujete a podepisujete nabídky přímo s dodavatelem."
                   ].map((item, index) => (
@@ -152,8 +159,8 @@ const Index = () => {
                   highlight: true
                 },
                 {
-                  title: "Žádné složité smlouvy",
-                  description: "jen hlídání a vyjednávání ve váš prospěch"
+                  title: "Minimální papírování",
+                  description: "primárně vyjednáváme u vašeho stávajícího dodavatele, změnu navrhujeme jen když musíme"
                 },
                 {
                   title: "Transparentní komunikace",
