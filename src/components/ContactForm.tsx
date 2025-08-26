@@ -14,16 +14,45 @@ export const ContactForm = () => {
   });
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Zde by byla integrace s backendem
-    toast({
-      title: "Zpráva odeslána!",
-      description: "Děkujeme za zájem. Brzy vás budeme kontaktovat.",
-    });
-    
-    setFormData({ name: "", email: "", message: "" });
+    if (!formData.name || !formData.email) {
+      toast({
+        title: "Chyba",
+        description: "Vyplňte prosím jméno a e-mail.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      const response = await fetch('/functions/v1/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Nepodařilo se odeslat zprávu');
+      }
+
+      toast({
+        title: "Zpráva odeslána!",
+        description: "Děkujeme za zájem. Brzy vás budeme kontaktovat.",
+      });
+      
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Chyba při odesílání",
+        description: "Nepodařilo se odeslat zprávu. Zkuste to prosím znovu.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
