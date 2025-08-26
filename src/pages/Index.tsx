@@ -12,12 +12,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-subtle">
-      {/* DEBUG: Testovací prvek */}
-      <div className="p-4 bg-red-500 text-white text-center">
-        DEBUG: Index komponenta se zobrazuje!
-      </div>
-      
+    <div className="min-h-screen" style={{ backgroundImage: 'var(--gradient-subtle)' }}>
       {/* Header / Navigation */}
       <header className="bg-background/80 backdrop-blur-sm border-b border-border sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
@@ -58,7 +53,7 @@ const Index = () => {
                 </p>
                 
                 {/* Price highlight */}
-                <div className="bg-gradient-primary text-primary-foreground p-4 md:p-6 rounded-xl shadow-glow max-w-md mx-auto lg:mx-0">
+                <div style={{ backgroundImage: 'var(--gradient-primary)' }} className="text-primary-foreground p-4 md:p-6 rounded-xl shadow-glow max-w-md mx-auto lg:mx-0">
                   <div className="text-center">
                     <p className="text-base md:text-lg font-medium mb-2">Náš poplatek:</p>
                     <p className="text-3xl md:text-4xl font-bold mb-1">500 Kč</p>
@@ -160,7 +155,7 @@ const Index = () => {
               ].map((item, index) => (
                 <Card key={index} className="text-center shadow-soft hover:shadow-energy transition-all duration-300">
                   <CardHeader>
-                    <div className="mx-auto w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center text-primary-foreground mb-4">
+                    <div style={{ backgroundImage: 'var(--gradient-primary)' }} className="mx-auto w-16 h-16 rounded-full flex items-center justify-center text-primary-foreground mb-4">
                       {item.icon}
                     </div>
                     <div className="text-4xl font-bold text-secondary mb-2">{item.step}</div>
