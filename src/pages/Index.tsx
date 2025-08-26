@@ -49,7 +49,7 @@ const Index = () => {
                 <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0">
                   Ušetřete na energiích bez složitého papírování.
                   <strong className="text-primary block mt-2">Primárně vyjednáváme u vašeho stávajícího dodavatele</strong> 
-                  <span className="block">– změnu navrhujeme pouze pokud se nepodaří dostat rozumnou a férovou individuální nabídku.</span>
+                  <span className="block">Změnu navrhujeme pouze pokud se nepodaří dostat rozumnou a férovou individuální nabídku.</span>
                 </p>
                 
                 {/* Price highlight */}
