@@ -13,6 +13,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-subtle">
+      {/* DEBUG: Testovací prvek */}
+      <div className="p-4 bg-red-500 text-white text-center">
+        DEBUG: Index komponenta se zobrazuje!
+      </div>
+      
       {/* Header / Navigation */}
       <header className="bg-background/80 backdrop-blur-sm border-b border-border sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
