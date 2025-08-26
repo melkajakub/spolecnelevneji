@@ -236,16 +236,35 @@ const Index = () => {
       {/* Footer */}
       <footer className="bg-primary text-primary-foreground py-12 px-4">
         <div className="container mx-auto max-w-4xl">
-          <div className="text-center space-y-4">
-            <h3 className="text-2xl font-bold">Společně levněji – Vaše energie pod dohledem</h3>
-            <div className="space-y-2">
-              <p>E-mail: info@spolecnelevneji.cz</p>
-              <p>IČ: 12345678 | Nejsem plátcem DPH dle § 6 zákona č. 235/2004 Sb., o DPH</p>
+          <div className="text-center space-y-6">
+            <h3 className="text-2xl font-bold">Společně levněji</h3>
+            
+            <div className="grid md:grid-cols-2 gap-8 text-left max-w-2xl mx-auto">
+              <div className="space-y-3">
+                <h4 className="font-semibold text-lg text-primary-glow">Kontaktní údaje</h4>
+                <div className="space-y-2 text-sm">
+                  <p><strong>Jakub Melka</strong></p>
+                  <p>IČO: 22516280</p>
+                  <p>Nejsem plátcem DPH dle § 6 zákona č. 235/2004 Sb., o DPH</p>
+                </div>
+              </div>
+              
+              <div className="space-y-3">
+                <h4 className="font-semibold text-lg text-primary-glow">Spojení</h4>
+                <div className="space-y-2 text-sm">
+                  <p>
+                    <strong>Tel:</strong> +420 734 106 233<br/>
+                    <span className="text-xs opacity-90">(volejte prosím po 15. hodině, nebo o víkendu)</span>
+                  </p>
+                  <p><strong>E-mail:</strong> info@spolecnelevneji.cz</p>
+                </div>
+              </div>
             </div>
+            
             <div className="mt-8 pt-8 border-t border-primary-glow">
-              <p className="text-primary-glow">
+              <p className="text-primary-glow text-sm leading-relaxed">
                 Nedovolte svému dodavateli energií tiše zneužívat to, že se neorientujete 
-                v nepřehledných fakturách a nabídkách.
+                v nepřehledných fakturách a nabídkách. Vyjednáme za vás férové ceny a ušetříme vám starosti.
               </p>
             </div>
           </div>
