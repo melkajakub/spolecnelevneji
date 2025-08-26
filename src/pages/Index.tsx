@@ -49,7 +49,7 @@ const Index = () => {
                 <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0">
                   Ušetřete na energiích bez složitého papírování.
                   <strong className="text-primary block mt-2">Primárně vyjednáváme u vašeho stávajícího dodavatele</strong> 
-                  <span className="block">– změnu navrhujeme pouze v případě, kdy je to pro vás skutečně výhodnější.</span>
+                  <span className="block">– změnu navrhujeme pouze pokud se nepodaří dostat rozumnou a férovou individuální nabídku.</span>
                 </p>
                 
                 {/* Price highlight */}
@@ -104,7 +104,7 @@ const Index = () => {
                 <div className="mb-6 p-4 bg-primary/5 border border-primary/20 rounded-lg">
                   <p className="text-primary font-semibold mb-2">✓ Nejdříve se vždy snažíme vyjednat u vašeho stávajícího dodavatele</p>
                   <p className="text-sm text-muted-foreground">
-                    Změnu dodavatele navrhujeme pouze v případě, kdy je to pro vás skutečně výhodnější. 
+                    Změnu dodavatele navrhujeme pouze v případě, kdy se nepodaří dostat rozumnou a férovou individuální nabídku od stávajícího dodavatele. 
                     Takto vám ušetříme maximum starostí s papírováním.
                   </p>
                 </div>
@@ -112,7 +112,7 @@ const Index = () => {
                   {[
                     "Sledujeme termíny vašich fixací.",
                     "Vyjednáváme individuální nabídky primárně u vašeho stávajícího dodavatele.",
-                    "Změnu dodavatele navrhujeme pouze tehdy, kdy je to pro vás výhodnější.",
+                    "Změnu dodavatele navrhujeme pouze pokud se nepodaří získat férovou individuální nabídku.",
                     "Vždy vám posíláme přehlednou kalkulaci e-mailem.",
                     "Vy rozhodujete a podepisujete nabídky přímo s dodavatelem."
                   ].map((item, index) => (
@@ -194,7 +194,7 @@ const Index = () => {
                 },
                 {
                   title: "Minimální papírování",
-                  description: "primárně vyjednáváme u vašeho stávajícího dodavatele, změnu navrhujeme pouze když je to skutečně výhodné"
+                  description: "primárně vyjednáváme u vašeho stávajícího dodavatele, změnu navrhujeme pouze pokud nelze získat férovou nabídku"
                 },
                 {
                   title: "Transparentní komunikace",
