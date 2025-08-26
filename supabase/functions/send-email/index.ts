@@ -11,11 +11,43 @@ serve(async (req) => {
   }
 
   try {
-    const { name, email, message } = await req.json()
+    const formData = await req.formData()
+    const name = formData.get('name') as string
+    const email = formData.get('email') as string
+    const message = formData.get('message') as string
+    const file = formData.get('file') as File | null
 
     const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
     if (!RESEND_API_KEY) {
       throw new Error('RESEND_API_KEY is not set')
+    }
+
+    let emailPayload: any = {
+      from: 'kontakt@spolecnelevneji.cz',
+      to: ['info@spolecnelevneji.cz'],
+      subject: 'Nový zájem o hlídání cen energií',
+      html: `
+        <h2>Nový zájem o službu</h2>
+        <p><strong>Jméno:</strong> ${name}</p>
+        <p><strong>E-mail:</strong> ${email}</p>
+        <p><strong>Zpráva:</strong></p>
+        <p>${message || 'Zákazník nenapsal žádnou zprávu.'}</p>
+        ${file ? '<p><strong>Příloha:</strong> Ano (viz příloha)</p>' : ''}
+        <hr>
+        <p><small>Odesláno z kontaktního formuláře na spolecnelevneji.cz</small></p>
+      `,
+    }
+
+    // Add attachment if file exists
+    if (file && file.size > 0) {
+      const fileBuffer = await file.arrayBuffer()
+      const fileBase64 = btoa(String.fromCharCode(...new Uint8Array(fileBuffer)))
+      
+      emailPayload.attachments = [{
+        filename: file.name,
+        content: fileBase64,
+        content_type: file.type
+      }]
     }
 
     const res = await fetch('https://api.resend.com/emails', {
@@ -24,20 +56,7 @@ serve(async (req) => {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${RESEND_API_KEY}`,
       },
-      body: JSON.stringify({
-        from: 'kontakt@spolecnelevneji.cz',
-        to: ['info@spolecnelevneji.cz'],
-        subject: 'Nový zájem o hlídání cen energií',
-        html: `
-          <h2>Nový zájem o službu</h2>
-          <p><strong>Jméno:</strong> ${name}</p>
-          <p><strong>E-mail:</strong> ${email}</p>
-          <p><strong>Zpráva:</strong></p>
-          <p>${message || 'Zákazník nenapsal žádnou zprávu.'}</p>
-          <hr>
-          <p><small>Odesláno z kontaktního formuláře na spolecnelevneji.cz</small></p>
-        `,
-      }),
+      body: JSON.stringify(emailPayload),
     })
 
     if (!res.ok) {

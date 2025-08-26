@@ -10,7 +10,8 @@ export const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: ""
+    message: "",
+    file: null as File | null
   });
   const { toast } = useToast();
 
@@ -27,12 +28,17 @@ export const ContactForm = () => {
     }
 
     try {
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('message', formData.message);
+      if (formData.file) {
+        formDataToSend.append('file', formData.file);
+      }
+
       const response = await fetch('/functions/v1/send-email', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        body: formDataToSend,
       });
 
       if (!response.ok) {
@@ -44,7 +50,7 @@ export const ContactForm = () => {
         description: "Děkujeme za zájem. Brzy vás budeme kontaktovat.",
       });
       
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", email: "", message: "", file: null });
     } catch (error) {
       console.error('Error sending email:', error);
       toast({
@@ -59,6 +65,14 @@ export const ContactForm = () => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
+    });
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] || null;
+    setFormData({
+      ...formData,
+      file
     });
   };
 
@@ -106,6 +120,27 @@ export const ContactForm = () => {
               rows={4}
               className="focus:ring-primary"
             />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="file">Příloha (volitelně)</Label>
+            <div className="text-sm text-muted-foreground mb-2">
+              <p>💡 <strong>Tip:</strong> Přiložte své poslední vyúčtování energií - výrazně to urychlí proces!</p>
+              <p className="text-xs mt-1">Podporované formáty: PDF, JPG, PNG (max. 10MB)</p>
+            </div>
+            <Input
+              id="file"
+              name="file"
+              type="file"
+              onChange={handleFileChange}
+              accept=".pdf,.jpg,.jpeg,.png"
+              className="focus:ring-primary file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:text-sm file:font-medium file:bg-primary/10 file:text-primary hover:file:bg-primary/20"
+            />
+            {formData.file && (
+              <p className="text-sm text-muted-foreground">
+                Vybraný soubor: {formData.file.name} ({Math.round(formData.file.size / 1024)} KB)
+              </p>
+            )}
           </div>
           
           <Button type="submit" variant="energy" className="w-full">
