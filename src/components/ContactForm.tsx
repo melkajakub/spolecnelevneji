@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -36,12 +37,11 @@ export const ContactForm = () => {
         formDataToSend.append('file', formData.file);
       }
 
-      const response = await fetch('/functions/v1/send-email', {
-        method: 'POST',
+      const { data, error } = await supabase.functions.invoke('send-email', {
         body: formDataToSend,
       });
 
-      if (!response.ok) {
+      if (error) {
         throw new Error('Nepodařilo se odeslat zprávu');
       }
 
