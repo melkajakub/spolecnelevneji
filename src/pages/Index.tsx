@@ -57,7 +57,7 @@ const Index = () => {
                   <div className="text-center">
                     <p className="text-base md:text-lg font-medium mb-2">Náš poplatek:</p>
                     <p className="text-3xl md:text-4xl font-bold mb-1">500 Kč</p>
-                    <p className="text-base md:text-lg opacity-90">ročně za odběrné místo</p>
+                    <p className="text-base md:text-lg opacity-90">ročně/odběrné místo</p>
                     <p className="text-xs md:text-sm opacity-75 mt-3 border-t border-white/20 pt-3">
                       💡 První faktura až po dosažené úspoře<br/>
                       🔄 Každá další roční faktura jako předplacení dalšího roku<br/>
@@ -80,7 +80,7 @@ const Index = () => {
                 <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-gradient-primary text-primary-foreground p-3 md:p-6 rounded-xl shadow-glow border-2 md:border-4 border-white">
                   <div className="text-center">
                     <p className="text-lg md:text-2xl font-bold">500 Kč</p>
-                    <p className="text-xs md:text-sm font-medium">ročně/místo</p>
+                    <p className="text-xs md:text-sm font-medium">ročně/odběrné místo</p>
                     <p className="text-xs opacity-90 mt-1 hidden md:block">Vše v ceně!</p>
                   </div>
                 </div>
