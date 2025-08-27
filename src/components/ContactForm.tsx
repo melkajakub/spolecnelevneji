@@ -9,12 +9,8 @@ import { useToast } from "@/hooks/use-toast";
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
-    contractHolderName: "",
-    contractHolderBirthDate: "",
     name: "",
     email: "",
-    billingName: "",
-    billingAddress: "",
     message: "",
     files: [] as File[],
     consent: false
@@ -24,10 +20,10 @@ export const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.contractHolderName || !formData.contractHolderBirthDate || !formData.name || !formData.email || !formData.billingName || !formData.billingAddress) {
+    if (!formData.name || !formData.email) {
       toast({
         title: "Chyba",
-        description: "Vyplňte prosím všechna povinná pole.",
+        description: "Vyplňte prosím jméno a e-mail.",
         variant: "destructive",
       });
       return;
@@ -44,12 +40,8 @@ export const ContactForm = () => {
 
     try {
       const formDataToSend = new FormData();
-      formDataToSend.append('contractHolderName', formData.contractHolderName);
-      formDataToSend.append('contractHolderBirthDate', formData.contractHolderBirthDate);
       formDataToSend.append('name', formData.name);
       formDataToSend.append('email', formData.email);
-      formDataToSend.append('billingName', formData.billingName);
-      formDataToSend.append('billingAddress', formData.billingAddress);
       formDataToSend.append('message', formData.message);
       
       // Add files (currently only first file due to email limitations)
@@ -81,7 +73,7 @@ export const ContactForm = () => {
         description: "Děkujeme za zájem. Brzy vás budeme kontaktovat.",
       });
       
-      setFormData({ contractHolderName: "", contractHolderBirthDate: "", name: "", email: "", billingName: "", billingAddress: "", message: "", files: [], consent: false });
+      setFormData({ name: "", email: "", message: "", files: [], consent: false });
     } catch (error) {
       console.error('Error sending email:', error);
       toast({
@@ -133,32 +125,7 @@ export const ContactForm = () => {
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="contractHolderName">Jméno osoby na kterou je odběrné místo napsáno *</Label>
-            <Input
-              id="contractHolderName"
-              name="contractHolderName"
-              value={formData.contractHolderName}
-              onChange={handleChange}
-              required
-              className="focus:ring-primary"
-            />
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="contractHolderBirthDate">Datum narození (osoba na odběrném místě) *</Label>
-            <Input
-              id="contractHolderBirthDate"
-              name="contractHolderBirthDate"
-              type="date"
-              value={formData.contractHolderBirthDate}
-              onChange={handleChange}
-              required
-              className="focus:ring-primary"
-            />
-          </div>
-          
-          <div className="space-y-2">
-            <Label htmlFor="name">Vaše jméno (kontaktní osoba) *</Label>
+            <Label htmlFor="name">Jméno</Label>
             <Input
               id="name"
               name="name"
@@ -170,7 +137,7 @@ export const ContactForm = () => {
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="email">Váš e-mail *</Label>
+            <Label htmlFor="email">E-mail</Label>
             <Input
               id="email"
               name="email"
@@ -179,32 +146,6 @@ export const ContactForm = () => {
               onChange={handleChange}
               required
               className="focus:ring-primary"
-            />
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="billingName">Fakturační jméno *</Label>
-            <Input
-              id="billingName"
-              name="billingName"
-              value={formData.billingName}
-              onChange={handleChange}
-              required
-              className="focus:ring-primary"
-            />
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="billingAddress">Fakturační adresa *</Label>
-            <Textarea
-              id="billingAddress"
-              name="billingAddress"
-              value={formData.billingAddress}
-              onChange={handleChange}
-              required
-              rows={2}
-              className="focus:ring-primary"
-              placeholder="Ulice, číslo popisné, PSČ, město"
             />
           </div>
           
