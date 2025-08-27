@@ -235,7 +235,7 @@ const Index = () => {
                 tuto službu nabídnout všem domácnostem, které chtějí ušetřit bez starostí.
               </p>
               <p className="text-primary font-semibold">
-                Jen komunikuji s dodavateli. Vy sami rozhodujete a podepisujete.
+                Já komunikuji s dodavateli. Vy sami rozhodujete a podepisujete.
               </p>
             </div>
           </div>
