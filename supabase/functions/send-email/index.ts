@@ -34,7 +34,7 @@ serve(async (req) => {
 
     let emailPayload: any = {
       from: 'onboarding@resend.dev',
-      to: ['info@spolecnelevneji.cz'],
+      to: ['melka.jakub@gmail.com'], // Dočasně pro testování
       reply_to: email || undefined,
       subject: 'Nový zájem o hlídání cen energií',
       html: `
