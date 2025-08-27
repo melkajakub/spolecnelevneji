@@ -58,17 +58,16 @@ serve(async (req) => {
         throw new Error('Soubor je příliš velký. Maximální velikost je 10MB.')
       }
       
-      // Convert file to base64 more efficiently for large files
+      // Convert file to base64 using proper encoding
       const fileBuffer = await file.arrayBuffer()
       const uint8Array = new Uint8Array(fileBuffer)
       
-      // Convert to base64 in chunks to avoid call stack overflow
-      let base64 = ''
-      const chunkSize = 8192
-      for (let i = 0; i < uint8Array.length; i += chunkSize) {
-        const chunk = uint8Array.slice(i, i + chunkSize)
-        base64 += btoa(String.fromCharCode.apply(null, Array.from(chunk)))
+      // Use proper base64 encoding that preserves file integrity
+      let binaryString = ''
+      for (let i = 0; i < uint8Array.length; i++) {
+        binaryString += String.fromCharCode(uint8Array[i])
       }
+      const base64 = btoa(binaryString)
       
       emailPayload.attachments = [{
         filename: file.name,
