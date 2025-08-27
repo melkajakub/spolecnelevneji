@@ -30,7 +30,7 @@ const Index = () => {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-6">
               <a href="#services" className="text-foreground hover:text-primary transition-colors">Jak to funguje</a>
-              <a href="#about" className="text-foreground hover:text-primary transition-colors">O nás</a>
+              <a href="#about" className="text-foreground hover:text-primary transition-colors">O mně</a>
               <a href="#why-paid" className="text-foreground hover:text-primary transition-colors">Proč je služba placená</a>
               <a href="#contact" className="text-foreground hover:text-primary transition-colors">Kontakt</a>
             </nav>
@@ -62,7 +62,7 @@ const Index = () => {
                   className="block py-2 text-foreground hover:text-primary transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  O nás
+                  O mně
                 </a>
                 <a 
                   href="#why-paid" 
@@ -142,19 +142,19 @@ const Index = () => {
         {/* Services Section - Combined with How it Works */}
         <section id="services" className="py-20 px-4 bg-background">
           <div className="container mx-auto max-w-6xl">
-            <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Co pro vás děláme a jak to funguje</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Co pro vás dělám a jak to funguje</h2>
             
             {/* Main Service Description */}
             <Card className="shadow-soft border-primary/20 mb-12">
               <CardHeader>
                 <CardTitle className="text-2xl text-primary flex items-center gap-2">
                   <Shield className="h-6 w-6" />
-                  Hlídáme a vyjednáváme výhodné ceny energií
+                  Hlídám a vyjednávám výhodné ceny energií
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="mb-6 p-4 bg-primary/5 border border-primary/20 rounded-lg">
-                  <p className="text-primary font-semibold mb-2">✓ Nejdříve se vždy snažíme vyjednat u vašeho stávajícího dodavatele</p>
+                  <p className="text-primary font-semibold mb-2">✓ Nejdříve se vždy snažím vyjednat u vašeho stávajícího dodavatele</p>
                   <p className="text-sm text-muted-foreground">
                     Změnu dodavatele navrhujeme pouze v případě, kdy se nepodaří dostat rozumnou individuální nabídku od stávajícího dodavatele. 
                     Takto vám ušetříme maximum starostí s papírováním.
@@ -162,10 +162,10 @@ const Index = () => {
                 </div>
                 <ul className="space-y-4">
                   {[
-                    "Sledujeme termíny vašich fixací.",
-                    "Vyjednáváme individuální nabídky primárně u vašeho stávajícího dodavatele.",
-                    "Změnu dodavatele navrhujeme pouze pokud se nepodaří získat výhodnou individuální nabídku.",
-                    "Vždy vám posíláme přehlednou kalkulaci e-mailem.",
+                    "Sleduji termíny vašich fixací.",
+                    "Vyjednávám individuální nabídky primárně u vašeho stávajícího dodavatele.",
+                    "Změnu dodavatele navrhuji pouze pokud se nepodaří získat výhodnou individuální nabídku.",
+                    "Vždy vám posílám přehlednou kalkulaci e-mailem.",
                     "Vy rozhodujete a podepisujete nabídky přímo s dodavatelem."
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
@@ -189,19 +189,19 @@ const Index = () => {
                 },
                 {
                   step: "2",
-                  title: "Zařadíme vás do databáze",
+                  title: "Zařadím vás do databáze",
                   icon: <Users className="h-8 w-8" />,
                   description: "Vaše údaje uložíme do systému a nastavíme monitoring termínů fixací."
                 },
                 {
                   step: "3",
-                  title: "Hlídáme termíny a oslovujeme dodavatele",
+                  title: "Hlídám termíny a oslovuji dodavatele",
                   icon: <Clock className="h-8 w-8" />,
-                  description: "Automaticky sledujeme termíny fixací a vyjednáváme nejlepší ceny."
+                  description: "Automaticky sleduji termíny fixací a vyjednávám nejlepší ceny."
                 },
                 {
                   step: "4",
-                  title: "Pošleme vám nabídky a přehled úspor",
+                  title: "Pošlu vám nabídky a přehled úspor",
                   icon: <TrendingDown className="h-8 w-8" />,
                   description: "Dostanete přehledné srovnání a kalkulace úspor e-mailem."
                 }
@@ -226,16 +226,16 @@ const Index = () => {
         {/* About */}
         <section id="about" className="py-20 px-4 bg-background">
           <div className="container mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold mb-8 text-foreground">O nás</h2>
-            <h3 className="text-xl font-semibold mb-6 text-primary">Proč tuto službu děláme?</h3>
+            <h2 className="text-3xl font-bold mb-8 text-foreground">O mně</h2>
+            <h3 className="text-xl font-semibold mb-6 text-primary">Proč tuto službu dělám?</h3>
             <div className="space-y-6 text-lg text-muted-foreground">
               <p>
-                Začali jsme pomáhat rodině a známým vyjednávat transparentní ceny energií. 
-                Viděli jsme, kolik lidí zbytečně přeplácí. Proto jsme se rozhodli 
+                Začal jsem pomáhat rodině a známým vyjednávat transparentní ceny energií. 
+                Viděl jsem, kolik lidí zbytečně přeplácí. Proto jsem se rozhodl 
                 tuto službu nabídnout všem domácnostem, které chtějí ušetřit bez starostí.
               </p>
               <p className="text-primary font-semibold">
-                Komunikujeme jen s dodavateli. Vy sami rozhodujete a podepisujete.
+                Komunikuji jen s dodavateli. Vy sami rozhodujete a podepisujete.
               </p>
             </div>
           </div>
@@ -259,7 +259,7 @@ const Index = () => {
                 },
                 {
                   title: "Minimální papírování",
-                  description: "primárně vyjednáváme u vašeho stávajícího dodavatele, změnu navrhujeme pouze pokud nelze získat výhodnou nabídku"
+                  description: "primárně vyjednávám u vašeho stávajícího dodavatele, změnu navrhuji pouze pokud nelze získat výhodnou nabídku"
                 },
                 {
                   title: "Transparentní komunikace",
@@ -267,7 +267,7 @@ const Index = () => {
                 },
                 {
                   title: "Bez rizika",
-                  description: "pokud nenajdeme minimálně 1 200 Kč roční úspory, první rok máte zdarma"
+                  description: "pokud nenajdu minimálně 1 200 Kč roční úspory, první rok máte zdarma"
                 }
               ].map((item, index) => (
                 <Card key={index} className={`shadow-soft ${item.highlight ? 'border-secondary shadow-energy' : ''}`}>
@@ -298,13 +298,13 @@ const Index = () => {
                     u vašeho stávajícího dodavatele, protože často lze cenu snížit ještě před koncem fixace a bez sankcí.
                   </p>
                   <p>
-                    Změnu dodavatele doporučuji až tehdy, když stávající dodavatel není ochoten nabídnout rozumnou cenu, 
+                    Změnu dodavatele doporučím až tehdy, když stávající dodavatel není ochoten nabídnout rozumnou cenu, 
                     a vždy vám připravím přehledný report s porovnáním obou možností.
                   </p>
                   <div className="bg-secondary/10 border border-secondary/20 rounded-lg p-6 mt-6">
                     <p className="text-secondary font-semibold">
                       💡 Když je něco „zdarma", obvykle to znamená, že nejste zákazník, ale produkt – vaše údaje nebo smlouvy jsou obchodovány. 
-                      Já volím transparentní roční poplatek, abych mohl být nezávislý a hájit vaše zájmy.
+                      Volím transparentní roční poplatek, abych mohl být nezávislý a hájit vaše zájmy.
                     </p>
                   </div>
                 </div>
@@ -360,7 +360,7 @@ const Index = () => {
             <div className="mt-8 pt-8 border-t border-primary-glow">
               <p className="text-primary-glow text-sm leading-relaxed">
                 Nedovolte svému dodavateli energií tiše zneužívat to, že se neorientujete 
-                v nepřehledných fakturách a nabídkách. Vyjednáme za vás férové ceny a ušetříme vám starosti.
+                v nepřehledných fakturách a nabídkách. Vyjednám za vás spravedlivé ceny a ušetřím vám starosti.
               </p>
             </div>
           </div>
