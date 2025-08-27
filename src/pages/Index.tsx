@@ -270,8 +270,36 @@ const Index = () => {
           </div>
         </section>
 
+        {/* Why is the service paid */}
+        <section className="py-20 px-4">
+          <div className="container mx-auto max-w-4xl">
+            <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Proč je služba placená?</h2>
+            <Card className="shadow-soft border-primary/20">
+              <CardContent className="p-6 md:p-8">
+                <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+                  <p>
+                    Na rozdíl od „zdarma" služeb, kde poradce vydělává provize za přetahování zákazníků od dodavatele k dodavateli, 
+                    <strong className="text-primary"> já pracuji výhradně pro vás</strong>. Mojí prioritou je vždy vyjednat nejlepší podmínky 
+                    u vašeho stávajícího dodavatele, protože často lze cenu snížit ještě před koncem fixace a bez sankcí.
+                  </p>
+                  <p>
+                    Změnu dodavatele doporučuji až tehdy, když stávající dodavatel není ochoten nabídnout férovou cenu, 
+                    a vždy vám připravím přehledný report s porovnáním obou možností.
+                  </p>
+                  <div className="bg-secondary/10 border border-secondary/20 rounded-lg p-6 mt-6">
+                    <p className="text-secondary font-semibold">
+                      💡 Když je něco „zdarma", obvykle to znamená, že nejste zákazník, ale produkt – vaše údaje nebo smlouvy jsou obchodovány. 
+                      Já volím transparentní roční poplatek, abych mohl být nezávislý a hájit vaše zájmy.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
         {/* About */}
-        <section id="about" className="py-20 px-4">
+        <section id="about" className="py-20 px-4 bg-background">
           <div className="container mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold mb-8 text-foreground">O nás</h2>
             <h3 className="text-xl font-semibold mb-6 text-primary">Proč tuto službu děláme?</h3>
