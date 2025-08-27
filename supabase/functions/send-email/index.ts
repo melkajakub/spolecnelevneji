@@ -52,12 +52,27 @@ serve(async (req) => {
     // Add attachment if file exists
     if (file && file.size > 0) {
       console.log(`Processing file attachment: ${file.name}, size: ${file.size} bytes`)
+      
+      // Check file size limit (10MB)
+      if (file.size > 10 * 1024 * 1024) {
+        throw new Error('Soubor je příliš velký. Maximální velikost je 10MB.')
+      }
+      
+      // Convert file to base64 more efficiently for large files
       const fileBuffer = await file.arrayBuffer()
-      const fileBase64 = btoa(String.fromCharCode(...new Uint8Array(fileBuffer)))
+      const uint8Array = new Uint8Array(fileBuffer)
+      
+      // Convert to base64 in chunks to avoid call stack overflow
+      let base64 = ''
+      const chunkSize = 8192
+      for (let i = 0; i < uint8Array.length; i += chunkSize) {
+        const chunk = uint8Array.slice(i, i + chunkSize)
+        base64 += btoa(String.fromCharCode.apply(null, Array.from(chunk)))
+      }
       
       emailPayload.attachments = [{
         filename: file.name,
-        content: fileBase64,
+        content: base64,
         content_type: file.type
       }]
       console.log('File attachment added to email payload')

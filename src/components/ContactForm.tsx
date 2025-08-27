@@ -12,7 +12,7 @@ export const ContactForm = () => {
     name: "",
     email: "",
     message: "",
-    file: null as File | null,
+    files: [] as File[],
     consent: false
   });
   const { toast } = useToast();
@@ -43,8 +43,10 @@ export const ContactForm = () => {
       formDataToSend.append('name', formData.name);
       formDataToSend.append('email', formData.email);
       formDataToSend.append('message', formData.message);
-      if (formData.file) {
-        formDataToSend.append('file', formData.file);
+      
+      // Add files (currently only first file due to email limitations)
+      if (formData.files.length > 0) {
+        formDataToSend.append('file', formData.files[0]);
       }
 
       const response = await fetch('https://cctflcnhlfjtmlmywbcp.supabase.co/functions/v1/send-email', {
@@ -71,7 +73,7 @@ export const ContactForm = () => {
         description: "Děkujeme za zájem. Brzy vás budeme kontaktovat.",
       });
       
-      setFormData({ name: "", email: "", message: "", file: null, consent: false });
+      setFormData({ name: "", email: "", message: "", files: [], consent: false });
     } catch (error) {
       console.error('Error sending email:', error);
       toast({
@@ -90,10 +92,19 @@ export const ContactForm = () => {
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0] || null;
+    const newFiles = Array.from(e.target.files || []);
     setFormData({
       ...formData,
-      file
+      files: [...formData.files, ...newFiles]
+    });
+    // Reset input to allow selecting same file again
+    e.target.value = '';
+  };
+
+  const removeFile = (index: number) => {
+    setFormData({
+      ...formData,
+      files: formData.files.filter((_, i) => i !== index)
     });
   };
 
@@ -151,23 +162,43 @@ export const ContactForm = () => {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="file">Příloha (volitelně)</Label>
+            <Label htmlFor="files">Příloha (volitelně)</Label>
             <div className="text-sm text-muted-foreground mb-2">
               <p>💡 <strong>Tip:</strong> Přiložte své poslední vyúčtování energií - výrazně to urychlí proces!</p>
-              <p className="text-xs mt-1">Podporované formáty: PDF, JPG, PNG (max. 10MB)</p>
+              <p className="text-xs mt-1">Podporované formáty: PDF, JPG, PNG (max. 10MB každý)</p>
             </div>
             <Input
-              id="file"
-              name="file"
+              id="files"
+              name="files"
               type="file"
               onChange={handleFileChange}
               accept=".pdf,.jpg,.jpeg,.png"
+              multiple
               className="focus:ring-primary file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:text-sm file:font-medium file:bg-primary/10 file:text-primary hover:file:bg-primary/20"
             />
-            {formData.file && (
-              <p className="text-sm text-muted-foreground">
-                Vybraný soubor: {formData.file.name} ({Math.round(formData.file.size / 1024)} KB)
-              </p>
+            {formData.files.length > 0 && (
+              <div className="space-y-2 mt-2">
+                <p className="text-sm font-medium text-muted-foreground">Vybrané soubory:</p>
+                {formData.files.map((file, index) => (
+                  <div key={index} className="flex items-center justify-between bg-muted/50 p-2 rounded">
+                    <span className="text-sm">
+                      {file.name} ({Math.round(file.size / 1024)} KB)
+                    </span>
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => removeFile(index)}
+                      className="text-destructive hover:text-destructive hover:bg-destructive/10"
+                    >
+                      Odebrat
+                    </Button>
+                  </div>
+                ))}
+                <p className="text-xs text-muted-foreground">
+                  📝 Poznámka: V e-mailu bude přiložen pouze první soubor
+                </p>
+              </div>
             )}
           </div>
           
@@ -190,7 +221,12 @@ export const ContactForm = () => {
             </div>
           </div>
           
-          <Button type="submit" variant="energy" className="w-full">
+          <Button 
+            type="submit" 
+            variant="energy" 
+            className="w-full" 
+            disabled={!formData.consent}
+          >
             Odeslat
           </Button>
         </form>
