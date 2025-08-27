@@ -1,11 +1,14 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, Shield, Clock, TrendingDown, Users, Mail } from "lucide-react";
+import { CheckCircle, Shield, Clock, TrendingDown, Users, Mail, Menu, X } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import heroImage from "@/assets/energy-savings-hero.jpg";
 
 const Index = () => {
   console.log("Index component rendering");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
     contactSection?.scrollIntoView({ behavior: 'smooth' });
@@ -24,13 +27,60 @@ const Index = () => {
                 className="h-12 w-auto rounded-full bg-transparent"
               />
             </div>
+            {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-6">
               <a href="#services" className="text-foreground hover:text-primary transition-colors">Služby</a>
               <a href="#how-it-works" className="text-foreground hover:text-primary transition-colors">Jak to funguje</a>
               <a href="#about" className="text-foreground hover:text-primary transition-colors">O nás</a>
               <a href="#contact" className="text-foreground hover:text-primary transition-colors">Kontakt</a>
             </nav>
+            
+            {/* Mobile Menu Button */}
+            <Button
+              variant="ghost"
+              size="sm"
+              className="md:hidden"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </Button>
           </div>
+          
+          {/* Mobile Navigation Menu */}
+          {mobileMenuOpen && (
+            <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-sm">
+              <nav className="container mx-auto px-4 py-4 space-y-2">
+                <a 
+                  href="#services" 
+                  className="block py-2 text-foreground hover:text-primary transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Služby
+                </a>
+                <a 
+                  href="#how-it-works" 
+                  className="block py-2 text-foreground hover:text-primary transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Jak to funguje
+                </a>
+                <a 
+                  href="#about" 
+                  className="block py-2 text-foreground hover:text-primary transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  O nás
+                </a>
+                <a 
+                  href="#contact" 
+                  className="block py-2 text-foreground hover:text-primary transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Kontakt
+                </a>
+              </nav>
+            </div>
+          )}
         </div>
       </header>
 

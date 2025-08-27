@@ -178,7 +178,7 @@ export const ContactForm = () => {
                 className="text-sm leading-relaxed cursor-pointer"
               >
                 Souhlasím se zpracováním osobních údajů podle 
-                <a href="#" className="text-primary hover:underline ml-1">GDPR</a>
+                <a href="https://gdpr.cz/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline ml-1">GDPR</a>
                 . Vaše údaje použijeme pouze pro účely této služby.
               </Label>
             </div>
