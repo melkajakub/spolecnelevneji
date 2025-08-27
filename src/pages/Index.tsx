@@ -32,6 +32,7 @@ const Index = () => {
               <a href="#services" className="text-foreground hover:text-primary transition-colors">Služby</a>
               <a href="#how-it-works" className="text-foreground hover:text-primary transition-colors">Jak to funguje</a>
               <a href="#about" className="text-foreground hover:text-primary transition-colors">O nás</a>
+              <a href="#why-paid" className="text-foreground hover:text-primary transition-colors">Proč je služba placená</a>
               <a href="#contact" className="text-foreground hover:text-primary transition-colors">Kontakt</a>
             </nav>
             
@@ -72,6 +73,13 @@ const Index = () => {
                   O nás
                 </a>
                 <a 
+                  href="#why-paid" 
+                  className="block py-2 text-foreground hover:text-primary transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Proč je služba placená
+                </a>
+                <a 
                   href="#contact" 
                   className="block py-2 text-foreground hover:text-primary transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
@@ -99,7 +107,7 @@ const Index = () => {
                 <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0">
                   Ušetřete na energiích bez složitého papírování.
                   <strong className="text-primary block mt-2">Primárně vyjednáváme u vašeho stávajícího dodavatele</strong> 
-                  <span className="block">Změnu navrhujeme pouze pokud se nepodaří dostat rozumnou a férovou individuální nabídku.</span>
+                  <span className="block">Změnu navrhujeme pouze pokud se nepodaří dostat rozumnou individuální nabídku.</span>
                 </p>
                 
                 {/* Price highlight */}
@@ -145,16 +153,16 @@ const Index = () => {
             <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Co pro vás děláme</h2>
             <Card className="shadow-soft border-primary/20">
               <CardHeader>
-                <CardTitle className="text-2xl text-primary flex items-center gap-2">
+                  <CardTitle className="text-2xl text-primary flex items-center gap-2">
                   <Shield className="h-6 w-6" />
-                  Hlídáme a vyjednáváme férové ceny energií
+                  Hlídáme a vyjednáváme výhodné ceny energií
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="mb-6 p-4 bg-primary/5 border border-primary/20 rounded-lg">
                   <p className="text-primary font-semibold mb-2">✓ Nejdříve se vždy snažíme vyjednat u vašeho stávajícího dodavatele</p>
                   <p className="text-sm text-muted-foreground">
-                    Změnu dodavatele navrhujeme pouze v případě, kdy se nepodaří dostat rozumnou a férovou individuální nabídku od stávajícího dodavatele. 
+                    Změnu dodavatele navrhujeme pouze v případě, kdy se nepodaří dostat rozumnou individuální nabídku od stávajícího dodavatele. 
                     Takto vám ušetříme maximum starostí s papírováním.
                   </p>
                 </div>
@@ -162,7 +170,7 @@ const Index = () => {
                   {[
                     "Sledujeme termíny vašich fixací.",
                     "Vyjednáváme individuální nabídky primárně u vašeho stávajícího dodavatele.",
-                    "Změnu dodavatele navrhujeme pouze pokud se nepodaří získat férovou individuální nabídku.",
+                    "Změnu dodavatele navrhujeme pouze pokud se nepodaří získat výhodnou individuální nabídku.",
                     "Vždy vám posíláme přehlednou kalkulaci e-mailem.",
                     "Vy rozhodujete a podepisujete nabídky přímo s dodavatelem."
                   ].map((item, index) => (
@@ -200,7 +208,7 @@ const Index = () => {
                   step: "3",
                   title: "Hlídáme termíny a oslovujeme dodavatele",
                   icon: <Clock className="h-8 w-8" />,
-                  description: "Automaticky sledujeme termíny fixací a vyjednáváme férové ceny."
+                  description: "Automaticky sledujeme termíny fixací a vyjednáváme nejlepší ceny."
                 },
                 {
                   step: "4",
@@ -226,14 +234,32 @@ const Index = () => {
           </div>
         </section>
 
+        {/* About */}
+        <section id="about" className="py-20 px-4 bg-background">
+          <div className="container mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl font-bold mb-8 text-foreground">O nás</h2>
+            <h3 className="text-xl font-semibold mb-6 text-primary">Proč tuto službu děláme?</h3>
+            <div className="space-y-6 text-lg text-muted-foreground">
+              <p>
+                Začali jsme pomáhat rodině a známým vyjednávat transparentní ceny energií. 
+                Viděli jsme, kolik lidí zbytečně přeplácí. Proto jsme se rozhodli 
+                tuto službu nabídnout všem domácnostem, které chtějí ušetřit bez starostí.
+              </p>
+              <p className="text-primary font-semibold">
+                Komunikujeme jen s dodavateli. Vy sami rozhodujete a podepisujete.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Why choose us */}
-        <section className="py-20 px-4 bg-background">
+        <section className="py-20 px-4">
           <div className="container mx-auto max-w-4xl">
             <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Proč si vybrat právě nás?</h2>
             <div className="grid md:grid-cols-2 gap-8">
               {[
                 {
-                  title: "Jednoduchý a férový roční poplatek",
+                  title: "Jednoduchý a transparentní roční poplatek",
                   description: "Pouze 600 Kč za odběrné místo ročně (50 Kč měsíčně) • Žádné skryté poplatky • Platíte jen když ušetříme",
                   highlight: true
                 },
@@ -244,7 +270,7 @@ const Index = () => {
                 },
                 {
                   title: "Minimální papírování",
-                  description: "primárně vyjednáváme u vašeho stávajícího dodavatele, změnu navrhujeme pouze pokud nelze získat férovou nabídku"
+                  description: "primárně vyjednáváme u vašeho stávajícího dodavatele, změnu navrhujeme pouze pokud nelze získat výhodnou nabídku"
                 },
                 {
                   title: "Transparentní komunikace",
@@ -271,7 +297,7 @@ const Index = () => {
         </section>
 
         {/* Why is the service paid */}
-        <section className="py-20 px-4">
+        <section id="why-paid" className="py-20 px-4 bg-background">
           <div className="container mx-auto max-w-4xl">
             <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Proč je služba placená?</h2>
             <Card className="shadow-soft border-primary/20">
@@ -283,7 +309,7 @@ const Index = () => {
                     u vašeho stávajícího dodavatele, protože často lze cenu snížit ještě před koncem fixace a bez sankcí.
                   </p>
                   <p>
-                    Změnu dodavatele doporučuji až tehdy, když stávající dodavatel není ochoten nabídnout férovou cenu, 
+                    Změnu dodavatele doporučuji až tehdy, když stávající dodavatel není ochoten nabídnout rozumnou cenu, 
                     a vždy vám připravím přehledný report s porovnáním obou možností.
                   </p>
                   <div className="bg-secondary/10 border border-secondary/20 rounded-lg p-6 mt-6">
@@ -298,26 +324,8 @@ const Index = () => {
           </div>
         </section>
 
-        {/* About */}
-        <section id="about" className="py-20 px-4 bg-background">
-          <div className="container mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold mb-8 text-foreground">O nás</h2>
-            <h3 className="text-xl font-semibold mb-6 text-primary">Proč tuto službu děláme?</h3>
-            <div className="space-y-6 text-lg text-muted-foreground">
-              <p>
-                Začali jsme pomáhat rodině a známým vyjednávat férové ceny energií. 
-                Viděli jsme, kolik lidí zbytečně přeplácí. Proto jsme se rozhodli 
-                tuto službu nabídnout všem domácnostem, které chtějí ušetřit bez starostí.
-              </p>
-              <p className="text-primary font-semibold">
-                Komunikujeme jen s dodavateli. Vy sami rozhodujete a podepisujete.
-              </p>
-            </div>
-          </div>
-        </section>
-
         {/* Contact */}
-        <section id="contact" className="py-20 px-4 bg-background">
+        <section id="contact" className="py-20 px-4">
           <div className="container mx-auto max-w-4xl">
             <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Kontakt</h2>
             <ContactForm />
