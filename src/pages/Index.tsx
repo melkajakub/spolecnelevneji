@@ -29,7 +29,7 @@ const Index = () => {
             </div>
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-6">
-              <a href="#services" className="text-foreground hover:text-primary transition-colors">Služby a proces</a>
+              <a href="#services" className="text-foreground hover:text-primary transition-colors">Jak to funguje</a>
               <a href="#about" className="text-foreground hover:text-primary transition-colors">O nás</a>
               <a href="#why-paid" className="text-foreground hover:text-primary transition-colors">Proč je služba placená</a>
               <a href="#contact" className="text-foreground hover:text-primary transition-colors">Kontakt</a>
@@ -55,7 +55,7 @@ const Index = () => {
                   className="block py-2 text-foreground hover:text-primary transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Služby a proces
+                  Jak to funguje
                 </a>
                 <a 
                   href="#about" 
