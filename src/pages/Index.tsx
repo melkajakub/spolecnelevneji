@@ -21,7 +21,7 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/dcd1b256-2e06-4aca-963c-251ffd8dee20.png" 
                 alt="Společně levněji logo" 
-                className="h-12 w-auto"
+                className="h-12 w-auto rounded-full bg-transparent"
               />
             </div>
             <nav className="hidden md:flex space-x-6">
