@@ -278,7 +278,7 @@ const Index = () => {
               <CardContent className="p-6 md:p-8">
                 <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                   <p>
-                    Na rozdíl od „zdarma" služeb, kde poradce vydělává provize za přetahování zákazníků od dodavatele k dodavateli, 
+                    Na rozdíl od „zdarma" služeb, kde výdělek poradce spočívá hlavně v provizi za přetahování zákazníků od dodavatele k dodavateli, 
                     <strong className="text-primary"> já pracuji výhradně pro vás</strong>. Mojí prioritou je vždy vyjednat nejlepší podmínky 
                     u vašeho stávajícího dodavatele, protože často lze cenu snížit ještě před koncem fixace a bez sankcí.
                   </p>
