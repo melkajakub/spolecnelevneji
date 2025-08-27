@@ -188,19 +188,19 @@ const Index = () => {
                   step: "1",
                   title: "Pošlete nám své údaje",
                   icon: <Mail className="h-8 w-8" />,
-                  description: "Vyplníte jednoduchý formulář s vašimi údaji o odběru energií."
+                  description: "Vyplníte jednoduchý formulář a kontaktujeme vás pro případné doplnění informací."
                 },
                 {
                   step: "2",
                   title: "Zařadíme vás do databáze",
                   icon: <Users className="h-8 w-8" />,
-                  description: "Vaše údaje bezpečně uložíme a připravíme monitoring."
+                  description: "Vaše údaje uložíme do systému a nastavíme monitoring termínů fixací."
                 },
                 {
                   step: "3",
                   title: "Hlídáme termíny a oslovujeme dodavatele",
                   icon: <Clock className="h-8 w-8" />,
-                  description: "Automaticky sledujeme termíny fixací a vyjednáváme nejlepší ceny."
+                  description: "Automaticky sledujeme termíny fixací a vyjednáváme férové ceny."
                 },
                 {
                   step: "4",

@@ -12,16 +12,20 @@ serve(async (req) => {
 
   try {
     const formData = await req.formData()
+    const contractHolderName = formData.get('contractHolderName') as string
+    const contractHolderBirthDate = formData.get('contractHolderBirthDate') as string
     const name = formData.get('name') as string
     const email = formData.get('email') as string
+    const billingName = formData.get('billingName') as string
+    const billingAddress = formData.get('billingAddress') as string
     const message = formData.get('message') as string
     const file = formData.get('file') as File | null
 
-    console.log('Received form data:', { name, email, hasMessage: !!message, hasFile: !!file })
+    console.log('Received form data:', { contractHolderName, name, email, hasMessage: !!message, hasFile: !!file })
 
     // Validate required fields
-    if (!name || !email) {
-      throw new Error('Name and email are required')
+    if (!contractHolderName || !contractHolderBirthDate || !name || !email || !billingName || !billingAddress) {
+      throw new Error('Všechna povinná pole musí být vyplněna')
     }
 
     const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
@@ -38,14 +42,31 @@ serve(async (req) => {
       reply_to: email || undefined,
       subject: 'Nový zájem o hlídání cen energií',
       html: `
-        <h2>Nový zájem o službu</h2>
-        <p><strong>Jméno:</strong> ${name}</p>
-        <p><strong>E-mail:</strong> ${email}</p>
-        <p><strong>Zpráva:</strong></p>
-        <p>${message || 'Zákazník nenapsal žádnou zprávu.'}</p>
-        ${file ? '<p><strong>Příloha:</strong> Ano (viz příloha)</p>' : ''}
-        <hr>
-        <p><small>Odesláno z kontaktního formuláře na spolecnelevneji.cz</small></p>
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <h2 style="color: #2563eb;">Nová poptávka - Hlídání cen energií</h2>
+          
+          <h3 style="color: #059669; margin-top: 20px;">Údaje osoby na odběrném místě:</h3>
+          <p><strong>Jméno:</strong> ${contractHolderName}</p>
+          <p><strong>Datum narození:</strong> ${contractHolderBirthDate}</p>
+          
+          <h3 style="color: #059669; margin-top: 20px;">Kontaktní údaje:</h3>
+          <p><strong>Jméno:</strong> ${name}</p>
+          <p><strong>E-mail:</strong> ${email}</p>
+          
+          <h3 style="color: #059669; margin-top: 20px;">Fakturační údaje:</h3>
+          <p><strong>Jméno:</strong> ${billingName}</p>
+          <p><strong>Adresa:</strong> ${billingAddress}</p>
+          
+          <h3 style="color: #059669; margin-top: 20px;">Zpráva:</h3>
+          <p>${message || 'Zákazník nenapsal žádnou zprávu.'}</p>
+          
+          ${file ? '<p><strong>Příloha:</strong> Ano (viz příloha)</p>' : ''}
+          
+          <hr style="margin: 20px 0; border: none; border-top: 1px solid #e5e7eb;">
+          <p style="color: #6b7280; font-size: 14px;">
+            Odesláno z kontaktního formuláře na spolecnelevneji.cz
+          </p>
+        </div>
       `,
     }
 
