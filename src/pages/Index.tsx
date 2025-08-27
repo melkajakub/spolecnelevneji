@@ -29,8 +29,7 @@ const Index = () => {
             </div>
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-6">
-              <a href="#services" className="text-foreground hover:text-primary transition-colors">Služby</a>
-              <a href="#how-it-works" className="text-foreground hover:text-primary transition-colors">Jak to funguje</a>
+              <a href="#services" className="text-foreground hover:text-primary transition-colors">Služby a proces</a>
               <a href="#about" className="text-foreground hover:text-primary transition-colors">O nás</a>
               <a href="#why-paid" className="text-foreground hover:text-primary transition-colors">Proč je služba placená</a>
               <a href="#contact" className="text-foreground hover:text-primary transition-colors">Kontakt</a>
@@ -56,14 +55,7 @@ const Index = () => {
                   className="block py-2 text-foreground hover:text-primary transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Služby
-                </a>
-                <a 
-                  href="#how-it-works" 
-                  className="block py-2 text-foreground hover:text-primary transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Jak to funguje
+                  Služby a proces
                 </a>
                 <a 
                   href="#about" 
@@ -147,13 +139,15 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Services Section */}
+        {/* Services Section - Combined with How it Works */}
         <section id="services" className="py-20 px-4 bg-background">
-          <div className="container mx-auto max-w-4xl">
-            <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Co pro vás děláme</h2>
-            <Card className="shadow-soft border-primary/20">
+          <div className="container mx-auto max-w-6xl">
+            <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Co pro vás děláme a jak to funguje</h2>
+            
+            {/* Main Service Description */}
+            <Card className="shadow-soft border-primary/20 mb-12">
               <CardHeader>
-                  <CardTitle className="text-2xl text-primary flex items-center gap-2">
+                <CardTitle className="text-2xl text-primary flex items-center gap-2">
                   <Shield className="h-6 w-6" />
                   Hlídáme a vyjednáváme výhodné ceny energií
                 </CardTitle>
@@ -182,13 +176,8 @@ const Index = () => {
                 </ul>
               </CardContent>
             </Card>
-          </div>
-        </section>
 
-        {/* How it works */}
-        <section id="how-it-works" className="py-20 px-4">
-          <div className="container mx-auto max-w-6xl">
-            <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Jak to funguje</h2>
+            {/* Process Steps */}
             <h3 className="text-xl font-semibold text-center mb-8 text-primary">Jednoduše ve 4 krocích</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
