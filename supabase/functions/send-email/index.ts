@@ -30,7 +30,7 @@ serve(async (req) => {
       throw new Error('RESEND_API_KEY is not set')
     }
 
-    console.log('API key found, preparing email payload')
+    console.log('Resend API key detected, length:', RESEND_API_KEY.length)
 
     let emailPayload: any = {
       from: 'onboarding@resend.dev',
