@@ -96,6 +96,10 @@ const Index = () => {
                     Vaše energie pod dohledem
                   </span>
                 </h1>
+                <p className="text-base md:text-lg text-primary font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-4">
+                  Nedovolte svému dodavateli energií tiše zneužívat to, že se neorientujete 
+                  v nepřehledných fakturách a nabídkách. Vyjednám za vás spravedlivé ceny a ušetřím vám starosti.
+                </p>
                 <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0">
                   Ušetřete na energiích bez složitého papírování.
                   <strong className="text-primary block mt-2">Primárně vyjednáváme u vašeho stávajícího dodavatele</strong> 
@@ -359,8 +363,7 @@ const Index = () => {
             
             <div className="mt-8 pt-8 border-t border-primary-glow">
               <p className="text-primary-glow text-sm leading-relaxed">
-                Nedovolte svému dodavateli energií tiše zneužívat to, že se neorientujete 
-                v nepřehledných fakturách a nabídkách. Vyjednám za vás spravedlivé ceny a ušetřím vám starosti.
+                © 2024 Společně levněji - Vaše energie pod dohledem
               </p>
             </div>
           </div>
