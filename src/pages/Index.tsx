@@ -188,7 +188,7 @@ const Index = () => {
                   step: "1",
                   title: "Pošlete nám své údaje",
                   icon: <Mail className="h-8 w-8" />,
-                  description: "Vyplníte jednoduchý formulář a kontaktuji vás pro případné doplnění informací."
+                  description: "Vyplníte jednoduchý formulář a následně vás kontaktuji pro případné doplnění informací."
                 },
                 {
                   step: "2",
