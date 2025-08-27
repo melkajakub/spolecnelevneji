@@ -76,7 +76,7 @@ serve(async (req) => {
     if (!res.ok) {
       const errorData = await res.text()
       console.error('Resend API error:', errorData)
-      throw new Error(`Failed to send email: ${res.status}`)
+      throw new Error(`Resend API ${res.status}: ${errorData}`)
     }
 
     const data = await res.json()
