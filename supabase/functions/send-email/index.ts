@@ -17,13 +17,23 @@ serve(async (req) => {
     const message = formData.get('message') as string
     const file = formData.get('file') as File | null
 
+    console.log('Received form data:', { name, email, hasMessage: !!message, hasFile: !!file })
+
+    // Validate required fields
+    if (!name || !email) {
+      throw new Error('Name and email are required')
+    }
+
     const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
     if (!RESEND_API_KEY) {
+      console.error('RESEND_API_KEY environment variable is not set')
       throw new Error('RESEND_API_KEY is not set')
     }
 
+    console.log('API key found, preparing email payload')
+
     let emailPayload: any = {
-      from: 'kontakt@spolecnelevneji.cz',
+      from: 'Společně Levněji <onboarding@resend.dev>',
       to: ['info@spolecnelevneji.cz'],
       subject: 'Nový zájem o hlídání cen energií',
       html: `
@@ -40,6 +50,7 @@ serve(async (req) => {
 
     // Add attachment if file exists
     if (file && file.size > 0) {
+      console.log(`Processing file attachment: ${file.name}, size: ${file.size} bytes`)
       const fileBuffer = await file.arrayBuffer()
       const fileBase64 = btoa(String.fromCharCode(...new Uint8Array(fileBuffer)))
       
@@ -48,7 +59,10 @@ serve(async (req) => {
         content: fileBase64,
         content_type: file.type
       }]
+      console.log('File attachment added to email payload')
     }
+
+    console.log('Sending email via Resend API...')
 
     const res = await fetch('https://api.resend.com/emails', {
       method: 'POST',

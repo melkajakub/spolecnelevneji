@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 
 export const ContactForm = () => {
@@ -11,7 +12,8 @@ export const ContactForm = () => {
     name: "",
     email: "",
     message: "",
-    file: null as File | null
+    file: null as File | null,
+    consent: false
   });
   const { toast } = useToast();
 
@@ -22,6 +24,15 @@ export const ContactForm = () => {
       toast({
         title: "Chyba",
         description: "Vyplňte prosím jméno a e-mail.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!formData.consent) {
+      toast({
+        title: "Chyba",
+        description: "Musíte souhlasit se zpracováním osobních údajů.",
         variant: "destructive",
       });
       return;
@@ -54,7 +65,7 @@ export const ContactForm = () => {
         description: "Děkujeme za zájem. Brzy vás budeme kontaktovat.",
       });
       
-      setFormData({ name: "", email: "", message: "", file: null });
+      setFormData({ name: "", email: "", message: "", file: null, consent: false });
     } catch (error) {
       console.error('Error sending email:', error);
       toast({
@@ -77,6 +88,13 @@ export const ContactForm = () => {
     setFormData({
       ...formData,
       file
+    });
+  };
+
+  const handleConsentChange = (checked: boolean) => {
+    setFormData({
+      ...formData,
+      consent: checked
     });
   };
 
@@ -145,6 +163,25 @@ export const ContactForm = () => {
                 Vybraný soubor: {formData.file.name} ({Math.round(formData.file.size / 1024)} KB)
               </p>
             )}
+          </div>
+          
+          <div className="space-y-2">
+            <div className="flex items-start space-x-2">
+              <Checkbox
+                id="consent"
+                checked={formData.consent}
+                onCheckedChange={handleConsentChange}
+                className="mt-1"
+              />
+              <Label
+                htmlFor="consent"
+                className="text-sm leading-relaxed cursor-pointer"
+              >
+                Souhlasím se zpracováním osobních údajů podle 
+                <a href="#" className="text-primary hover:underline ml-1">GDPR</a>
+                . Vaše údaje použijeme pouze pro účely této služby.
+              </Label>
+            </div>
           </div>
           
           <Button type="submit" variant="energy" className="w-full">
