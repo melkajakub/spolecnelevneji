@@ -188,13 +188,13 @@ const Index = () => {
                   step: "1",
                   title: "Pošlete nám své údaje",
                   icon: <Mail className="h-8 w-8" />,
-                  description: "Vyplníte jednoduchý formulář a kontaktujeme vás pro případné doplnění informací."
+                  description: "Vyplníte jednoduchý formulář a kontaktuji vás pro případné doplnění informací."
                 },
                 {
                   step: "2",
                   title: "Zařadím vás do databáze",
                   icon: <Users className="h-8 w-8" />,
-                  description: "Vaše údaje uložíme do systému a nastavíme monitoring termínů fixací."
+                  description: "Vaše údaje uložím do systému a nastavím monitoring termínů fixací."
                 },
                 {
                   step: "3",
