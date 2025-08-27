@@ -70,7 +70,7 @@ export const ContactForm = () => {
 
       toast({
         title: "Zpráva odeslána!",
-        description: "Děkujeme za zájem. Brzy vás budeme kontaktovat.",
+        description: "Děkuji za zájem. Brzy vás budeme kontaktovat.",
       });
       
       setFormData({ name: "", email: "", message: "", files: [], consent: false });
