@@ -33,8 +33,9 @@ serve(async (req) => {
     console.log('API key found, preparing email payload')
 
     let emailPayload: any = {
-      from: 'Společně Levněji <onboarding@resend.dev>',
+      from: 'onboarding@resend.dev',
       to: ['info@spolecnelevneji.cz'],
+      reply_to: email || undefined,
       subject: 'Nový zájem o hlídání cen energií',
       html: `
         <h2>Nový zájem o službu</h2>

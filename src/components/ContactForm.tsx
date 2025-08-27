@@ -57,7 +57,13 @@ export const ContactForm = () => {
       });
 
       if (!response.ok) {
-        throw new Error('Nepodařilo se odeslat zprávu');
+        const raw = await response.text();
+        let serverMsg = 'Nepodařilo se odeslat zprávu';
+        try {
+          const data = JSON.parse(raw);
+          serverMsg = data.error || serverMsg;
+        } catch {}
+        throw new Error(serverMsg);
       }
 
       toast({
@@ -70,7 +76,7 @@ export const ContactForm = () => {
       console.error('Error sending email:', error);
       toast({
         title: "Chyba při odesílání",
-        description: "Nepodařilo se odeslat zprávu. Zkuste to prosím znovu.",
+        description: error instanceof Error ? error.message : "Nepodařilo se odeslat zprávu. Zkuste to prosím znovu.",
         variant: "destructive",
       });
     }
