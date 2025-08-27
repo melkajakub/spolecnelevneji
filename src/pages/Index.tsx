@@ -230,7 +230,7 @@ const Index = () => {
             <h3 className="text-xl font-semibold mb-6 text-primary">Proč tuto službu dělám?</h3>
             <div className="space-y-6 text-lg text-muted-foreground">
               <p>
-                Začal jsem pomáhat rodině a známým vyjednávat transparentní ceny energií. 
+                Začal jsem pomáhat rodině a známým vyjednávat výhodnější ceny energií. 
                 Viděl jsem, kolik lidí zbytečně přeplácí. Proto jsem se rozhodl 
                 tuto službu nabídnout všem domácnostem, které chtějí ušetřit bez starostí.
               </p>
