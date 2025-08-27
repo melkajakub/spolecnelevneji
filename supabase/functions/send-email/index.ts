@@ -33,8 +33,8 @@ serve(async (req) => {
     console.log('Resend API key detected, length:', RESEND_API_KEY.length)
 
     let emailPayload: any = {
-      from: 'onboarding@resend.dev',
-      to: ['melka.jakub@gmail.com'], // Dočasně pro testování
+      from: 'Společně levněji <info@spolecnelevneji.cz>',
+      to: ['info@spolecnelevneji.cz'],
       reply_to: email || undefined,
       subject: 'Nový zájem o hlídání cen energií',
       html: `
