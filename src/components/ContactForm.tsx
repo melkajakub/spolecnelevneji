@@ -166,6 +166,12 @@ export const ContactForm = () => {
             <div className="text-sm text-muted-foreground mb-2">
               <p>💡 <strong>Tip:</strong> Přiložte své poslední vyúčtování energií - výrazně to urychlí proces!</p>
               <p className="text-xs mt-1">Podporované formáty: PDF, JPG, PNG (max. 10MB každý)</p>
+              <p className="text-xs mt-1 text-amber-600">
+                📧 <strong>Velké soubory?</strong> Pokud máte přílohy větší než 10MB, pošlete je prosím přímo na 
+                <a href="mailto:info@spolecnelevneji.cz" className="text-primary hover:underline ml-1">
+                  info@spolecnelevneji.cz
+                </a>
+              </p>
             </div>
             <Input
               id="files"
@@ -195,9 +201,6 @@ export const ContactForm = () => {
                     </Button>
                   </div>
                 ))}
-                <p className="text-xs text-muted-foreground">
-                  📝 Poznámka: V e-mailu bude přiložen pouze první soubor
-                </p>
               </div>
             )}
           </div>
