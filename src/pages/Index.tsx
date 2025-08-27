@@ -156,7 +156,7 @@ const Index = () => {
                 <div className="mb-6 p-4 bg-primary/5 border border-primary/20 rounded-lg">
                   <p className="text-primary font-semibold mb-2">✓ Nejdříve se vždy snažím vyjednat u vašeho stávajícího dodavatele</p>
                   <p className="text-sm text-muted-foreground">
-                    Změnu dodavatele navrhujeme pouze v případě, kdy se nepodaří dostat rozumnou individuální nabídku od stávajícího dodavatele. 
+                    Změnu dodavatele navrhuji pouze v případě, kdy se nepodaří dostat rozumnou individuální nabídku od stávajícího dodavatele. 
                     Takto vám ušetříme maximum starostí s papírováním.
                   </p>
                 </div>
@@ -244,7 +244,7 @@ const Index = () => {
         {/* Why choose us */}
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-4xl">
-            <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Proč si vybrat právě nás?</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Proč si vybrat právě tuto službu?</h2>
             <div className="grid md:grid-cols-2 gap-8">
               {[
                 {
@@ -263,7 +263,7 @@ const Index = () => {
                 },
                 {
                   title: "Transparentní komunikace",
-                  description: "každé jednání shrneme v přehledném e-mailu"
+                  description: "každé jednání shrnu v přehledném e-mailu"
                 },
                 {
                   title: "Bez rizika",
