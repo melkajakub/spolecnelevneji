@@ -202,7 +202,7 @@ const Index = () => {
                 },
                 {
                   title: "Bez rizika",
-                  description: "pokud nenajdeme minimálně 1 000 Kč roční úspory, první rok máte zdarma"
+                  description: "pokud nenajdeme minimálně 1\u00A0000 Kč roční úspory, první rok máte zdarma"
                 }
               ].map((item, index) => (
                 <Card key={index} className={`shadow-soft ${item.highlight ? 'border-secondary shadow-energy' : ''}`}>
