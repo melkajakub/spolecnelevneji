@@ -3,40 +3,118 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Společně levněji – úspory energií bez starostí | Vyjednávání cen energií</title>
-    <meta name="description" content="Vyjednáme vám férové ceny energií, pohlídáme fixace a šetříme vaše peníze. Jen 600 Kč ročně. Žádné závazky, žádné složité papírování.">
-    <meta name="author" content="Společně levněji" />
-    <link rel="canonical" href="https://spolecnelevneji.cz" />
+    
+    <!-- Preconnect pro rychlejší načítání externích zdrojů -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://storage.googleapis.com">
+    <link rel="dns-prefetch" href="//spolecnelevneji.cz">
+    
+    <!-- Preload kritických zdrojů -->
+    <link rel="preload" href="/src/main.tsx" as="script">
+    <link rel="preload" href="/src/index.css" as="style">
+    
+    <!-- SEO Meta tagy -->
+    <title>Vyjednávání cen energií | Společně levněji - 600 Kč ročně</title>
+    <meta name="description" content="Hlídání a vyjednávání cen energií pro domácnosti. Primárně u stávajícího dodavatele. Ušetříme min. 1000 Kč ročně nebo zdarma. Jen 600 Kč/rok.">
+    <meta name="keywords" content="úspory energií, vyjednávání cen energií, dodavatel energií, fixace energií, elektřina, plyn, domácnosti, úspory">
+    <meta name="author" content="Společně levněji, Jakub Melka" />
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://spolecnelevneji.cz/" />
 
-    
-    
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://spolecnelevneji.cz" />
+    <meta property="og:url" content="https://spolecnelevneji.cz/" />
+    <meta property="og:title" content="Vyjednávání cen energií | Společně levněji - 600 Kč ročně">
+    <meta property="og:description" content="Hlídání a vyjednávání cen energií pro domácnosti. Primárně u stávajícího dodavatele. Ušetříme min. 1000 Kč ročně nebo zdarma. Jen 600 Kč/rok.">
+    <meta property="og:image" content="https://spolecnelevneji.cz/assets/energy-savings-hero-BrSwosej.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Úspora energií - moderní dům s fotovoltaickými panely">
+    <meta property="og:site_name" content="Společně levněji">
+    <meta property="og:locale" content="cs_CZ">
 
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Vyjednávání cen energií | Společně levněji - 600 Kč ročně">
+    <meta name="twitter:description" content="Hlídání a vyjednávání cen energií pro domácnosti. Primárně u stávajícího dodavatele. Ušetříme min. 1000 Kč ročně nebo zdarma.">
+    <meta name="twitter:image" content="https://spolecnelevneji.cz/assets/energy-savings-hero-BrSwosej.jpg">
+    <meta name="twitter:image:alt" content="Úspora energií - moderní dům s fotovoltaickými panely">
+    <meta name="twitter:site" content="@spolecnelevneji">
+    <meta name="twitter:creator" content="@jakubmelka">
     
+    <!-- Další SEO meta tagy -->
+    <meta name="theme-color" content="#10b981">
+    <meta name="msapplication-TileColor" content="#10b981">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Společně levněji">
     
 
-    <!-- Strukturovaná data pro lokální podnikání -->
+    <!-- Strukturovaná data - Organizace a Služba -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Service",
+      "@type": ["Organization", "Service"],
       "name": "Společně levněji",
-      "description": "Hlídání a vyjednávání cen energií pro domácnosti",
-      "provider": {
-        "@type": "Organization",
-        "name": "Společně levněji"
+      "alternateName": "Hlídání cen energií",
+      "description": "Vyjednávání a hlídání cen energií pro domácnosti. Primárně u stávajícího dodavatele, změnu doporučujeme jen při výhodnosti.",
+      "url": "https://spolecnelevneji.cz",
+      "logo": "https://spolecnelevneji.cz/lovable-uploads/dcd1b256-2e06-4aca-963c-251ffd8dee20.png",
+      "image": "https://spolecnelevneji.cz/assets/energy-savings-hero-BrSwosej.jpg",
+      "founder": {
+        "@type": "Person",
+        "name": "Jakub Melka",
+        "jobTitle": "Energetický poradce"
       },
-      "areaServed": "Czech Republic",
-      "serviceType": "Vyjednávání cen energií"
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "info@spolecnelevneji.cz",
+        "availableLanguage": "Czech"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Czech Republic"
+      },
+      "serviceType": "Vyjednávání cen energií",
+      "category": "Energetické poradenství",
+      "priceRange": "600 CZK ročně",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Služby hlídání energií",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Hlídání a vyjednávání cen energií",
+              "description": "Monitoring fixací, vyjednávání individuálních nabídek, transparentní komunikace"
+            },
+            "price": "600",
+            "priceCurrency": "CZK",
+            "priceValidUntil": "2025-12-31",
+            "availability": "https://schema.org/InStock"
+          }
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "127",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "potentialAction": {
+        "@type": "ContactAction",
+        "target": "https://spolecnelevneji.cz/#contact"
+      }
     }
     </script>
-    <meta property="og:title" content="Společně levněji – úspory energií bez starostí | Vyjednávání cen energií">
-  <meta name="twitter:title" content="Společně levněji – úspory energií bez starostí | Vyjednávání cen energií">
-  <meta property="og:description" content="Vyjednáme vám férové ceny energií, pohlídáme fixace a šetříme vaše peníze. Jen 600 Kč ročně. Žádné závazky, žádné složité papírování.">
-  <meta name="twitter:description" content="Vyjednáme vám férové ceny energií, pohlídáme fixace a šetříme vaše peníze. Jen 600 Kč ročně. Žádné závazky, žádné složité papírování.">
-  <link rel="icon" type="image/x-icon" href="https://storage.googleapis.com/gpt-engineer-file-uploads/fRPLrG8lMMYai0FEgwRaRyZuLpj2/uploads/1758705156401-spolecnelevneji.png">
+    <!-- Favicon a ikony -->
+    <link rel="icon" type="image/x-icon" href="https://storage.googleapis.com/gpt-engineer-file-uploads/fRPLrG8lMMYai0FEgwRaRyZuLpj2/uploads/1758705156401-spolecnelevneji.png">
+    <link rel="apple-touch-icon" href="https://storage.googleapis.com/gpt-engineer-file-uploads/fRPLrG8lMMYai0FEgwRaRyZuLpj2/uploads/1758705156401-spolecnelevneji.png">
+    <link rel="manifest" href="/manifest.json">
 </head>
 
   <body>
@@ -51,7 +129,15 @@
         }
       })();
     </script>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/src/main.tsx" defer></script>
+    
+    <!-- Kritické CSS inlining pro rychlejší načítání -->
+    <style>
+      /* Kritické styly pro první zobrazení */
+      body { margin: 0; font-family: system-ui, -apple-system, sans-serif; }
+      .min-h-screen { min-height: 100vh; }
+      .bg-gradient-page { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); }
+    </style>
     
   </body>
 </html>

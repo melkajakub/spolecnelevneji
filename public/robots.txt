@@ -1,7 +1,22 @@
+# Společně levněji - Hlídání cen energií
+# Robots.txt pro spolecnelevneji.cz
+
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /lovable-uploads/
+
+# Zákaz přístupu k technickým souborům
+Disallow: /src/
+Disallow: /*.json$
+Disallow: /*.ts$
+Disallow: /*.tsx$
+
+# Specifické roboty
 User-agent: Googlebot
 Allow: /
 
-User-agent: Bingbot
+User-agent: Bingbot  
 Allow: /
 
 User-agent: Twitterbot
@@ -10,5 +25,8 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
-Allow: /
+# Sitemap
+Sitemap: https://spolecnelevneji.cz/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1

@@ -23,8 +23,11 @@ const Index = () => {
             <div className="flex items-center gap-3">
               <img 
                 src="/lovable-uploads/dcd1b256-2e06-4aca-963c-251ffd8dee20.png" 
-                alt="Společně levněji logo" 
+                alt="Společně levněji logo - symbol pro úspory energií a vyjednávání cen" 
                 className="h-12 w-auto rounded-full bg-transparent"
+                loading="lazy"
+                width="48"
+                height="48"
               />
             </div>
             {/* Desktop Navigation */}
@@ -134,8 +137,11 @@ const Index = () => {
               <div className="relative order-first lg:order-last">
                 <img 
                   src={heroImage} 
-                  alt="Úspora energií - moderní dům s solárními panely" 
+                  alt="Úspora energií - moderní dům s fotovoltaickými panely a úsporným osvětlením pro domácnosti" 
                   className="rounded-lg shadow-glow w-full h-auto max-h-96 md:max-h-none object-cover"
+                  loading="lazy"
+                  width="800"
+                  height="600"
                 />
               </div>
             </div>
@@ -332,8 +338,11 @@ const Index = () => {
             <div className="flex items-center justify-center gap-4">
               <img 
                 src="/lovable-uploads/efaeae31-0aa8-4a27-bae2-0bc5d0274196.png" 
-                alt="Společně levněji symbol" 
+                alt="Společně levněji ikona - symbol služby hlídání cen energií" 
                 className="h-16 w-16"
+                loading="lazy"
+                width="64"
+                height="64"
               />
               <h3 className="text-2xl font-bold">Společně levněji</h3>
             </div>

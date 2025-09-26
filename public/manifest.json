@@ -1,0 +1,27 @@
+{
+  "name": "Společně levněji - Hlídání cen energií",
+  "short_name": "Společně levněji",
+  "description": "Vyjednávání a hlídání cen energií pro domácnosti. Ušetříme minimálně 1000 Kč ročně nebo zdarma.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#10b981",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "https://storage.googleapis.com/gpt-engineer-file-uploads/fRPLrG8lMMYai0FEgwRaRyZuLpj2/uploads/1758705156401-spolecnelevneji.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://storage.googleapis.com/gpt-engineer-file-uploads/fRPLrG8lMMYai0FEgwRaRyZuLpj2/uploads/1758705156401-spolecnelevneji.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["finance", "utilities", "productivity"],
+  "lang": "cs",
+  "dir": "ltr"
+}
