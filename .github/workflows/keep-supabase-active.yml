@@ -1,0 +1,27 @@
+name: Keep Supabase Active
+
+on:
+  schedule:
+    # Runs at 9:00 AM UTC on Monday and Thursday
+    - cron: '0 9 * * 1,4'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase keep-alive endpoint
+        run: |
+          response=$(curl -s -w "\n%{http_code}" https://cctflcnhlfjtmlmywbcp.supabase.co/functions/v1/keep-alive)
+          http_code=$(echo "$response" | tail -n1)
+          body=$(echo "$response" | sed '$d')
+          
+          echo "HTTP Status: $http_code"
+          echo "Response: $body"
+          
+          if [ "$http_code" -ne 200 ]; then
+            echo "❌ Keep-alive check failed with status $http_code"
+            exit 1
+          else
+            echo "✅ Supabase project is active"
+          fi
