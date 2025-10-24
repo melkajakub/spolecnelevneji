@@ -112,13 +112,13 @@ const Index = () => {
                 <div style={{ backgroundImage: 'var(--gradient-primary)' }} className="text-primary-foreground p-4 md:p-6 rounded-xl shadow-glow max-w-md mx-auto lg:mx-0">
                   <div className="text-center">
                     <p className="text-base md:text-lg font-medium mb-2">Náš poplatek:</p>
-                    <p className="text-3xl md:text-4xl font-bold mb-1">600 Kč</p>
-                    <p className="text-base md:text-lg opacity-90">ročně/odběrné místo (50 Kč měsíčně)</p>
+                    <p className="text-3xl md:text-4xl font-bold mb-1">300 Kč</p>
+                    <p className="text-base md:text-lg opacity-90">ročně/odběrné místo (25 Kč měsíčně)</p>
                     <p className="text-xs md:text-sm opacity-75 mt-3 border-t border-white/20 pt-3">
                       💡 První faktura až po dosažené úspoře<br/>
                       🔄 Každá další roční faktura jako předplacení dalšího roku<br/>
                       ✋ Nechcete pokračovat? Stačí přestat platit<br/>
-                      <strong className="opacity-100">🎯 Nenajdeme úsporu? První rok ZDARMA!</strong>
+                      <strong className="opacity-100">🎯 Neušetříme alespoň 600 Kč? První rok ZDARMA!</strong>
                     </p>
                   </div>
                 </div>
@@ -258,7 +258,7 @@ const Index = () => {
               {[
                 {
                   title: "Jednoduchý a transparentní roční poplatek",
-                  description: "Pouze 600 Kč za odběrné místo ročně (50 Kč měsíčně) • Žádné skryté poplatky • Platíte jen když ušetříme",
+                  description: "Pouze 300 Kč za odběrné místo ročně (25 Kč měsíčně) • Žádné skryté poplatky • Platíte jen když ušetříme",
                   highlight: true
                 },
                 {
@@ -276,7 +276,7 @@ const Index = () => {
                 },
                 {
                   title: "Bez rizika",
-                  description: "pokud nenajdu minimálně 1 000 Kč roční úspory, první rok máte zdarma"
+                  description: "pokud neušetříme minimálně 600 Kč ročně, první rok máte zdarma"
                 }
               ].map((item, index) => (
                 <Card key={index} className={`shadow-soft ${item.highlight ? 'border-secondary shadow-energy' : ''}`}>

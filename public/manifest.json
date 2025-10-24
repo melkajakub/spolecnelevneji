@@ -1,7 +1,7 @@
 {
   "name": "Společně levněji - Hlídání cen energií",
   "short_name": "Společně levněji",
-  "description": "Vyjednávání a hlídání cen energií pro domácnosti. Ušetříme minimálně 1000 Kč ročně nebo zdarma.",
+  "description": "Vyjednávání a hlídání cen energií pro domácnosti. Ušetříme minimálně 600 Kč ročně nebo první rok zdarma.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
