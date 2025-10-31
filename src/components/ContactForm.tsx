@@ -12,6 +12,13 @@ import { CalendarIcon } from "lucide-react";
 import { format } from "date-fns";
 import { cs } from "date-fns/locale";
 import { cn } from "@/lib/utils";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import type { CaptionProps } from "react-day-picker";
+
+const czechMonths = [
+  "Leden", "Únor", "Březen", "Duben", "Květen", "Červen",
+  "Červenec", "Srpen", "Září", "Říjen", "Listopad", "Prosinec"
+];
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -22,7 +29,66 @@ export const ContactForm = () => {
     files: [] as File[],
     consent: false
   });
+  const [calendarMonth, setCalendarMonth] = useState<Date>(new Date(1990, 0));
   const { toast } = useToast();
+
+  const CustomCaption = (props: CaptionProps) => {
+    const { displayMonth } = props;
+    const currentYear = displayMonth.getFullYear();
+    const currentMonth = displayMonth.getMonth();
+
+    const years = Array.from(
+      { length: new Date().getFullYear() - 1900 + 1 },
+      (_, i) => 1900 + i
+    ).reverse();
+
+    return (
+      <div className="flex flex-col gap-2 pb-4">
+        <div className="flex items-center gap-2">
+          <Label className="text-sm font-medium min-w-[60px]">Měsíc:</Label>
+          <Select
+            value={currentMonth.toString()}
+            onValueChange={(value) => {
+              const newDate = new Date(currentYear, parseInt(value));
+              setCalendarMonth(newDate);
+            }}
+          >
+            <SelectTrigger className="w-full bg-background">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent className="bg-background z-50">
+              {czechMonths.map((month, index) => (
+                <SelectItem key={index} value={index.toString()}>
+                  {month}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+        <div className="flex items-center gap-2">
+          <Label className="text-sm font-medium min-w-[60px]">Rok:</Label>
+          <Select
+            value={currentYear.toString()}
+            onValueChange={(value) => {
+              const newDate = new Date(parseInt(value), currentMonth);
+              setCalendarMonth(newDate);
+            }}
+          >
+            <SelectTrigger className="w-full bg-background">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent className="max-h-[200px] bg-background z-50">
+              {years.map((year) => (
+                <SelectItem key={year} value={year.toString()}>
+                  {year}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+      </div>
+    );
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -159,7 +225,7 @@ export const ContactForm = () => {
                   {formData.birthDate ? format(formData.birthDate, "d. MMMM yyyy", { locale: cs }) : <span>Vyberte datum</span>}
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-auto p-0 bg-background z-50" align="start">
+              <PopoverContent className="w-auto p-4 bg-background z-50" align="start">
                 <Calendar
                   mode="single"
                   selected={formData.birthDate}
@@ -168,11 +234,12 @@ export const ContactForm = () => {
                     date > new Date() || date < new Date("1900-01-01")
                   }
                   locale={cs}
-                  initialFocus
-                  captionLayout="dropdown-buttons"
-                  fromYear={1900}
-                  toYear={new Date().getFullYear()}
-                  className={cn("p-3 pointer-events-auto")}
+                  month={calendarMonth}
+                  onMonthChange={setCalendarMonth}
+                  components={{
+                    Caption: CustomCaption
+                  }}
+                  className={cn("pointer-events-auto")}
                 />
               </PopoverContent>
             </Popover>
