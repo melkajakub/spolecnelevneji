@@ -6,10 +6,17 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Calendar } from "@/components/ui/calendar";
+import { CalendarIcon } from "lucide-react";
+import { format } from "date-fns";
+import { cs } from "date-fns/locale";
+import { cn } from "@/lib/utils";
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
+    birthDate: undefined as Date | undefined,
     email: "",
     message: "",
     files: [] as File[],
@@ -20,10 +27,10 @@ export const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.name || !formData.email) {
+    if (!formData.name || !formData.birthDate || !formData.email) {
       toast({
         title: "Chyba",
-        description: "Vyplňte prosím jméno a e-mail.",
+        description: "Vyplňte prosím jméno, datum narození a e-mail.",
         variant: "destructive",
       });
       return;
@@ -41,6 +48,7 @@ export const ContactForm = () => {
     try {
       const formDataToSend = new FormData();
       formDataToSend.append('name', formData.name);
+      formDataToSend.append('birthDate', formData.birthDate ? format(formData.birthDate, 'dd.MM.yyyy') : '');
       formDataToSend.append('email', formData.email);
       formDataToSend.append('message', formData.message);
       
@@ -73,7 +81,7 @@ export const ContactForm = () => {
         description: "Děkuji za zájem. Brzy vás budeme kontaktovat.",
       });
       
-      setFormData({ name: "", email: "", message: "", files: [], consent: false });
+      setFormData({ name: "", birthDate: undefined, email: "", message: "", files: [], consent: false });
     } catch (error) {
       console.error('Error sending email:', error);
       toast({
@@ -134,6 +142,36 @@ export const ContactForm = () => {
               required
               className="focus:ring-primary"
             />
+          </div>
+          
+          <div className="space-y-2">
+            <Label>Datum narození</Label>
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button
+                  variant="outline"
+                  className={cn(
+                    "w-full justify-start text-left font-normal",
+                    !formData.birthDate && "text-muted-foreground"
+                  )}
+                >
+                  <CalendarIcon className="mr-2 h-4 w-4" />
+                  {formData.birthDate ? format(formData.birthDate, "d. MMMM yyyy", { locale: cs }) : <span>Vyberte datum</span>}
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-auto p-0" align="start">
+                <Calendar
+                  mode="single"
+                  selected={formData.birthDate}
+                  onSelect={(date) => setFormData({ ...formData, birthDate: date })}
+                  disabled={(date) =>
+                    date > new Date() || date < new Date("1900-01-01")
+                  }
+                  initialFocus
+                  className={cn("p-3 pointer-events-auto")}
+                />
+              </PopoverContent>
+            </Popover>
           </div>
           
           <div className="space-y-2">

@@ -13,11 +13,12 @@ serve(async (req) => {
   try {
     const formData = await req.formData()
     const name = formData.get('name') as string
+    const birthDate = formData.get('birthDate') as string
     const email = formData.get('email') as string
     const message = formData.get('message') as string
     const file = formData.get('file') as File | null
 
-    console.log('Received form data:', { name, email, hasMessage: !!message, hasFile: !!file })
+    console.log('Received form data:', { name, birthDate, email, hasMessage: !!message, hasFile: !!file })
 
     // Validate required fields
     if (!name || !email) {
@@ -40,6 +41,7 @@ serve(async (req) => {
       html: `
         <h2>Nový zájem o službu</h2>
         <p><strong>Jméno:</strong> ${name}</p>
+        <p><strong>Datum narození:</strong> ${birthDate || 'Neuvedeno'}</p>
         <p><strong>E-mail:</strong> ${email}</p>
         <p><strong>Zpráva:</strong></p>
         <p>${message || 'Zákazník nenapsal žádnou zprávu.'}</p>
