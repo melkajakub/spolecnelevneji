@@ -159,7 +159,7 @@ export const ContactForm = () => {
                   {formData.birthDate ? format(formData.birthDate, "d. MMMM yyyy", { locale: cs }) : <span>Vyberte datum</span>}
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-auto p-0" align="start">
+              <PopoverContent className="w-auto p-0 bg-background z-50" align="start">
                 <Calendar
                   mode="single"
                   selected={formData.birthDate}
@@ -167,6 +167,7 @@ export const ContactForm = () => {
                   disabled={(date) =>
                     date > new Date() || date < new Date("1900-01-01")
                   }
+                  locale={cs}
                   initialFocus
                   captionLayout="dropdown-buttons"
                   fromYear={1900}
