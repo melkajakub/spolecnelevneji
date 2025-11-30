@@ -101,7 +101,7 @@ const Index = () => {
                 <div className="space-y-3 text-lg text-foreground max-w-xl mx-auto lg:mx-0">
                   <div className="flex items-center gap-3">
                     <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span>Hlídám fixace zdarma</span>
+                    <span>Hlídám fixace u odběrných míst</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
