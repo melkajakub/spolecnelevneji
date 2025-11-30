@@ -7,12 +7,12 @@ export const ContactForm = () => {
     <Card className="max-w-lg mx-auto shadow-soft bg-gradient-card border-primary/10">
       <CardHeader>
         <CardTitle className="text-center text-foreground">
-          Máte zájem o hlídání cen energií? Napište nám a začneme!
+          Máte zájem o hlídání cen energií?
         </CardTitle>
       </CardHeader>
       <CardContent className="text-center space-y-4">
         <p className="text-muted-foreground">
-          Vyplňte jednoduchý formulář a my se vám ozveme s nabídkou na míru.
+          Vyplňte registrační formulář a my se postaráme o zbytek.
         </p>
         <Button 
           variant="energy" 
