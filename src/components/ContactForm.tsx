@@ -33,7 +33,7 @@ export const ContactForm = () => {
         <Button 
           variant="energy" 
           size="lg"
-          className="w-full text-lg py-6"
+          className="w-full text-lg py-6 font-bold"
           asChild
         >
           <a 
@@ -42,7 +42,7 @@ export const ContactForm = () => {
             rel="noopener noreferrer"
           >
             <ExternalLink className="mr-2 h-5 w-5" />
-            Vyplnit přihlášku
+            ZAČÍT ŠETŘIT HNED
           </a>
         </Button>
         

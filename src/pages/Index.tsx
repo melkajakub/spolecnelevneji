@@ -1,21 +1,18 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, Shield, Clock, TrendingDown, Users, Mail, Menu, X } from "lucide-react";
+import { CheckCircle, Shield, Clock, TrendingDown, Users, Mail, Menu, X, AlertTriangle, ExternalLink, Quote } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import heroImage from "@/assets/energy-savings-hero.jpg";
+
+const AIRTABLE_FORM_URL = "https://airtable.com/app5b1mae9Kf5qvLE/shrOyujug320j2coS";
 
 const Index = () => {
   console.log("Index component rendering");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    contactSection?.scrollIntoView({ behavior: 'smooth' });
-  };
 
   return (
-    <div className="min-h-screen bg-gradient-page">{/* změnil jsem pozadí z gradient-subtle na gradient-page */}
+    <div className="min-h-screen bg-gradient-page">
       {/* Header / Navigation */}
       <header className="bg-background/80 backdrop-blur-sm border-b border-border sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
@@ -99,39 +96,92 @@ const Index = () => {
                     Vaše energie pod dohledem
                   </span>
                 </h1>
-                <p className="text-base md:text-lg text-primary font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-4">
-                  Nedovolte svému dodavateli energií tiše zneužívat to, že se neorientujete 
-                  v nepřehledných fakturách a nabídkách. Vyjednám za vás rozumné ceny a ušetřím vám starosti.
-                </p>
-                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                  Ušetřete na energiích bez složitého papírování.
-                  <strong className="text-primary block mt-2">Primárně vyjednáváme u vašeho stávajícího dodavatele</strong> 
-                </p>
                 
-                {/* Price highlight */}
-                <div style={{ backgroundImage: 'var(--gradient-primary)' }} className="text-primary-foreground p-4 md:p-6 rounded-xl shadow-glow max-w-md mx-auto lg:mx-0">
-                  <div className="text-center">
-                    <p className="text-base md:text-lg font-medium mb-2">Náš poplatek:</p>
-                    <p className="text-3xl md:text-4xl font-bold mb-1">300 Kč</p>
-                    <p className="text-base md:text-lg opacity-90">ročně/odběrné místo (25 Kč měsíčně)</p>
-                    <p className="text-xs md:text-sm opacity-75 mt-3 border-t border-white/20 pt-3">
-                      💡 První faktura až po dosažené úspoře<br/>
-                      🔄 Každá další roční faktura jako předplacení dalšího roku<br/>
-                      ✋ Nechcete pokračovat? Stačí přestat platit<br/>
-                      <strong className="opacity-100">🎯 Neušetříme alespoň 600 Kč? První rok ZDARMA!</strong>
-                    </p>
+                {/* Key benefits - shortened */}
+                <div className="space-y-3 text-lg text-foreground max-w-xl mx-auto lg:mx-0">
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span>Hlídám fixace zdarma</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span>Vyjednám ceny jako pro nového zákazníka</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span><strong className="text-primary">300 Kč/rok = 25 Kč/měsíc</strong></span>
                   </div>
                 </div>
-                <div className="flex justify-center lg:justify-start">
-                  <Button 
-                    onClick={scrollToContact} 
-                    variant="hero" 
-                    size="lg" 
-                    className="text-lg px-8 py-3"
-                    style={{ backgroundImage: 'var(--gradient-hero)' }}
-                  >
-                    Chci ušetřit
-                  </Button>
+
+                {/* Stačí 1 krok section */}
+                <Card className="bg-background/50 border-primary/30 max-w-xl mx-auto lg:mx-0">
+                  <CardContent className="p-5">
+                    <h3 className="text-xl font-bold text-primary mb-3">Stačí 1 krok:</h3>
+                    <p className="text-foreground mb-4">
+                      <strong>1. Vyplň formulář</strong> → vše (včetně plné moci) je uvnitř!
+                    </p>
+                    <div className="flex items-start gap-2 bg-secondary/10 border border-secondary/30 rounded-lg p-3 mb-4">
+                      <AlertTriangle className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
+                      <p className="text-sm text-foreground">
+                        <strong>PLNÁ MOC</strong> = jen pro komunikaci s dodavateli.<br/>
+                        NEMŮŽU nic podepisovat, ani uzavírat závazky za Vás!
+                      </p>
+                    </div>
+                    <Button 
+                      variant="energy" 
+                      size="lg" 
+                      className="w-full text-lg py-6 font-bold"
+                      asChild
+                    >
+                      <a 
+                        href={AIRTABLE_FORM_URL}
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="mr-2 h-5 w-5" />
+                        ZAČÍT ŠETŘIT HNED
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
+
+                {/* Garance */}
+                <div style={{ backgroundImage: 'var(--gradient-primary)' }} className="text-primary-foreground p-4 md:p-5 rounded-xl shadow-glow max-w-xl mx-auto lg:mx-0">
+                  <p className="text-center text-lg md:text-xl font-bold">
+                    🎯 GARANCE: Vyjednám min. 600 Kč/rok úsporu<br/>
+                    nebo PRVNÍ ROK ZDARMA!
+                  </p>
+                </div>
+
+                {/* GDPR info */}
+                <div className="bg-muted/50 border border-border rounded-lg p-4 text-xs text-muted-foreground max-w-xl mx-auto lg:mx-0">
+                  <p className="font-semibold text-foreground mb-2">INFORMACE O ZPRACOVÁNÍ OSOBNÍCH ÚDAJŮ (GDPR)</p>
+                  <p>Správce: Jakub Melka, IČO 22516280</p>
+                  <p>Účel: správa odběrných míst</p>
+                  <p>Příjemci: dodavatelé, Airtable.com</p>
+                  <p className="mt-1">
+                    <a href="mailto:info@spolecnelevneji.cz" className="text-primary hover:underline">
+                      info@spolecnelevneji.cz
+                    </a>
+                  </p>
+                </div>
+
+                {/* Testimonials */}
+                <div className="space-y-3 max-w-xl mx-auto lg:mx-0">
+                  <div className="flex items-start gap-3 bg-background/80 border border-border rounded-lg p-4">
+                    <Quote className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
+                    <div>
+                      <p className="text-foreground italic">"Ušetřil jsem 1 200 Kč/rok na domě"</p>
+                      <p className="text-sm text-muted-foreground mt-1">— Jiří D., Prostějov</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 bg-background/80 border border-border rounded-lg p-4">
+                    <Quote className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
+                    <div>
+                      <p className="text-foreground italic">"3 odběrná místa bez starostí"</p>
+                      <p className="text-sm text-muted-foreground mt-1">— Petr F., firma</p>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="relative order-first lg:order-last">
