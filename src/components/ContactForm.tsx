@@ -18,7 +18,7 @@ export const ContactForm = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm text-left py-4">
           <div className="flex items-start gap-2">
             <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-            <span className="text-foreground">Registrace zabere 2 minuty</span>
+            <span className="text-foreground">Registrace zabere jen pár minut</span>
           </div>
           <div className="flex items-start gap-2">
             <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
