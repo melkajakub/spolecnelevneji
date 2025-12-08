@@ -171,14 +171,14 @@ const Index = () => {
                   <div className="flex items-start gap-3 bg-background/80 border border-border rounded-lg p-4">
                     <Quote className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <p className="text-foreground italic">"Ušetřil jsem 1 200 Kč/rok na domě"</p>
+                      <p className="text-foreground italic">"Ušetřil jsem 1 200 Kč ročně v bytě s minimální spotřebou"</p>
                       <p className="text-sm text-muted-foreground mt-1">— Jiří D., Prostějov</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3 bg-background/80 border border-border rounded-lg p-4">
                     <Quote className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <p className="text-foreground italic">"3 odběrná místa bez starostí"</p>
+                      <p className="text-foreground italic">"3 odběrná místa se skvělou cenou a bez starostí"</p>
                       <p className="text-sm text-muted-foreground mt-1">— Petr F., firma</p>
                     </div>
                   </div>
