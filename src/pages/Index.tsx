@@ -88,7 +88,7 @@ const Index = () => {
         {/* Hero Section */}
         <section className="py-12 md:py-20 px-4">
           <div className="container mx-auto max-w-6xl">
-            <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
               <div className="space-y-6 md:space-y-8 text-center lg:text-left">
                 <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground leading-tight">
                   <span className="block text-primary mb-2">Společně levněji</span>
@@ -184,15 +184,17 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-              <div className="relative order-first lg:order-last flex items-start">
-                <img 
-                  src={heroImage} 
-                  alt="Úspora energií - moderní dům s fotovoltaickými panely a úsporným osvětlením pro domácnosti" 
-                  className="rounded-lg shadow-glow w-full h-auto object-cover lg:sticky lg:top-24"
-                  loading="lazy"
-                  width="800"
-                  height="600"
-                />
+              <div className="relative order-first lg:order-last">
+                <div className="lg:sticky lg:top-24">
+                  <img 
+                    src={heroImage} 
+                    alt="Úspora energií - moderní dům s fotovoltaickými panely a úsporným osvětlením pro domácnosti" 
+                    className="rounded-lg shadow-glow w-full h-auto object-cover"
+                    loading="lazy"
+                    width="800"
+                    height="600"
+                  />
+                </div>
               </div>
             </div>
           </div>
