@@ -184,11 +184,11 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-              <div className="relative order-first lg:order-last">
+              <div className="relative order-first lg:order-last flex items-start">
                 <img 
                   src={heroImage} 
                   alt="Úspora energií - moderní dům s fotovoltaickými panely a úsporným osvětlením pro domácnosti" 
-                  className="rounded-lg shadow-glow w-full h-auto max-h-96 md:max-h-none object-cover"
+                  className="rounded-lg shadow-glow w-full h-auto object-cover lg:sticky lg:top-24"
                   loading="lazy"
                   width="800"
                   height="600"
