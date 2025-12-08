@@ -108,9 +108,10 @@ serve(async (req) => {
     )
   } catch (error) {
     console.error('Error sending email:', error)
+    const errorMessage = error instanceof Error ? error.message : 'Failed to send email';
     return new Response(
       JSON.stringify({ 
-        error: error.message || 'Failed to send email',
+        error: errorMessage,
         success: false 
       }),
       {
