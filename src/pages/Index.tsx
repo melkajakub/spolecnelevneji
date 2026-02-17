@@ -107,7 +107,7 @@ const Index = () => {
                     <div className="space-y-3 text-foreground">
                       <div className="flex items-start gap-3">
                         <TrendingDown className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Špatná distribuční sazba → <strong className="text-primary">úspora 800 Kč/rok</strong></span>
+                        <span>Špatná distribuční sazba → <strong className="text-primary">úspora 7000 Kč/rok</strong></span>
                       </div>
                       <div className="flex items-start gap-3">
                         <TrendingDown className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
