@@ -93,63 +93,90 @@ const Index = () => {
                 <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground leading-tight">
                   <span className="block text-primary mb-2">Společně levněji</span>
                   <span className="block text-2xl md:text-3xl lg:text-4xl font-medium text-muted-foreground">
-                    Vaše energie pod dohledem
+                    První faktura až po úspěšném vyjednávání.
+                  </span>
+                  <span className="block text-xl md:text-2xl lg:text-3xl font-medium text-muted-foreground mt-1">
+                    Pak 300 Kč/rok za dohled.
                   </span>
                 </h1>
                 
-                {/* Key benefits - shortened */}
-                <div className="space-y-3 text-lg text-foreground max-w-xl mx-auto lg:mx-0">
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span>Hlídám fixace u odběrných míst</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span>Vyjednám férové ceny</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span><strong className="text-primary">300 Kč/rok = 25 Kč/měsíc</strong></span>
-                  </div>
-                </div>
-
-                {/* Stačí 1 krok section */}
+                {/* Úspory z praxe */}
                 <Card className="bg-background/50 border-primary/30 max-w-xl mx-auto lg:mx-0">
                   <CardContent className="p-5">
-                    <h3 className="text-xl font-bold text-primary mb-3">Stačí 1 krok:</h3>
-                    <p className="text-foreground mb-4">
-                      <strong>1. Vyplň formulář</strong> → vše (včetně plné moci) je uvnitř!
-                    </p>
-                    <div className="flex items-start gap-2 bg-secondary/10 border border-secondary/30 rounded-lg p-3 mb-4">
-                      <AlertTriangle className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
-                      <p className="text-sm text-foreground">
-                        <strong>PLNÁ MOC</strong> = jen pro komunikaci s dodavateli.<br/>
-                        NEMŮŽU nic podepisovat, ani uzavírat závazky za Vás!
-                      </p>
+                    <h3 className="text-xl font-bold text-primary mb-4">📊 Úspory z mé praxe:</h3>
+                    <div className="space-y-3 text-foreground">
+                      <div className="flex items-start gap-3">
+                        <TrendingDown className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span>Špatná distribuční sazba → <strong className="text-primary">úspora 800 Kč/rok</strong></span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <TrendingDown className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span>Plyn 1 700 Kč/MWh → vyjednáno <strong className="text-primary">900 Kč/MWh</strong></span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <TrendingDown className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span>Elektřina 3 900 Kč/MWh → <strong className="text-primary">2 400 Kč/MWh</strong></span>
+                      </div>
                     </div>
-                    <Button 
-                      variant="energy" 
-                      size="lg" 
-                      className="w-full text-lg py-6 font-bold"
-                      asChild
-                    >
-                      <a 
-                        href={AIRTABLE_FORM_URL}
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                      >
-                        <ExternalLink className="mr-2 h-5 w-5" />
-                        ZAČÍT ŠETŘIT HNED
-                      </a>
-                    </Button>
                   </CardContent>
                 </Card>
 
-                {/* Garance */}
+                {/* Jak to funguje - 6 kroků */}
+                <Card className="bg-background/50 border-primary/30 max-w-xl mx-auto lg:mx-0">
+                  <CardContent className="p-5">
+                    <h3 className="text-xl font-bold text-primary mb-4">Jak to funguje:</h3>
+                    <ol className="space-y-3 text-foreground list-none">
+                      <li className="flex items-start gap-3">
+                        <span className="font-bold text-primary flex-shrink-0">1.</span>
+                        <span>Vyplníte formulář + plná moc <span className="text-muted-foreground text-sm">(jen pro komunikaci)</span></span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="font-bold text-primary flex-shrink-0">2.</span>
+                        <span>Vyjednám férové ceny <strong>U VÁŠHO DODAVATELE</strong></span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="font-bold text-primary flex-shrink-0">3.</span>
+                        <span>Pokud se nedohodne → nechám udělat <strong>NABÍDKY KONKURENCE</strong></span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="font-bold text-primary flex-shrink-0">4.</span>
+                        <span>Pošlu <strong>POROVNÁNÍ</strong> + dopady vašeho rozhodnutí</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="font-bold text-primary flex-shrink-0">5.</span>
+                        <span>Podepisujete <strong>PŘÍMO S DODAVATELEM</strong></span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="font-bold text-primary flex-shrink-0">6.</span>
+                        <span>Faktura až <strong>PO ÚSPĚŠNÉM VYJEDNÁNÍ</strong></span>
+                      </li>
+                    </ol>
+                  </CardContent>
+                </Card>
+
+                {/* CTA */}
+                <div className="max-w-xl mx-auto lg:mx-0">
+                  <Button 
+                    variant="energy" 
+                    size="lg" 
+                    className="w-full text-lg py-6 font-bold"
+                    asChild
+                  >
+                    <a 
+                      href={AIRTABLE_FORM_URL}
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      <ExternalLink className="mr-2 h-5 w-5" />
+                      ZAČÍT
+                    </a>
+                  </Button>
+                </div>
+
+                {/* Záruka */}
                 <div style={{ backgroundImage: 'var(--gradient-primary)' }} className="text-primary-foreground p-4 md:p-5 rounded-xl shadow-glow max-w-xl mx-auto lg:mx-0">
                   <p className="text-center text-lg md:text-xl font-bold">
-                    🎯 GARANCE: Vyjednám min. 600 Kč/rok úsporu<br/>
-                    nebo PRVNÍ ROK ZDARMA!
+                    🛡️ ZÁRUKA: Nejste spokojeni? Zrušte do 30 dnů — vracíme 100 %.
                   </p>
                 </div>
 
@@ -215,19 +242,19 @@ const Index = () => {
               </CardHeader>
               <CardContent>
                 <div className="mb-6 p-4 bg-primary/5 border border-primary/20 rounded-lg">
-                  <p className="text-primary font-semibold mb-2">✓ Nejdříve se vždy snažím vyjednat u vašeho stávajícího dodavatele</p>
+                  <p className="text-primary font-semibold mb-2">✓ Nejdříve vyjednávám u vašeho stávajícího dodavatele</p>
                   <p className="text-sm text-muted-foreground">
-                    Změnu dodavatele navrhuji pouze v případě, kdy se nepodaří dostat rozumnou individuální nabídku od stávajícího dodavatele. 
-                    Takto vám ušetříme maximum starostí s papírováním.
+                    Pokud se nedohodne, nechám udělat nabídky konkurence a pošlu vám porovnání s dopady rozhodnutí.
                   </p>
                 </div>
                 <ul className="space-y-4">
                   {[
                     "Sleduji termíny vašich fixací.",
-                    "Vyjednávám individuální nabídky primárně u vašeho stávajícího dodavatele.",
-                    "Změnu dodavatele navrhuji pouze pokud se nepodaří získat výhodnou individuální nabídku.",
-                    "Vždy vám posílám přehlednou kalkulaci e-mailem.",
-                    "Vy rozhodujete a podepisujete nabídky přímo s dodavatelem."
+                    "Vyjednávám férové ceny u vašeho dodavatele.",
+                    "Pokud se nedohodne — získám nabídky konkurence.",
+                    "Pošlu přehledné porovnání s dopady rozhodnutí.",
+                    "Vy rozhodujete a podepisujete přímo s dodavatelem.",
+                    "Faktura až po úspěšném vyjednání."
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
@@ -239,32 +266,44 @@ const Index = () => {
             </Card>
 
             {/* Process Steps */}
-            <h3 className="text-xl font-semibold text-center mb-8 text-primary">Jednoduše ve 4 krocích</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <h3 className="text-xl font-semibold text-center mb-8 text-primary">Jednoduše v 6 krocích</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 {
                   step: "1",
-                  title: "Pošlete nám své údaje",
+                  title: "Vyplníte formulář + plná moc",
                   icon: <Mail className="h-8 w-8" />,
-                  description: "Vyplníte jednoduchý formulář a následně vás kontaktuji pro případné doplnění informací."
+                  description: "Plná moc slouží jen pro komunikaci s dodavateli."
                 },
                 {
                   step: "2",
-                  title: "Zařadím vás do databáze",
-                  icon: <Users className="h-8 w-8" />,
-                  description: "Vaše údaje uložím do systému a nastavím monitoring termínů fixací."
+                  title: "Vyjednám u vašeho dodavatele",
+                  icon: <Shield className="h-8 w-8" />,
+                  description: "Snažím se získat férovou cenu přímo u stávajícího dodavatele."
                 },
                 {
                   step: "3",
-                  title: "Hlídám termíny a oslovuji dodavatele",
-                  icon: <Clock className="h-8 w-8" />,
-                  description: "Automaticky sleduji termíny fixací a vyjednávám nejlepší ceny."
+                  title: "Nabídky konkurence",
+                  icon: <Users className="h-8 w-8" />,
+                  description: "Pokud se nedohodne, nechám udělat nabídky od konkurence."
                 },
                 {
                   step: "4",
-                  title: "Pošlu vám nabídky a přehled úspor",
+                  title: "Porovnání a dopady",
                   icon: <TrendingDown className="h-8 w-8" />,
-                  description: "Dostanete přehledné srovnání a kalkulace úspor e-mailem."
+                  description: "Pošlu vám přehledné porovnání s dopady vašeho rozhodnutí."
+                },
+                {
+                  step: "5",
+                  title: "Podepisujete přímo s dodavatelem",
+                  icon: <CheckCircle className="h-8 w-8" />,
+                  description: "Vždy rozhodujete vy a podepisujete přímo s dodavatelem."
+                },
+                {
+                  step: "6",
+                  title: "Faktura až po úspěchu",
+                  icon: <Clock className="h-8 w-8" />,
+                  description: "První faktura až po úspěšném vyjednání. Pak 300 Kč/rok."
                 }
               ].map((item, index) => (
                 <Card key={index} className="text-center shadow-soft hover:shadow-energy transition-all duration-300">
@@ -315,7 +354,7 @@ const Index = () => {
                 },
                 {
                   title: "Maximální flexibilita",
-                  description: "první faktura až po dosažené úspoře • každá další roční faktura jako předplacení dalšího roku • nechcete pokračovat? Stačí přestat platit",
+                  description: "první faktura až po úspěšném vyjednání • každá další roční faktura jako předplacení dalšího roku • nechcete pokračovat? Stačí přestat platit",
                   highlight: true
                 },
                 {
@@ -328,7 +367,7 @@ const Index = () => {
                 },
                 {
                   title: "Bez rizika",
-                  description: "pokud neušetříme minimálně 600 Kč ročně, první rok máte zdarma"
+                  description: "Nejste spokojeni? Zrušte do 30 dnů — vracíme 100 %."
                 }
               ].map((item, index) => (
                 <Card key={index} className={`shadow-soft ${item.highlight ? 'border-secondary shadow-energy' : ''}`}>
