@@ -103,7 +103,7 @@ const Index = () => {
                 {/* Úspory z praxe */}
                 <Card className="bg-background/50 border-primary/30 max-w-xl mx-auto lg:mx-0">
                   <CardContent className="p-5">
-                    <h3 className="text-xl font-bold text-primary mb-4">📊 Úspory z mé praxe:</h3>
+                    <h3 className="text-xl font-bold text-primary mb-4">📊 Extremní případy, na které jsem narazil:</h3>
                     <div className="space-y-3 text-foreground">
                       <div className="flex items-start gap-3">
                         <TrendingDown className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -115,7 +115,7 @@ const Index = () => {
                       </div>
                       <div className="flex items-start gap-3">
                         <TrendingDown className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Elektřina 3 900 Kč/MWh → <strong className="text-primary">2 400 Kč/MWh</strong></span>
+                        <span>Elektřina 3 900 Kč/MWh → vyjednáno <strong className="text-primary">2 400 Kč/MWh</strong></span>
                       </div>
                     </div>
                   </CardContent>
@@ -136,11 +136,11 @@ const Index = () => {
                       </li>
                       <li className="flex items-start gap-3">
                         <span className="font-bold text-primary flex-shrink-0">3.</span>
-                        <span>Pokud se nedohodne → nechám udělat <strong>NABÍDKY KONKURENCE</strong></span>
+                        <span>Pokud nenabídne férovou cenu → nechám udělat <strong>NABÍDKY KONKURENCE</strong></span>
                       </li>
                       <li className="flex items-start gap-3">
                         <span className="font-bold text-primary flex-shrink-0">4.</span>
-                        <span>Pošlu <strong>POROVNÁNÍ</strong> + dopady vašeho rozhodnutí</span>
+                        <span>Pošlu <strong>OBJEKTIVNÍ POROVNÁNÍ</strong> nabídek a vy se rozhodnete, jakou cestou se vydáte</span>
                       </li>
                       <li className="flex items-start gap-3">
                         <span className="font-bold text-primary flex-shrink-0">5.</span>
@@ -148,7 +148,11 @@ const Index = () => {
                       </li>
                       <li className="flex items-start gap-3">
                         <span className="font-bold text-primary flex-shrink-0">6.</span>
-                        <span>Faktura až <strong>PO ÚSPĚŠNÉM VYJEDNÁNÍ</strong></span>
+                        <span>První faktura až <strong>PO ÚSPĚŠNÉM VYJEDNÁNÍ</strong></span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="font-bold text-primary flex-shrink-0">7.</span>
+                        <span>Jednou ročně faktura za <strong>AKTIVNÍ DOHLED</strong> nad vaším odběrným místem</span>
                       </li>
                     </ol>
                   </CardContent>
@@ -242,19 +246,20 @@ const Index = () => {
               </CardHeader>
               <CardContent>
                 <div className="mb-6 p-4 bg-primary/5 border border-primary/20 rounded-lg">
-                  <p className="text-primary font-semibold mb-2">✓ Nejdříve vyjednávám u vašeho stávajícího dodavatele</p>
-                  <p className="text-sm text-muted-foreground">
-                    Pokud se nedohodne, nechám udělat nabídky konkurence a pošlu vám porovnání s dopady rozhodnutí.
-                  </p>
-                </div>
-                <ul className="space-y-4">
-                  {[
-                    "Sleduji termíny vašich fixací.",
-                    "Vyjednávám férové ceny u vašeho dodavatele.",
-                    "Pokud se nedohodne — získám nabídky konkurence.",
-                    "Pošlu přehledné porovnání s dopady rozhodnutí.",
-                    "Vy rozhodujete a podepisujete přímo s dodavatelem.",
-                    "Faktura až po úspěšném vyjednání."
+                   <p className="text-primary font-semibold mb-2">✓ Nejdříve vyjednávám u vašeho stávajícího dodavatele</p>
+                   <p className="text-sm text-muted-foreground">
+                     Pokud nenabídne férovou cenu, nechám udělat nabídky konkurence a pošlu vám objektivní porovnání.
+                   </p>
+                 </div>
+                 <ul className="space-y-4">
+                   {[
+                     "Sleduji termíny vašich fixací.",
+                     "Vyjednávám férové ceny u vašeho dodavatele.",
+                     "Pokud nenabídne férovou cenu — získám nabídky konkurence.",
+                     "Pošlu objektivní porovnání nabídek a vy se rozhodnete.",
+                     "Vy rozhodujete a podepisujete přímo s dodavatelem.",
+                     "První faktura až po úspěšném vyjednání.",
+                     "Jednou ročně faktura za aktivní dohled nad vaším odběrným místem."
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
@@ -266,8 +271,8 @@ const Index = () => {
             </Card>
 
             {/* Process Steps */}
-            <h3 className="text-xl font-semibold text-center mb-8 text-primary">Jednoduše v 6 krocích</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <h3 className="text-xl font-semibold text-center mb-8 text-primary">Jednoduše v 7 krocích</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 {
                   step: "1",
@@ -285,13 +290,13 @@ const Index = () => {
                   step: "3",
                   title: "Nabídky konkurence",
                   icon: <Users className="h-8 w-8" />,
-                  description: "Pokud se nedohodne, nechám udělat nabídky od konkurence."
+                  description: "Pokud nenabídne férovou cenu, nechám udělat nabídky od konkurence."
                 },
                 {
                   step: "4",
-                  title: "Porovnání a dopady",
+                  title: "Objektivní porovnání",
                   icon: <TrendingDown className="h-8 w-8" />,
-                  description: "Pošlu vám přehledné porovnání s dopady vašeho rozhodnutí."
+                  description: "Pošlu vám objektivní porovnání nabídek a vy se rozhodnete, jakou cestou se vydáte."
                 },
                 {
                   step: "5",
@@ -301,9 +306,15 @@ const Index = () => {
                 },
                 {
                   step: "6",
-                  title: "Faktura až po úspěchu",
+                  title: "První faktura po úspěchu",
                   icon: <Clock className="h-8 w-8" />,
-                  description: "První faktura až po úspěšném vyjednání. Pak 300 Kč/rok."
+                  description: "První faktura až po úspěšném vyjednání."
+                },
+                {
+                  step: "7",
+                  title: "Aktivní dohled",
+                  icon: <Shield className="h-8 w-8" />,
+                  description: "Jednou ročně faktura za aktivní dohled nad vaším odběrným místem. 300 Kč/rok."
                 }
               ].map((item, index) => (
                 <Card key={index} className="text-center shadow-soft hover:shadow-energy transition-all duration-300">
