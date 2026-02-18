@@ -47,7 +47,7 @@ export const ContactForm = () => {
         </Button>
         
         <p className="text-xs text-muted-foreground pt-2">
-          Po vyplnění vás budeme kontaktovat pro doplnění případných údajů.
+          Po vyplnění vás budeme kontaktovat pro případné doplnění údajů.
         </p>
       </CardContent>
     </Card>
