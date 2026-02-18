@@ -107,64 +107,6 @@ const Index = () => {
               <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto">
                 Cena za aktivní dohled je <strong className="text-primary">300 Kč/rok</strong>. První faktura přijde až po prvním úspěšném vyjednání férové nabídky, se kterou budete spokojeni.
               </p>
-              
-              {/* Úspory z praxe */}
-              <Card className="bg-background/50 border-primary/30 max-w-xl mx-auto text-left">
-                <CardContent className="p-5">
-                  <h3 className="text-xl font-bold text-primary mb-4">📊 Extremní případy, na které jsem narazil:</h3>
-                  <div className="space-y-3 text-foreground">
-                    <div className="flex items-start gap-3">
-                      <TrendingDown className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Špatná distribuční sazba → <span className="text-primary font-bold">úspora 7 000 Kč/rok</span></span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <TrendingDown className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Plyn 1 700 Kč/MWh → <span className="text-primary font-bold">vyjednáno 900 Kč/MWh</span></span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <TrendingDown className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Elektřina 3 900 Kč/MWh → <span className="text-primary font-bold">vyjednáno 2 400 Kč/MWh</span></span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Jak to funguje - 7 kroků */}
-              <Card className="bg-background/50 border-primary/30 max-w-xl mx-auto text-left">
-                <CardContent className="p-5">
-                  <h3 className="text-xl font-bold text-primary mb-4">Jak to funguje:</h3>
-                  <ol className="space-y-3 text-foreground list-none">
-                    <li className="flex items-start gap-3">
-                      <span className="font-bold text-primary flex-shrink-0">1.</span>
-                      <span>Vyplníte formulář + plná moc <span className="text-muted-foreground text-sm">(jen pro komunikaci)</span></span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="font-bold text-primary flex-shrink-0">2.</span>
-                      <span>Vyjednám férové ceny <strong>U VÁŠHO DODAVATELE</strong></span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="font-bold text-primary flex-shrink-0">3.</span>
-                      <span>Pokud nenabídne férovou cenu → nechám udělat <strong>NABÍDKY KONKURENCE</strong></span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="font-bold text-primary flex-shrink-0">4.</span>
-                      <span>Pošlu <strong>OBJEKTIVNÍ POROVNÁNÍ</strong> nabídek a vy se rozhodnete, jakou cestou se vydáte</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="font-bold text-primary flex-shrink-0">5.</span>
-                      <span>Podepisujete <strong>PŘÍMO S DODAVATELEM</strong></span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="font-bold text-primary flex-shrink-0">6.</span>
-                      <span>První faktura až <strong>PO ÚSPĚŠNÉM VYJEDNÁNÍ</strong></span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="font-bold text-primary flex-shrink-0">7.</span>
-                      <span>Jednou ročně faktura za <strong>AKTIVNÍ DOHLED</strong> nad vaším odběrným místem — budu si vyžadovat individuální nabídky dlouho před koncem fixace, pokud bude cena na trhu lepší než vaše aktuální cena ve smlouvě</span>
-                    </li>
-                  </ol>
-                </CardContent>
-              </Card>
 
               {/* CTA */}
               <div className="max-w-xl mx-auto">
@@ -218,7 +160,6 @@ const Index = () => {
           <div className="container mx-auto max-w-6xl">
             <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Co pro vás dělám a jak to funguje</h2>
             
-            {/* Main Service Description */}
             <Card className="shadow-soft border-primary/20 mb-12">
               <CardHeader>
                 <CardTitle className="text-2xl text-primary flex items-center gap-2">
@@ -252,52 +193,16 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            {/* Process Steps */}
             <h3 className="text-xl font-semibold text-center mb-8 text-primary">Jednoduše v 7 krocích</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                {
-                  step: "1",
-                  title: "Vyplníte formulář + plná moc",
-                  icon: <Mail className="h-8 w-8" />,
-                  description: "Plná moc slouží jen pro komunikaci s dodavateli."
-                },
-                {
-                  step: "2",
-                  title: "Vyjednám u vašeho dodavatele",
-                  icon: <Shield className="h-8 w-8" />,
-                  description: "Snažím se získat férovou cenu přímo u stávajícího dodavatele."
-                },
-                {
-                  step: "3",
-                  title: "Nabídky konkurence",
-                  icon: <Users className="h-8 w-8" />,
-                  description: "Pokud nenabídne férovou cenu, nechám udělat nabídky od konkurence."
-                },
-                {
-                  step: "4",
-                  title: "Objektivní porovnání",
-                  icon: <TrendingDown className="h-8 w-8" />,
-                  description: "Pošlu vám objektivní porovnání nabídek a vy se rozhodnete, jakou cestou se vydáte."
-                },
-                {
-                  step: "5",
-                  title: "Podepisujete přímo s dodavatelem",
-                  icon: <CheckCircle className="h-8 w-8" />,
-                  description: "Vždy rozhodujete vy a podepisujete přímo s dodavatelem."
-                },
-                {
-                  step: "6",
-                  title: "První faktura po úspěchu",
-                  icon: <Clock className="h-8 w-8" />,
-                  description: "První faktura až po úspěšném vyjednání."
-                },
-                {
-                  step: "7",
-                  title: "Aktivní dohled",
-                  icon: <Shield className="h-8 w-8" />,
-                  description: "Jednou ročně faktura za aktivní dohled nad vaším odběrným místem. Individuální nabídky vyžaduji dlouho před koncem fixace, pokud je cena na trhu lepší. 300 Kč/rok."
-                }
+                { step: "1", title: "Vyplníte formulář + plná moc", icon: <Mail className="h-8 w-8" />, description: "Plná moc slouží jen pro komunikaci s dodavateli." },
+                { step: "2", title: "Vyjednám u vašeho dodavatele", icon: <Shield className="h-8 w-8" />, description: "Snažím se získat férovou cenu přímo u stávajícího dodavatele." },
+                { step: "3", title: "Nabídky konkurence", icon: <Users className="h-8 w-8" />, description: "Pokud nenabídne férovou cenu, nechám udělat nabídky od konkurence." },
+                { step: "4", title: "Objektivní porovnání", icon: <TrendingDown className="h-8 w-8" />, description: "Pošlu vám objektivní porovnání nabídek a vy se rozhodnete, jakou cestou se vydáte." },
+                { step: "5", title: "Podepisujete přímo s dodavatelem", icon: <CheckCircle className="h-8 w-8" />, description: "Vždy rozhodujete vy a podepisujete přímo s dodavatelem." },
+                { step: "6", title: "První faktura po úspěchu", icon: <Clock className="h-8 w-8" />, description: "První faktura až po úspěšném vyjednání." },
+                { step: "7", title: "Aktivní dohled", icon: <Shield className="h-8 w-8" />, description: "Jednou ročně faktura za aktivní dohled nad vaším odběrným místem. Individuální nabídky vyžaduji dlouho před koncem fixace, pokud je cena na trhu lepší. 300 Kč/rok." }
               ].map((item, index) => (
                 <Card key={index} className="text-center shadow-soft hover:shadow-energy transition-all duration-300">
                   <CardHeader>
@@ -316,65 +221,28 @@ const Index = () => {
           </div>
         </section>
 
-        {/* About */}
-        <section id="about" className="py-20 px-4 bg-background">
-          <div className="container mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold mb-8 text-foreground">O mně</h2>
-            <h3 className="text-xl font-semibold mb-6 text-primary">Proč tuto službu dělám?</h3>
-            <div className="space-y-6 text-lg text-muted-foreground">
-              <p>
-                Začal jsem pomáhat rodině a známým vyjednávat výhodnější ceny energií. 
-                Viděl jsem, kolik lidí zbytečně přeplácí. Proto jsem se rozhodl 
-                tuto službu nabídnout všem domácnostem, které chtějí ušetřit bez starostí.
-              </p>
-              <p className="text-primary font-semibold">
-                Já komunikuji s dodavateli. Vy sami rozhodujete a podepisujete.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Why choose us */}
+        {/* Extrémní případy */}
         <section className="py-20 px-4">
-          <div className="container mx-auto max-w-4xl">
-            <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Proč si vybrat právě tuto službu?</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {[
-                {
-                  title: "Jednoduchý a transparentní roční poplatek",
-                  description: "Pouze 300 Kč za odběrné místo ročně (25 Kč měsíčně) • Žádné skryté poplatky • Platíte jen když ušetříme",
-                  highlight: true
-                },
-                {
-                  title: "Maximální flexibilita",
-                  description: "první faktura až po úspěšném vyjednání • každá další roční faktura jako předplacení dalšího roku • nechcete pokračovat? Stačí přestat platit",
-                  highlight: true
-                },
-                {
-                  title: "Minimální papírování",
-                  description: "primárně vyjednávám u vašeho stávajícího dodavatele, změnu navrhuji pouze pokud nelze získat výhodnou nabídku"
-                },
-                {
-                  title: "Transparentní komunikace",
-                  description: "každé jednání shrnu v přehledném e-mailu"
-                },
-                {
-                  title: "Bez rizika",
-                  description: "Nejste spokojeni? Zrušte do 30 dnů — vracíme 100 %."
-                }
-              ].map((item, index) => (
-                <Card key={index} className={`shadow-soft ${item.highlight ? 'border-secondary shadow-energy' : ''}`}>
-                  <CardHeader>
-                    <CardTitle className={item.highlight ? 'text-secondary' : 'text-primary'}>
-                      {item.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-foreground">{item.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+          <div className="container mx-auto max-w-3xl">
+            <Card className="border-primary/30 shadow-soft">
+              <CardContent className="p-6 md:p-8">
+                <h2 className="text-2xl font-bold text-primary mb-6">📊 Extrémní případy, na které jsem narazil</h2>
+                <div className="space-y-4 text-foreground text-lg">
+                  <div className="flex items-start gap-3">
+                    <TrendingDown className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
+                    <span className="text-primary font-bold">Špatná distribuční sazba → úspora 7 000 Kč/rok</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <TrendingDown className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
+                    <span>Plyn 1 700 Kč/MWh → <span className="text-primary font-bold">vyjednáno 900 Kč/MWh</span></span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <TrendingDown className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
+                    <span>Elektřina 3 900 Kč/MWh → <span className="text-primary font-bold">vyjednáno 2 400 Kč/MWh</span></span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </section>
 
