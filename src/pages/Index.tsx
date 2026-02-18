@@ -86,147 +86,127 @@ const Index = () => {
 
       <main>
         {/* Hero Section */}
-        <section className="py-12 md:py-20 px-4">
-          <div className="container mx-auto max-w-6xl">
-            <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
-              <div className="space-y-6 md:space-y-8 text-center lg:text-left">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground leading-tight">
-                  <span className="block text-primary mb-2">Společně levněji</span>
-                </h1>
-                <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0">
-                  Cena za aktivní dohled je <strong className="text-primary">300 Kč/rok</strong>. První faktura přijde až po prvním úspěšném vyjednání férové nabídky, se kterou budete spokojeni.
-                </p>
-                
-                {/* Úspory z praxe */}
-                <Card className="bg-background/50 border-primary/30 max-w-xl mx-auto lg:mx-0">
-                  <CardContent className="p-5">
-                    <h3 className="text-xl font-bold text-primary mb-4">📊 Extremní případy, na které jsem narazil:</h3>
-                    <div className="space-y-3 text-foreground">
-                      <div className="flex items-start gap-3">
-                        <TrendingDown className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Špatná distribuční sazba → <span className="text-primary font-bold">úspora 7 000 Kč/rok</span></span>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <TrendingDown className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Plyn 1 700 Kč/MWh → vyjednáno <strong className="text-primary">900 Kč/MWh</strong></span>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <TrendingDown className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Elektřina 3 900 Kč/MWh → vyjednáno <strong className="text-primary">2 400 Kč/MWh</strong></span>
-                      </div>
+        <section className="relative">
+          {/* Full-width hero image */}
+          <div className="w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden">
+            <img 
+              src={heroImage} 
+              alt="Úspora energií - moderní dům s fotovoltaickými panely a úsporným osvětlením pro domácnosti" 
+              className="w-full h-full object-cover"
+              width="1920"
+              height="500"
+            />
+          </div>
+          
+          {/* Text content below image */}
+          <div className="py-12 md:py-16 px-4">
+            <div className="container mx-auto max-w-3xl space-y-6 md:space-y-8 text-center">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground leading-tight">
+                <span className="block text-primary mb-2">Společně levněji</span>
+              </h1>
+              <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto">
+                Cena za aktivní dohled je <strong className="text-primary">300 Kč/rok</strong>. První faktura přijde až po prvním úspěšném vyjednání férové nabídky, se kterou budete spokojeni.
+              </p>
+              
+              {/* Úspory z praxe */}
+              <Card className="bg-background/50 border-primary/30 max-w-xl mx-auto text-left">
+                <CardContent className="p-5">
+                  <h3 className="text-xl font-bold text-primary mb-4">📊 Extremní případy, na které jsem narazil:</h3>
+                  <div className="space-y-3 text-foreground">
+                    <div className="flex items-start gap-3">
+                      <TrendingDown className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Špatná distribuční sazba → <span className="text-primary font-bold">úspora 7 000 Kč/rok</span></span>
                     </div>
-                  </CardContent>
-                </Card>
+                    <div className="flex items-start gap-3">
+                      <TrendingDown className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Plyn 1 700 Kč/MWh → <span className="text-primary font-bold">vyjednáno 900 Kč/MWh</span></span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <TrendingDown className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Elektřina 3 900 Kč/MWh → <span className="text-primary font-bold">vyjednáno 2 400 Kč/MWh</span></span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
 
-                {/* Jak to funguje - 6 kroků */}
-                <Card className="bg-background/50 border-primary/30 max-w-xl mx-auto lg:mx-0">
-                  <CardContent className="p-5">
-                    <h3 className="text-xl font-bold text-primary mb-4">Jak to funguje:</h3>
-                    <ol className="space-y-3 text-foreground list-none">
-                      <li className="flex items-start gap-3">
-                        <span className="font-bold text-primary flex-shrink-0">1.</span>
-                        <span>Vyplníte formulář + plná moc <span className="text-muted-foreground text-sm">(jen pro komunikaci)</span></span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <span className="font-bold text-primary flex-shrink-0">2.</span>
-                        <span>Vyjednám férové ceny <strong>U VÁŠHO DODAVATELE</strong></span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <span className="font-bold text-primary flex-shrink-0">3.</span>
-                        <span>Pokud nenabídne férovou cenu → nechám udělat <strong>NABÍDKY KONKURENCE</strong></span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <span className="font-bold text-primary flex-shrink-0">4.</span>
-                        <span>Pošlu <strong>OBJEKTIVNÍ POROVNÁNÍ</strong> nabídek a vy se rozhodnete, jakou cestou se vydáte</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <span className="font-bold text-primary flex-shrink-0">5.</span>
-                        <span>Podepisujete <strong>PŘÍMO S DODAVATELEM</strong></span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <span className="font-bold text-primary flex-shrink-0">6.</span>
-                        <span>První faktura až <strong>PO ÚSPĚŠNÉM VYJEDNÁNÍ</strong></span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <span className="font-bold text-primary flex-shrink-0">7.</span>
-                        <span>Jednou ročně faktura za <strong>AKTIVNÍ DOHLED</strong> nad vaším odběrným místem — budu si vyžadovat individuální nabídky dlouho před koncem fixace, pokud bude cena na trhu lepší než vaše aktuální cena ve smlouvě</span>
-                      </li>
-                    </ol>
-                  </CardContent>
-                </Card>
+              {/* Jak to funguje - 7 kroků */}
+              <Card className="bg-background/50 border-primary/30 max-w-xl mx-auto text-left">
+                <CardContent className="p-5">
+                  <h3 className="text-xl font-bold text-primary mb-4">Jak to funguje:</h3>
+                  <ol className="space-y-3 text-foreground list-none">
+                    <li className="flex items-start gap-3">
+                      <span className="font-bold text-primary flex-shrink-0">1.</span>
+                      <span>Vyplníte formulář + plná moc <span className="text-muted-foreground text-sm">(jen pro komunikaci)</span></span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="font-bold text-primary flex-shrink-0">2.</span>
+                      <span>Vyjednám férové ceny <strong>U VÁŠHO DODAVATELE</strong></span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="font-bold text-primary flex-shrink-0">3.</span>
+                      <span>Pokud nenabídne férovou cenu → nechám udělat <strong>NABÍDKY KONKURENCE</strong></span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="font-bold text-primary flex-shrink-0">4.</span>
+                      <span>Pošlu <strong>OBJEKTIVNÍ POROVNÁNÍ</strong> nabídek a vy se rozhodnete, jakou cestou se vydáte</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="font-bold text-primary flex-shrink-0">5.</span>
+                      <span>Podepisujete <strong>PŘÍMO S DODAVATELEM</strong></span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="font-bold text-primary flex-shrink-0">6.</span>
+                      <span>První faktura až <strong>PO ÚSPĚŠNÉM VYJEDNÁNÍ</strong></span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="font-bold text-primary flex-shrink-0">7.</span>
+                      <span>Jednou ročně faktura za <strong>AKTIVNÍ DOHLED</strong> nad vaším odběrným místem — budu si vyžadovat individuální nabídky dlouho před koncem fixace, pokud bude cena na trhu lepší než vaše aktuální cena ve smlouvě</span>
+                    </li>
+                  </ol>
+                </CardContent>
+              </Card>
 
-                {/* CTA */}
-                <div className="max-w-xl mx-auto lg:mx-0">
-                  <Button 
-                    variant="energy" 
-                    size="lg" 
-                    className="w-full text-lg py-6 font-bold"
-                    asChild
+              {/* CTA */}
+              <div className="max-w-xl mx-auto">
+                <Button 
+                  variant="energy" 
+                  size="lg" 
+                  className="w-full text-lg py-6 font-bold"
+                  asChild
+                >
+                  <a 
+                    href={AIRTABLE_FORM_URL}
+                    target="_blank" 
+                    rel="noopener noreferrer"
                   >
-                    <a 
-                      href={AIRTABLE_FORM_URL}
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                    >
-                      <ExternalLink className="mr-2 h-5 w-5" />
-                      ZAČÍT
-                    </a>
-                  </Button>
-                </div>
-
-                {/* Záruka */}
-                <div style={{ backgroundImage: 'var(--gradient-primary)' }} className="text-primary-foreground p-4 md:p-5 rounded-xl shadow-glow max-w-xl mx-auto lg:mx-0">
-                  <p className="text-center text-lg md:text-xl font-bold">
-                    🛡️ ZÁRUKA: Nejste spokojeni? Zrušte do 30 dnů — vracíme 100 %.
-                  </p>
-                </div>
-
-                {/* GDPR info */}
-                <div className="bg-muted/50 border border-border rounded-lg p-4 text-xs text-muted-foreground max-w-xl mx-auto lg:mx-0">
-                  <p className="font-semibold text-foreground mb-2">INFORMACE O ZPRACOVÁNÍ OSOBNÍCH ÚDAJŮ (GDPR)</p>
-                  <p>Správce: Jakub Melka, IČO 22516280</p>
-                  <p>Účel: správa odběrných míst</p>
-                  <p>Příjemci: dodavatelé, Airtable.com</p>
-                  <p className="mt-1">
-                    <a href="https://drive.google.com/file/d/162d_9Dja-M3RDoG4MH6JuKzHsJ_mV2ke/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                      Kompletní zásady ochrany osobních údajů
-                    </a>
-                  </p>
-                  <p className="mt-1">
-                    <a href="mailto:info@spolecnelevneji.cz" className="text-primary hover:underline">
-                      info@spolecnelevneji.cz
-                    </a>
-                  </p>
-                </div>
-
-                {/* Testimonials */}
-                <div className="space-y-3 max-w-xl mx-auto lg:mx-0">
-                  <div className="flex items-start gap-3 bg-background/80 border border-border rounded-lg p-4">
-                    <Quote className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="text-foreground italic">"Ušetřil jsem 1 200 Kč ročně v bytě s minimální spotřebou"</p>
-                      <p className="text-sm text-muted-foreground mt-1">— Jiří D., Prostějov</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3 bg-background/80 border border-border rounded-lg p-4">
-                    <Quote className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="text-foreground italic">"3 odběrná místa se skvělou cenou a bez starostí"</p>
-                      <p className="text-sm text-muted-foreground mt-1">— Petr F., firma</p>
-                    </div>
-                  </div>
-                </div>
+                    <ExternalLink className="mr-2 h-5 w-5" />
+                    ZAČÍT
+                  </a>
+                </Button>
               </div>
-              <div className="relative order-first lg:order-last">
-                <div className="lg:sticky lg:top-24">
-                  <img 
-                    src={heroImage} 
-                    alt="Úspora energií - moderní dům s fotovoltaickými panely a úsporným osvětlením pro domácnosti" 
-                    className="rounded-lg shadow-glow w-full max-h-[500px] object-cover"
-                    loading="lazy"
-                    width="800"
-                    height="600"
-                  />
+
+              {/* Záruka */}
+              <div style={{ backgroundImage: 'var(--gradient-primary)' }} className="text-primary-foreground p-4 md:p-5 rounded-xl shadow-glow max-w-xl mx-auto">
+                <p className="text-center text-lg md:text-xl font-bold">
+                  🛡️ ZÁRUKA: Nejste spokojeni? Zrušte do 30 dnů — vracíme 100 %.
+                </p>
+              </div>
+
+              {/* Testimonials */}
+              <div className="space-y-3 max-w-xl mx-auto">
+                <div className="flex items-start gap-3 bg-background/80 border border-border rounded-lg p-4 text-left">
+                  <Quote className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="text-foreground italic">"Ušetřil jsem 1 200 Kč ročně v bytě s minimální spotřebou"</p>
+                    <p className="text-sm text-muted-foreground mt-1">— Jiří D., Prostějov</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 bg-background/80 border border-border rounded-lg p-4 text-left">
+                  <Quote className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="text-foreground italic">"3 odběrná místa se skvělou cenou a bez starostí"</p>
+                    <p className="text-sm text-muted-foreground mt-1">— Petr F., firma</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -473,8 +453,13 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="mt-8 pt-8 border-t border-primary-glow">
-              <p className="text-primary-glow text-sm leading-relaxed">
+            <div className="mt-8 pt-8 border-t border-primary-glow text-center space-y-2">
+              <p className="text-xs opacity-80">
+                <a href="https://drive.google.com/file/d/162d_9Dja-M3RDoG4MH6JuKzHsJ_mV2ke/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  Zásady ochrany osobních údajů (GDPR)
+                </a>
+              </p>
+              <p className="text-primary-glow text-sm">
                 © 2024 Společně levněji - Vaše energie pod dohledem
               </p>
             </div>
