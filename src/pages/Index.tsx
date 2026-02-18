@@ -92,13 +92,10 @@ const Index = () => {
               <div className="space-y-6 md:space-y-8 text-center lg:text-left">
                 <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground leading-tight">
                   <span className="block text-primary mb-2">Společně levněji</span>
-                  <span className="block text-2xl md:text-3xl lg:text-4xl font-medium text-muted-foreground">
-                    První faktura až po úspěšném vyjednávání.
-                  </span>
-                  <span className="block text-xl md:text-2xl lg:text-3xl font-medium text-muted-foreground mt-1">
-                    Pak 300 Kč/rok za dohled.
-                  </span>
                 </h1>
+                <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0">
+                  Cena za aktivní dohled je <strong className="text-primary">300 Kč/rok</strong>. První faktura přijde až po prvním úspěšném vyjednání férové nabídky, se kterou budete spokojeni.
+                </p>
                 
                 {/* Úspory z praxe */}
                 <Card className="bg-background/50 border-primary/30 max-w-xl mx-auto lg:mx-0">
@@ -107,7 +104,7 @@ const Index = () => {
                     <div className="space-y-3 text-foreground">
                       <div className="flex items-start gap-3">
                         <TrendingDown className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Špatná distribuční sazba → <strong className="text-primary">úspora 7000 Kč/rok</strong></span>
+                        <span>Špatná distribuční sazba → <span className="text-primary font-bold">úspora 7 000 Kč/rok</span></span>
                       </div>
                       <div className="flex items-start gap-3">
                         <TrendingDown className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -152,7 +149,7 @@ const Index = () => {
                       </li>
                       <li className="flex items-start gap-3">
                         <span className="font-bold text-primary flex-shrink-0">7.</span>
-                        <span>Jednou ročně faktura za <strong>AKTIVNÍ DOHLED</strong> nad vaším odběrným místem</span>
+                        <span>Jednou ročně faktura za <strong>AKTIVNÍ DOHLED</strong> nad vaším odběrným místem — budu si vyžadovat individuální nabídky dlouho před koncem fixace, pokud bude cena na trhu lepší než vaše aktuální cena ve smlouvě</span>
                       </li>
                     </ol>
                   </CardContent>
@@ -191,6 +188,11 @@ const Index = () => {
                   <p>Účel: správa odběrných míst</p>
                   <p>Příjemci: dodavatelé, Airtable.com</p>
                   <p className="mt-1">
+                    <a href="https://drive.google.com/file/d/162d_9Dja-M3RDoG4MH6JuKzHsJ_mV2ke/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                      Kompletní zásady ochrany osobních údajů
+                    </a>
+                  </p>
+                  <p className="mt-1">
                     <a href="mailto:info@spolecnelevneji.cz" className="text-primary hover:underline">
                       info@spolecnelevneji.cz
                     </a>
@@ -220,7 +222,7 @@ const Index = () => {
                   <img 
                     src={heroImage} 
                     alt="Úspora energií - moderní dům s fotovoltaickými panely a úsporným osvětlením pro domácnosti" 
-                    className="rounded-lg shadow-glow w-full h-auto object-cover"
+                    className="rounded-lg shadow-glow w-full max-h-[500px] object-cover"
                     loading="lazy"
                     width="800"
                     height="600"
@@ -259,7 +261,7 @@ const Index = () => {
                      "Pošlu objektivní porovnání nabídek a vy se rozhodnete.",
                      "Vy rozhodujete a podepisujete přímo s dodavatelem.",
                      "První faktura až po úspěšném vyjednání.",
-                     "Jednou ročně faktura za aktivní dohled nad vaším odběrným místem."
+                     "Jednou ročně faktura za aktivní dohled nad vaším odběrným místem — individuální nabídky vyžaduji dlouho před koncem fixace."
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
@@ -314,7 +316,7 @@ const Index = () => {
                   step: "7",
                   title: "Aktivní dohled",
                   icon: <Shield className="h-8 w-8" />,
-                  description: "Jednou ročně faktura za aktivní dohled nad vaším odběrným místem. 300 Kč/rok."
+                  description: "Jednou ročně faktura za aktivní dohled nad vaším odběrným místem. Individuální nabídky vyžaduji dlouho před koncem fixace, pokud je cena na trhu lepší. 300 Kč/rok."
                 }
               ].map((item, index) => (
                 <Card key={index} className="text-center shadow-soft hover:shadow-energy transition-all duration-300">
