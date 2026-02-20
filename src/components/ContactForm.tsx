@@ -12,7 +12,7 @@ export const ContactForm = () => {
       </CardHeader>
       <CardContent className="text-center space-y-6 px-6 md:px-10 pb-8">
         <p className="text-lg text-muted-foreground">
-          Vyplňte registrační formulář a my se postaráme o zbytek.
+          Vyplňte registrační formulář a já se postaráme o zbytek.
         </p>
         
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm text-left py-4">
