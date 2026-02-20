@@ -22,7 +22,7 @@ export const ContactForm = () => {
           </div>
           <div className="flex items-start gap-2">
             <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-            <span className="text-foreground">Platíte až po úspoře</span>
+            <span className="text-foreground">Platíte až po úspěšném vyjenání férové nabídky</span>
           </div>
           <div className="flex items-start gap-2">
             <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
