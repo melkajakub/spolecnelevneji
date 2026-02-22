@@ -1,11 +1,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, Shield, Clock, TrendingDown, Users, Mail, Menu, X, AlertTriangle, ExternalLink, Quote } from "lucide-react";
-import { ContactForm } from "@/components/ContactForm";
+import { CheckCircle, Shield, Clock, TrendingDown, Users, Mail, Menu, X, Quote } from "lucide-react";
 import heroImage from "@/assets/energy-savings-hero.jpg";
-
-const AIRTABLE_FORM_URL = "https://airtable.com/app5b1mae9Kf5qvLE/shrOyujug320j2coS";
 
 const Index = () => {
   console.log("Index component rendering");
@@ -29,10 +26,10 @@ const Index = () => {
             </div>
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-6">
-              <a href="#services" className="text-foreground hover:text-primary transition-colors">Jak to funguje</a>
               <a href="#about" className="text-foreground hover:text-primary transition-colors">O mně</a>
+              <a href="#services" className="text-foreground hover:text-primary transition-colors">Jak to funguje</a>
               <a href="#why-paid" className="text-foreground hover:text-primary transition-colors">Proč je služba placená</a>
-              <a href="#contact" className="text-foreground hover:text-primary transition-colors">Kontakt</a>
+              <a href="#contact" className="text-foreground hover:text-primary transition-colors">Registrace</a>
             </nav>
             
             {/* Mobile Menu Button */}
@@ -50,34 +47,10 @@ const Index = () => {
           {mobileMenuOpen && (
             <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-sm">
               <nav className="container mx-auto px-4 py-4 space-y-2">
-                <a 
-                  href="#services" 
-                  className="block py-2 text-foreground hover:text-primary transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Jak to funguje
-                </a>
-                <a 
-                  href="#about" 
-                  className="block py-2 text-foreground hover:text-primary transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  O mně
-                </a>
-                <a 
-                  href="#why-paid" 
-                  className="block py-2 text-foreground hover:text-primary transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Proč je služba placená
-                </a>
-                <a 
-                  href="#contact" 
-                  className="block py-2 text-foreground hover:text-primary transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Kontakt
-                </a>
+                <a href="#about" className="block py-2 text-foreground hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>O mně</a>
+                <a href="#services" className="block py-2 text-foreground hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>Jak to funguje</a>
+                <a href="#why-paid" className="block py-2 text-foreground hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>Proč je služba placená</a>
+                <a href="#contact" className="block py-2 text-foreground hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>Registrace</a>
               </nav>
             </div>
           )}
@@ -87,7 +60,6 @@ const Index = () => {
       <main>
         {/* Hero Section */}
         <section className="relative">
-          {/* Full-width hero image */}
           <div className="w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden">
             <img 
               src={heroImage} 
@@ -98,7 +70,6 @@ const Index = () => {
             />
           </div>
           
-          {/* Text content below image */}
           <div className="py-12 md:py-16 px-4">
             <div className="container mx-auto max-w-3xl space-y-6 md:space-y-8 text-center">
               <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground leading-tight">
@@ -116,12 +87,7 @@ const Index = () => {
                   className="w-full text-lg py-6 font-bold"
                   asChild
                 >
-                  <a 
-                    href={AIRTABLE_FORM_URL}
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    <ExternalLink className="mr-2 h-5 w-5" />
+                  <a href="#contact">
                     ZAČÍT
                   </a>
                 </Button>
@@ -155,8 +121,42 @@ const Index = () => {
           </div>
         </section>
 
+        {/* O mně */}
+        <section id="about" className="py-16 md:py-20 px-4 bg-background">
+          <div className="container mx-auto max-w-3xl">
+            <h2 className="text-3xl font-bold text-center mb-10 text-foreground">Ahoj, jsem Jakub</h2>
+            <Card className="shadow-soft border-primary/20">
+              <CardContent className="p-6 md:p-8 space-y-5 text-lg text-muted-foreground leading-relaxed">
+                <p>
+                  Štve mě, kolik lidí zbytečně přeplácí za energie jen proto, že se o to aktivně nestarají.
+                </p>
+                <p>
+                  Sám jsem to zažil: automatická nabídka před koncem fixace, žádná kontrola → klidně tisíce korun ročně navíc. Začal jsem to hlídat pro sebe, rodinu a kamarády – a ukázalo se, že se dá ušetřit často i bez změny dodavatele.
+                </p>
+                <p className="font-semibold text-foreground">Proto teď dělám totéž pro vás:</p>
+                <ul className="space-y-3 pl-1">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span>sleduji vaše ceny dlouhodobě, abyste měli co nejméně starostí a zbytečně nepřepláceli</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span>vyjednávám zavčas férovější podmínky (snažím se hlavně u stávajícího dodavatele)</span>
+                  </li>
+                </ul>
+                <p>
+                  Bez provizí od dodavatelů, abych nebyl závislý na neustálých změnách dodavatelů u svých zákazníků.
+                </p>
+                <p className="text-foreground font-medium">
+                  Pokud vás to taky štve, napište, rád se podívám na vaši aktuální situaci.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
         {/* Services Section - Combined with How it Works */}
-        <section id="services" className="py-20 px-4 bg-background">
+        <section id="services" className="py-20 px-4">
           <div className="container mx-auto max-w-6xl">
             <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Co pro vás dělám a jak to funguje</h2>
             
@@ -222,7 +222,7 @@ const Index = () => {
         </section>
 
         {/* Extrémní případy */}
-        <section className="py-20 px-4">
+        <section className="py-20 px-4 bg-background">
           <div className="container mx-auto max-w-3xl">
             <Card className="border-primary/30 shadow-soft">
               <CardContent className="p-6 md:p-8">
@@ -247,7 +247,7 @@ const Index = () => {
         </section>
 
         {/* Why is the service paid */}
-        <section id="why-paid" className="py-20 px-4 bg-background">
+        <section id="why-paid" className="py-20 px-4">
           <div className="container mx-auto max-w-4xl">
             <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Proč je služba placená?</h2>
             <Card className="shadow-soft border-primary/20">
@@ -274,11 +274,22 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Registration */}
-        <section id="contact" className="py-20 px-4">
-          <div className="container mx-auto max-w-4xl">
+        {/* Registration - Embedded Airtable Form */}
+        <section id="contact" className="py-20 px-4 bg-background">
+          <div className="container mx-auto max-w-3xl">
             <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Registrace</h2>
-            <ContactForm />
+            <div className="rounded-xl overflow-hidden border border-border shadow-soft">
+              <iframe 
+                className="airtable-embed w-full" 
+                src="https://airtable.com/embed/app5b1mae9Kf5qvLE/pags0wOUy5GkNsh0S/form" 
+                frameBorder="0"
+                width="100%" 
+                height="600"
+                style={{ background: 'transparent', minHeight: '600px' }}
+                title="Registrační formulář Společně levněji"
+                loading="lazy"
+              />
+            </div>
           </div>
         </section>
       </main>
