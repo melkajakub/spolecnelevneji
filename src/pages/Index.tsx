@@ -279,16 +279,15 @@ const Index = () => {
           <div className="container mx-auto max-w-3xl">
             <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Registrace</h2>
             <div className="rounded-xl overflow-hidden border border-border shadow-soft">
-              <div className="relative w-full overflow-hidden" style={{ paddingBottom: '140%' }}>
-                <iframe 
-                  className="airtable-embed absolute top-0 left-0 w-full h-full"
-                  src="https://airtable.com/embed/app5b1mae9Kf5qvLE/pags0wOUy5GkNsh0S/form" 
-                  frameBorder="0"
-                  style={{ background: 'transparent' }}
-                  title="Registrační formulář Společně levněji"
-                  loading="lazy"
-                />
-              </div>
+              <iframe 
+                className="airtable-embed w-full"
+                src="https://airtable.com/embed/app5b1mae9Kf5qvLE/pags0wOUy5GkNsh0S/form" 
+                frameBorder="0"
+                style={{ background: 'transparent', border: 'none', minHeight: '1200px' }}
+                title="Registrační formulář Společně levněji"
+                loading="lazy"
+                height="1200"
+              />
             </div>
           </div>
         </section>
