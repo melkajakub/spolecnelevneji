@@ -128,7 +128,7 @@ const Index = () => {
             <Card className="shadow-soft border-primary/20">
               <CardContent className="p-6 md:p-8 space-y-5 text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  Štve mě, kolik lidí zbytečně přeplácí za energie jen proto, že se o to aktivně nestarají.
+                  Štve mě, kolik lidí zbytečně přeplácí za energie jen proto, že se o to aktivně nestarají. Pojďme se o vaše odběrná místa starat společně, ať můžete energie odebírat levněji.
                 </p>
                 <p>
                   Sám jsem to zažil: automatická nabídka před koncem fixace, žádná kontrola → klidně tisíce korun ročně navíc. Začal jsem to hlídat pro sebe, rodinu a kamarády – a ukázalo se, že se dá ušetřit často i bez změny dodavatele.
@@ -230,7 +230,7 @@ const Index = () => {
                 <div className="space-y-4 text-foreground text-lg">
                   <div className="flex items-start gap-3">
                     <TrendingDown className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
-                    <span className="text-primary font-bold">Špatná distribuční sazba → úspora 7 000 Kč/rok</span>
+                    <span>Špatná distribuční sazba → <span className="text-primary font-bold">úspora 7 000 Kč/rok</span></span>
                   </div>
                   <div className="flex items-start gap-3">
                     <TrendingDown className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
