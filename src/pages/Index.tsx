@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Mail, Phone, User, Upload, Send, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
-const FORMSPREE_URL = "https://formspree.io/f/xwpkgjgr";
+const FORMSPREE_URL = "https://formspree.io/f/mqegvjjq";
 
 const Index = () => {
   const { toast } = useToast();
