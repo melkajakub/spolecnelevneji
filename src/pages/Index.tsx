@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Mail, Phone, User, Upload, Send, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -12,6 +13,7 @@ const Index = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [fileName, setFileName] = useState<string | null>(null);
+  const [gdprChecked, setGdprChecked] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,6 +23,14 @@ const Index = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!gdprChecked) {
+      toast({
+        title: "Souhlas je povinný",
+        description: "Pro odeslání formuláře je nutné souhlasit se zpracováním osobních údajů.",
+        variant: "destructive",
+      });
+      return;
+    }
     setIsSubmitting(true);
 
     const formData = new FormData(e.currentTarget);
@@ -60,13 +70,13 @@ const Index = () => {
           <div className="flex items-center gap-3">
             <img
               src="/lovable-uploads/dcd1b256-2e06-4aca-963c-251ffd8dee20.png"
-              alt="Společně levněji logo"
+              alt="Nepřeplácejme logo"
               className="h-10 w-auto rounded-full"
               width="40"
               height="40"
             />
             <span className="font-semibold text-foreground text-lg hidden sm:inline">
-              Společně levněji
+              Nepřeplácejme
             </span>
           </div>
           <a
@@ -83,17 +93,18 @@ const Index = () => {
         <section className="py-20 md:py-32 px-4">
           <div className="container mx-auto max-w-2xl text-center space-y-8">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight tracking-tight">
-              Máte jistotu, že za energie neplatíte víc, než je nutné?
+              Nepřeplácejme už dál zbytečně za energie.
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl mx-auto">
-              Pomáhám lidem a firmám zorientovat se ve vyúčtování za elektřinu
-              a plyn. Podívám se na vaše aktuální náklady a nezávazně posoudím,
-              zda jsou vaše ceny férové.
+              Pomáhám lidem a firmám zorientovat se v jejich vyúčtování za
+              elektřinu a plyn. Podívám se na vaše aktuální náklady a nezávazně
+              posoudím, zda jsou vaše ceny dlouhodobě férové.
             </p>
 
             <p className="text-base md:text-lg text-foreground font-medium">
-              Pojďme se společně postarat o to, abyste zbytečně nepřepláceli za energie.
+              Pojďme se společně postarat o to, abyste zbytečně nepřepláceli za
+              energie.
             </p>
 
             <Button
@@ -230,10 +241,29 @@ const Index = () => {
                   </div>
                 </div>
 
+                {/* GDPR Checkbox */}
+                <div className="flex items-start gap-3">
+                  <Checkbox
+                    id="gdpr"
+                    checked={gdprChecked}
+                    onCheckedChange={(checked) =>
+                      setGdprChecked(checked === true)
+                    }
+                    className="mt-0.5"
+                  />
+                  <Label
+                    htmlFor="gdpr"
+                    className="text-sm text-muted-foreground leading-relaxed cursor-pointer"
+                  >
+                    Souhlasím se zpracováním osobních údajů za účelem
+                    vypracování nezávazného posouzení vyúčtování.
+                  </Label>
+                </div>
+
                 {/* Submit */}
                 <Button
                   type="submit"
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || !gdprChecked}
                   className="w-full py-6 text-base font-semibold"
                 >
                   {isSubmitting ? (
@@ -256,9 +286,13 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="border-t border-border py-10 px-4">
-        <div className="container mx-auto max-w-2xl text-center space-y-2">
+        <div className="container mx-auto max-w-2xl text-center space-y-3">
           <p className="text-sm text-muted-foreground">
-            Společně levněji · Jakub Melka · Prostějov a okolí
+            Nepřeplácejme · Jakub Melka · IČO: 22516280 · melka.jakub@gmail.com
+          </p>
+          <p className="text-xs text-muted-foreground/70 max-w-lg mx-auto leading-relaxed">
+            Odesláním formuláře nedochází k uzavření smlouvy ani k zahájení
+            zprostředkovatelské činnosti. Jedná se o nezávaznou konzultaci.
           </p>
           <p className="text-xs text-muted-foreground/60">
             © {new Date().getFullYear()}
