@@ -1,11 +1,11 @@
 {
-  "name": "Společně levněji - Hlídání cen energií",
-  "short_name": "Společně levněji",
-  "description": "Vyjednávání a hlídání cen energií pro domácnosti. Ušetříme minimálně 600 Kč ročně nebo první rok zdarma.",
+  "name": "Nepřeplácejme – kontrola vyúčtování za energie",
+  "short_name": "Nepřeplácejme",
+  "description": "Pomáhám lidem a firmám zorientovat se v jejich vyúčtování za elektřinu a plyn. Nezávazně posoudím, zda jsou vaše ceny dlouhodobě férové.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#10b981",
+  "theme_color": "#1e3a5f",
   "orientation": "portrait-primary",
   "icons": [
     {
