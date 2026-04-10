@@ -134,7 +134,7 @@ const Index = () => {
                 Pošlete mi své vyúčtování
               </h2>
               <p className="text-muted-foreground">
-                Stačí vyplnit základní údaje a přiložit fotku nebo scan
+                Stačí vyplnit základní údaje a přiložit
                 vyúčtování. Ozvu se vám s nezávazným posouzením.
               </p>
             </div>
