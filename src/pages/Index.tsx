@@ -1,10 +1,6 @@
-import { useState, useRef } from "react";
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Mail, Phone, User, Upload, Send, Loader2 } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+import { Send } from "lucide-react";
 
 const FORMSPREE_URL = "https://formspree.io/f/mqegvjjq";
 
