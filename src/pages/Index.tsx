@@ -1,66 +1,23 @@
-import { useState, useRef } from "react";
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Mail, Phone, User, Upload, Send, Loader2 } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
-
-const FORMSPREE_URL = "https://formspree.io/f/mqegvjjq";
+import { Send } from "lucide-react";
 
 const Index = () => {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const [fileName, setFileName] = useState<string | null>(null);
-  const [gdprChecked, setGdprChecked] = useState(false);
-  const fileInputRef = useRef<HTMLInputElement>(null);
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    setFileName(file ? file.name : null);
-  };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (!gdprChecked) {
-      toast({
-        title: "Souhlas je povinný",
-        description: "Pro odeslání formuláře je nutné souhlasit se zpracováním osobních údajů.",
-        variant: "destructive",
-      });
-      return;
+  useEffect(() => {
+    const w = "https://tally.so/widgets/embed.js";
+    if (typeof (window as any).Tally !== "undefined") {
+      (window as any).Tally.loadEmbeds();
+    } else if (!document.querySelector(`script[src="${w}"]`)) {
+      const s = document.createElement("script");
+      s.src = w;
+      s.onload = () => {
+        if (typeof (window as any).Tally !== "undefined") {
+          (window as any).Tally.loadEmbeds();
+        }
+      };
+      document.body.appendChild(s);
     }
-    setIsSubmitting(true);
-
-    const formData = new FormData(e.currentTarget);
-
-    try {
-      const res = await fetch(FORMSPREE_URL, {
-        method: "POST",
-        body: formData,
-        headers: { Accept: "application/json" },
-      });
-
-      if (res.ok) {
-        setSubmitted(true);
-        toast({
-          title: "Odesláno!",
-          description: "Děkujeme, brzy se vám ozveme.",
-        });
-      } else {
-        throw new Error("Odeslání se nezdařilo");
-      }
-    } catch {
-      toast({
-        title: "Chyba",
-        description: "Nepodařilo se odeslat. Zkuste to prosím znovu.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -126,7 +83,7 @@ const Index = () => {
           <hr className="border-border" />
         </div>
 
-        {/* Form */}
+        {/* Tally Form */}
         <section id="formular" className="py-20 md:py-24 px-4">
           <div className="container mx-auto max-w-lg space-y-8">
             <div className="text-center space-y-3">
@@ -134,152 +91,20 @@ const Index = () => {
                 Pošlete mi své vyúčtování
               </h2>
               <p className="text-muted-foreground">
-                Stačí vyplnit základní údaje a přiložit
-                vyúčtování. Ozvu se vám s nezávazným posouzením.
+                Stačí vyplnit základní údaje a přiložit vyúčtování. Ozvu se vám
+                s nezávazným posouzením.
               </p>
             </div>
 
-            {submitted ? (
-              <div className="text-center py-12 space-y-4">
-                <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Send className="h-7 w-7 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground">
-                  Děkuji za odeslání!
-                </h3>
-                <p className="text-muted-foreground">
-                  Vaše vyúčtování jsem přijal. Ozvu se vám co nejdříve.
-                </p>
-              </div>
-            ) : (
-              <form
-                onSubmit={handleSubmit}
-                encType="multipart/form-data"
-                className="space-y-6"
-              >
-                {/* Name */}
-                <div className="space-y-2">
-                  <Label htmlFor="name" className="text-foreground">
-                    Jméno
-                  </Label>
-                  <div className="relative">
-                    <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                    <Input
-                      id="name"
-                      name="name"
-                      type="text"
-                      placeholder="Jan Novák"
-                      required
-                      className="pl-10"
-                    />
-                  </div>
-                </div>
-
-                {/* Email */}
-                <div className="space-y-2">
-                  <Label htmlFor="email" className="text-foreground">
-                    E-mail
-                  </Label>
-                  <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      placeholder="jan@email.cz"
-                      required
-                      className="pl-10"
-                    />
-                  </div>
-                </div>
-
-                {/* Phone */}
-                <div className="space-y-2">
-                  <Label htmlFor="phone" className="text-foreground">
-                    Telefon
-                  </Label>
-                  <div className="relative">
-                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      placeholder="+420 123 456 789"
-                      className="pl-10"
-                    />
-                  </div>
-                </div>
-
-                {/* File Upload */}
-                <div className="space-y-2">
-                  <Label htmlFor="file" className="text-foreground">
-                    Vyúčtování (fotka nebo PDF)
-                  </Label>
-                  <div
-                    className="border-2 border-dashed border-border rounded-lg p-6 text-center cursor-pointer hover:border-primary/40 transition-colors"
-                    onClick={() => fileInputRef.current?.click()}
-                  >
-                    <Upload className="h-8 w-8 text-muted-foreground mx-auto mb-2" />
-                    {fileName ? (
-                      <p className="text-sm text-foreground font-medium">
-                        {fileName}
-                      </p>
-                    ) : (
-                      <p className="text-sm text-muted-foreground">
-                        Klikněte nebo přetáhněte soubor
-                      </p>
-                    )}
-                    <input
-                      ref={fileInputRef}
-                      id="file"
-                      name="file"
-                      type="file"
-                      accept="image/*,.pdf"
-                      className="hidden"
-                      onChange={handleFileChange}
-                    />
-                  </div>
-                </div>
-
-                {/* GDPR Checkbox */}
-                <div className="flex items-start gap-3">
-                  <Checkbox
-                    id="gdpr"
-                    checked={gdprChecked}
-                    onCheckedChange={(checked) =>
-                      setGdprChecked(checked === true)
-                    }
-                    className="mt-0.5"
-                  />
-                  <Label
-                    htmlFor="gdpr"
-                    className="text-sm text-muted-foreground leading-relaxed cursor-pointer"
-                  >
-                    Souhlasím se zpracováním osobních údajů za účelem
-                    vypracování nezávazného posouzení vyúčtování.
-                  </Label>
-                </div>
-
-                {/* Submit */}
-                <Button
-                  type="submit"
-                  disabled={isSubmitting || !gdprChecked}
-                  className="w-full py-6 text-base font-semibold"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      Odesílám…
-                    </>
-                  ) : (
-                    <>
-                      <Send className="mr-2 h-4 w-4" />
-                      Poslat vyúčtování ke kontrole
-                    </>
-                  )}
-                </Button>
-              </form>
-            )}
+            <iframe
+              data-tally-src="https://tally.so/embed/KYJ8zD?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+              loading="lazy"
+              width="100%"
+              height="648"
+              frameBorder="0"
+              title="Pošlete mi své vyúčtování"
+              style={{ border: "none" }}
+            />
           </div>
         </section>
       </main>
