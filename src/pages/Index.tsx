@@ -54,14 +54,22 @@ const Index = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl mx-auto">
-              Pomáhám domácnostem a firmám zorientovat se v jejich vyúčtování za
-              elektřinu a plyn. Podívám se na vaše ceny a nezávazně
-              je porovnám s aktuální nabídkou na trhu ať máte jistotu, že zbytečně nepřeplácíte.
+              Pomáhám domácnostem, firmám i obcím zorientovat se v jejich
+              vyúčtování za elektřinu a plyn. Podívám se na vaše aktuální
+              náklady a nezávazně posoudím, zda jsou vaše ceny dlouhodobě
+              férové.
+            </p>
+
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">
+              Nekontroluji jen cenu samotné energie (silovou složku). Zaměřuji
+              se i na regulovanou část vyúčtování – prověřím, zda zbytečně
+              nepřeplácíte kvůli nevhodně zvolené distribuční sazbě nebo příliš
+              vysokému rezervovanému příkonu (jističi).
             </p>
 
             <p className="text-base md:text-lg text-foreground font-medium">
-              Pojďme se společně postarat o to, abyste zbytečně nepřepláceli za
-              energie.
+              Pojďme se společně postarat o to, aby vaše rodina, firma nebo obec
+              už dál zbytečně nepřeplácela za energie.
             </p>
 
             <Button
