@@ -54,7 +54,7 @@ const Index = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl mx-auto">
-              Pomáhám lidem a firmám zorientovat se v jejich vyúčtování za
+              Pomáhám domácnostem a firmám zorientovat se v jejich vyúčtování za
               elektřinu a plyn. Podívám se na vaše ceny a nezávazně
               je porovnám s aktuální nabídkou na trhu ať máte jistotu, že zbytečně nepřeplácíte.
             </p>
