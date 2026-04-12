@@ -38,7 +38,7 @@ Pokud máte nízkou spotřebu a dvoutarifní sazbu, ověřte si, zda se vám opr
   },
   {
     slug: "ceska-pokuta-za-vernost",
-    title: "Česká „pokuta za věrnost": Proč se dlouhodobým zákazníkům energie často prodražují?",
+    title: 'Česká „pokuta za věrnost": Proč se dlouhodobým zákazníkům energie často prodražují?',
     excerpt: "Proč loajální klienti často platí víc než ti noví a jak se tomu bránit.",
     date: "2026-04-08",
     content: `## Věrnost se u energií netrestá náhodou
