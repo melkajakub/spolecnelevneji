@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Send } from "lucide-react";
 
@@ -36,12 +37,20 @@ const Index = () => {
               Nepřeplácejme
             </span>
           </div>
-          <a
-            href="#formular"
-            className="text-sm font-medium text-primary hover:text-primary-glow transition-colors"
-          >
-            Poslat vyúčtování
-          </a>
+          <nav className="flex items-center gap-6">
+            <Link
+              to="/blog"
+              className="text-sm font-medium text-primary hover:text-primary-glow transition-colors"
+            >
+              Blog
+            </Link>
+            <a
+              href="#formular"
+              className="text-sm font-medium text-primary hover:text-primary-glow transition-colors"
+            >
+              Poslat vyúčtování
+            </a>
+          </nav>
         </div>
       </header>
 
@@ -120,6 +129,20 @@ const Index = () => {
       {/* Footer */}
       <footer className="border-t border-border py-10 px-4">
         <div className="container mx-auto max-w-2xl text-center space-y-3">
+          <div className="flex justify-center gap-6 mb-4">
+            <Link
+              to="/blog"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Blog
+            </Link>
+            <a
+              href="#formular"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Poslat vyúčtování
+            </a>
+          </div>
           <p className="text-sm text-muted-foreground">
             Nepřeplácejme · Jakub Melka · IČO: 22516280 · melka.jakub@gmail.com
           </p>
