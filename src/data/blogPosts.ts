@@ -29,8 +29,8 @@ Mục tiêu của tôi không chỉ là thay đổi một lần, mà là đảm 
 
 ## Moje odborná pomoc / Sự trợ giúp chuyên nghiệp của tôi
 
-Zanalyzuji vaši fakturu a zjistím, kde přesně vznikají přeplatky. Pokud najdeme prostor pro úsporu, pomohu vám s veškerou administrativou spojenou s nastavením lepších podmínek.
-Tôi sẽ phân tích hóa đơn của bạn và tìm ra chính xác nơi phát sinh chi phí thừa. Nếu tìm thấy cơ hội tiết kiệm, tôi sẽ giúp bạn hoàn tất mọi thủ tục giấy tờ liên quan đến việc thiết lập các điều kiện tốt hơn.
+Prověřím vaši fakturu a zjistím, zda zbytečně nepřeplácíte. Pokud najdeme prostor pro úsporu, pomohu vám s veškerou administrativou spojenou s nastavením lepších podmínek.
+Tôi sẽ kiểm tra hóa đơn của bạn và xem liệu bạn có đang trả thừa một cách không cần thiết hay không. Nếu tìm thấy cơ hội tiết kiệm, tôi sẽ giúp bạn hoàn tất mọi thủ tục giấy tờ liên quan đến việc thiết lập các điều kiện tốt hơn.
 
 ---
 
@@ -50,7 +50,7 @@ V podnikání i ve správě veřejného majetku se počítá každá koruna. U p
 
 ## Kde vznikají zbytečné náklady?
 
-Často se setkávám s tím, že tarify jsou nastaveny podle starých potřeb, které už neodpovídají realitě. Výsledkem je zbytečně drahá distribuce nebo nevýhodná cena za silovou elektřinu. Moje role je tyto chyby najít a napravit.
+Často se setkávám s tím, že tarify jsou nastaveny podle starých potřeb, které už neodpovídají realitě. Výsledkem je zbytečně drahá distribuce nebo nevýhodná cena za silovou elektřinu. Moje role je prověřit, zda zbytečně nepřeplácíte.
 
 ---
 
@@ -67,7 +67,7 @@ Při kontrole vyúčtování u domácností opakovaně vidím jeden a ten samý 
 
 ## Malá změna, reálná úspora
 
-Pokud elektřinou neohříváte vodu ani netopíte, existují tarify určené přímo pro vás. Přechod na vhodnější variantu nevyžaduje technické zásahy, ale v peněžence ji uvidíte okamžitě. Pomohu vám zjistit, zda se to týká i vás.
+Pokud elektřinou neohříváte vodu ani netopíte, existují tarify určené přímo pro vás. Přechod na vhodnější variantu nevyžaduje technické zásahy. Prověřím vaši fakturu a zjistím, zda zbytečně nepřeplácíte.
 
 ---
 
@@ -84,7 +84,7 @@ Většina dodavatelů energií nabízí novým zákazníkům lákavé ceny. Prob
 
 ## Dlouhodobě férový přístup
 
-Cílem mé analýzy je najít pro vás partnera, který se k vám bude chovat fér nejen první rok, ale dlouhodobě. Stabilita a transparentnost jsou v energetice důležitější než krátkodobé akční nabídky.
+Cílem mé analýzy je prověřit, zda zbytečně nepřeplácíte a najít pro vás partnera, který se k vám bude chovat fér dlouhodobě. Stabilita a transparentnost jsou v energetice důležitější než krátkodobé akční nabídky.
 
 ---
 
@@ -102,7 +102,7 @@ Vyúčtování za elektřinu je dokument, který většina lidí jen letmo prohl
 ## Co sledovat:
 
 1. **Obchodní cena:** Částka dodavateli. Zde je největší prostor pro úsporu výběrem férového partnera.
-2. **Distribuční část:** Poplatky státu, které lze snížit správnou volbou tarifu.
+2. **Distribuční část:** Poplatky státu, které lze snížit správnou volbou tarifu. Prověřím vaši fakturu a zjistím, zda zbytečně nepřeplácíte.
 
 ---
 
