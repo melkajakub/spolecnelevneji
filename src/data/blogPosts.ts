@@ -65,27 +65,36 @@ Vyúčtování za energie není jen číslo k zaplacení. Je to klíč k pochope
     date: "2026-04-10",
     content: `## Častá situace, na kterou narážím
 
-Při kontrole vyúčtování opakovaně vidím jeden a ten samý vzorec: domácnost se spotřebou kolem 1 MWh ročně a jističem 3×20 A má nastavenou dvoutarifní sazbu D02d – a zbytečně tak přeplácí zhruba 1 000 Kč ročně. Přitom by stačila jednoduchá administrativní změna.
+# Nepřeplácíte zbytečně i na regulovaných složkách? Aneb máte správně nastavenou distribuční sazbu?
+
+Při kontrole vyúčtování opakovaně vidím jeden a ten samý vzorec: domácnost se spotřebou kolem 1 MWh ročně a jističem 3×20 A má nastavenou sazbu **D02d** – a zbytečně tak přeplácí zhruba 1 000 Kč ročně. Přitom by stačila jednoduchá administrativní změna.
 
 ## D02d vs. D01d – v čem je rozdíl?
 
-Sazba **D02d** (dvoutarifní) byla původně navržena pro domácnosti s akumulačním ohřevem vody nebo přímotopem. Nabízí osm hodin denně v tzv. nízkém tarifu, kdy je elektřina levnější. Zní to lákavě – ale pozor: měsíční poplatek za distribuci je u D02d výrazně vyšší než u jednoduchého tarifu **D01d**.
+Obě tyto sazby jsou tzv. jednotarifní, což znamená, že cena za elektřinu je stejná po celých 24 hodin. Rozdíl je však v jejich konstrukci:
 
-Sazba **D01d** (jednotarifní) nemá žádný nízký tarif, ale její stálý měsíční poplatek je podstatně nižší. Pokud máte nízkou spotřebu (kolem 1 MWh ročně), úspora na stálém platu výrazně převyšuje to, co byste ušetřili v nízkém tarifu.
+* **Sazba D02d** je navržena pro střední spotřebu. Má o něco nižší cenu za každou spotřebovanou kilowatthodinu, ale je vykoupena **vysokým měsíčním poplatkem** za jistič.
+* **Sazba D01d** je určena pro nízkou spotřebu. Cena za kilowatthodinu je sice o něco vyšší, ale **stálý měsíční plat za jistič je výrazně nižší**.
 
 ## Kdy se D02d nevyplatí?
 
-Typický příklad, na který narážím: domácnost s jističem 3×20 A a roční spotřebou kolem 1 MWh. Pokud nemáte akumulační bojler nebo přímotop a většinu spotřeby tvoří běžné spotřebiče, je pravděpodobné, že na sazbě D02d **přeplácíte řádově 1 000 Kč ročně** oproti jednodušší sazbě D01d. Tisíc korun za nic – jen kvůli špatně nastavené sazbě.
+Typický příklad, na který často narážím: domácnost v bytě s jističem 3×20 A a roční spotřebou kolem 1 MWh. Pokud elektřinou neohříváte vodu ani netopíte a většinu spotřeby tvoří běžné spotřebiče (lednice, TV, osvětlení), je pravděpodobné, že na sazbě D02d **přeplácíte řádově 1 000 Kč ročně** oproti sazbě D01d. 
+
+Tisíc korun za rok platíte v podstatě „za nic“ – jen kvůli tomu, že máte tarif nastavený na vyšší odběr, který reálně nevyužíváte.
 
 ## Co s tím?
 
-Změna distribuční sazby je jednoduchý administrativní úkon. Nemusíte měnit jistič, nemusíte měnit dodavatele. Stačí požádat svého distributora (ČEZ Distribuce, EG.D nebo PREdistribuce) o přeřazení na jinou sazbu. Změna je obvykle provedena k nejbližšímu odečtu.
+Změna distribuční sazby je jednoduchý administrativní úkon. Nemusíte měnit jistič, nemusíte volat elektrikáře ani měnit dodavatele. Stačí požádat svého distributora o přeřazení na jinou sazbu. Změna se obvykle projeví v dalším vyúčtování a pomůže vám okamžitě srazit fixní náklady na minimum.
 
 ## Shrnutí
 
-Pokud máte nízkou spotřebu a dvoutarifní sazbu, ověřte si, zda se vám opravdu vyplatí. Někdy stačí jedna administrativní změna a ročně ušetříte stovky až tisíce korun – bez jakýchkoliv investic.
+Pokud máte nízkou spotřebu, ověřte si, zda se vám sazba D02d opravdu vyplatí. Někdy stačí jedna administrativní změna a ročně ušetříte zajímavou částku – bez jakýchkoliv investic nebo omezení vašeho komfortu.
 
-*Poznámka: Veškeré příklady a výpočty vycházejí z cen a podmínek pro rok 2026. Ceníky a podmínky distributorů se mohou v čase měnit.*`,
+---
+
+**Nejste si jistí svým vyúčtováním?** Pokud chcete mít klid, že neplatíte víc, než musíte, rád se na vaše vyúčtování podívám. Stačí mi ho nahrát v PDF a já vám napíšu svůj pohled.
+
+*Poznámka: Veškeré příklady a výpočty vycházejí z cen a podmínek pro rok 2026. Ceníky a podmínky distributorů se mohou v čase měnit.*,
   },
   {
     slug: "ceska-pokuta-za-vernost",
