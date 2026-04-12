@@ -8,116 +8,94 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: "jak-se-vyznat-ve-vyuctovani",
-    title: "Jak se vyznat ve vyúčtování energií a proč se v něm snadno přehlédne chyba?",
-    excerpt: "Vyúčtování je hromada čísel a zkratek. Zjistěte, proč je někdy těžké v něm najít skryté poplatky a proč se v něm vyplatí orientovat.",
-    date: "2026-04-05",
-    content: `## Proč je vyúčtování tak nepřehledné?
+    slug: "uspora-pro-vecerky-kinh-doanh-tiem-tap-hoa",
+    title: "Máte večerku? / Bạn đang kinh doanh tiệm tạp hóa?",
+    excerpt: "Průvodce úsporami pro majitele prodejen potravin. / Hướng dẫn tiết kiệm chi phí điện cho chủ cửa hàng thực phẩm.",
+    date: "2026-04-14",
+    content: `# Úspora pro večerky / Tiết kiệm chi phí cho tiệm tạp hóa
 
-Vyúčtování za elektřinu nebo plyn je dokument, který většina lidí letmo prohlédne, podívá se na konečnou částku – a odloží. A přitom právě v tomto dokumentu se mohou skrývat chyby nebo zbytečné náklady, které vás stojí stovky až tisíce korun ročně.
+Provozovatelé večerek mají specifický problém: jejich mrazáky a lednice běží 24/7. Náklady na elektřinu jsou jedním z největších výdajů. 
+Các chủ tiệm tạp hóa có một vấn đề đặc thù: tủ đông và tủ lạnh chạy 24/7. Chi phí tiền điện là một trong những khoản chi lớn nhất.
 
-## Z čeho se vyúčtování skládá?
+## Příklad z praxe / Ví dụ thực tế
 
-Celková cena za elektřinu se skládá ze dvou hlavních částí:
+Máte prodejnu se spotřebou **30 MWh**, jističem **3x32A**, sazbou **C02d** a standardním ceníkem? V takovém případě můžete přeplácet **okolo 30 000 Kč bez DPH ročně** oproti optimálnímu nastavení a aktuálním tržním cenám.
 
-### 1. Neregulovaná (silová) složka
-To je cena samotné elektřiny, kterou určuje váš dodavatel. Zahrnuje:
-- cenu za odebranou energii (Kč/kWh),
-- stálý měsíční poplatek dodavateli.
+Bạn có cửa hàng với mức tiêu thụ **30 MWh**, cầu dao **3x32A**, biểu giá **C02d** và giá điện tiêu chuẩn không? Trong trường hợp đó, bạn có thể đang trả thừa khoảng **30.000 Kč (chưa VAT) mỗi năm** so với việc thiết lập tối ưu và giá thị trường hiện tại.
 
-### 2. Regulovaná složka
-Tyto poplatky stanovuje Energetický regulační úřad (ERÚ) a platíte je distributorovi. Patří sem:
-- **poplatek za distribuci** (závisí na vaší sazbě a spotřebě),
-- **stálý plat za příkon** (závisí na velikosti jističe),
-- příspěvek na obnovitelné zdroje,
-- poplatek za systémové služby,
-- poplatek operátorovi trhu.
+## Bod zlomu mezi sazbami / Điểm thay đổi giữa các biểu giá (C02d vs. C03d)
 
-## Kde se nejčastěji skrývají zbytečné náklady?
+Většina prodejen začíná na sazbě **C02d**. Pokud máte ale hodně mrazáků, může pro vás být výhodnější sazba **C03d**.
+Hầu hết các cửa hàng bắt đầu với biểu giá **C02d**. Tuy nhiên, nếu bạn có nhiều tủ đông, biểu giá **C03d** có thể tiết kiệm hơn cho bạn.
 
-### Nevhodná distribuční sazba
-Pokud máte sazbu D02d, ale vaše spotřeba je velmi nízká, pravděpodobně přeplácíte na stálém platu za jistič. Přechod na sazbu D01d může v takovém případě přinést úsporu.
+* **C02d:** Nižší paušál, ale dražší každá kWh. (Phí cố định thấp hơn, nhưng giá mỗi kWh cao hơn.)
+* **C03d:** Vyšší paušál, ale výrazně levnější každá kWh. (Phí cố định cao hơn, nhưng giá mỗi kWh rẻ hơn đáng kể.)
 
-### Příliš vysoký jistič
-Hodnota hlavního jističe (např. 3×25 A vs. 3×20 A) přímo ovlivňuje výši stálého platu za příkon. Pokud máte zbytečně velký jistič, platíte více, než musíte.
+## Kontrola obchodní ceny / Kiểm tra giá thương mại
 
-### Neaktuální cena silové složky
-Po skončení fixace se cena za kWh může výrazně zvýšit. Mnoho lidí si toho nevšimne, protože se dívají jen na konečnou částku a ne na jednotkovou cenu.
-
-## Proč je praktický pohled zvenčí užitečný?
-
-Laik většinou neví, co přesně ve vyúčtování hledat. Někdo, kdo faktury vidí denně, dokáže:
-- posoudit, zda máte **správnou distribuční sazbu**,
-- ověřit, zda **velikost jističe** odpovídá vaší skutečné spotřebě,
-- porovnat vaši **cenu za kWh** s aktuálními tržními nabídkami.
-
-## Shrnutí
-
-Vyúčtování za energie není jen číslo k zaplacení. Je to klíč k pochopení toho, zda za energie platíte férově. Pokud si nejste jistí, nechte své vyúčtování zkontrolovat – může vám to ušetřit překvapivě hodně peněz.
+Prověřím, zda vám dodavatel neúčtuje víc, než je aktuální standard roku 2026.
+Tôi sẽ kiểm tra xem nhà cung cấp có tính phí cao hơn mức tiêu chuẩn thị trường năm 2026 không.
 
 ---
 
-**Nejste si jistí svým vyúčtováním?** Pokud chcete mít klid, že neplatíte víc, než musíte, rád se na vaše vyúčtování podívám. Stačí mi ho nahrát v PDF a já vám napíšu svůj pohled.
+**Chcete platit méně? / Bạn muốn trả tiền điện ít hơn?**
 
-*Poznámka: Veškeré příklady a výpočty vycházejí z cen a podmínek pro rok 2026. Ceníky a podmínky distributorů se mohou v čase měnit.*`,
+Nahrajte mi poslední fakturu za elektřinu přes formulář níže.
+Hãy gửi cho tôi hóa đơn tiền điện mới nhất của bạn qua mẫu dưới đây.`,
+  },
+  {
+    slug: "uspora-pro-firmy-obce-a-zivnostniky",
+    title: "Firmy, obce i živnostníci: Neplatíte za energie víc, než vaše budovy skutečně vyžadují?",
+    excerpt: "U firemních a obecních odběrů kategorie C se nevhodná sazba a vysoká obchodní cena mohou prodražit o desítky tisíc korun ročně.",
+    date: "2026-04-12",
+    content: `# Úspory pro firmy, obce a živnostníky
+
+V podnikání i ve správě veřejného majetku se počítá každá koruna. U odběrů kategorie C (podnikatelské a obecní sazby) je prostor pro úsporu mnohem větší než u domácností, zejména díky optimalizaci distribučních sazeb a obchodních cen.
+
+## Obchodní cena a distribuční sazba
+
+Mezi sazbami **C01d, C02d a C03d** jsou zásadní rozdíly. Často se setkávám s tím, že provozovny nebo obecní budovy mají sazbu nastavenou podle historických potřeb, které už neodpovídají realitě. Výsledkem je zbytečně drahá distribuce nebo nevýhodná obchodní cena.
+
+## Co pro vás mohu udělat?
+
+Moje role spočívá v odhalení skrytého potenciálu úspor v těchto oblastech:
+- **Obchodní ceny:** Zda vaše fixace nebo aktuální ceník odpovídá trhu v roce 2026.
+- **Distribuční sazby:** Zda zvolená sazba (C01d–C03d) dává ekonomický smysl vzhledem k reálnému ročnímu odběru.
+
+---
+
+**Řídíte firmu nebo obec?** Nahrajte mi poslední fakturu za elektřinu v PDF přes formulář níže. Podívám se na vaše nastavení a odhadnu potenciál vašich úspor.`,
   },
   {
     slug: "sazba-d02d-zbytecne-draha",
-    title: "Nepřeplácíte zbytečně i na regulovaných složkách? Aneb máte správně nastavenou distribuční sazbu?",
+    title: "Máte správně nastavenou distribuční sazbu?",
     excerpt: "Zjistěte, jak prostá změna distribuční sazby může ušetřit tisíc korun ročně bez výměny jističe.",
     date: "2026-04-10",
-    content: `# Nepřeplácíte zbytečně i na regulovaných složkách? Aneb máte správně nastavenou distribuční sazbu?
+    content: `# Nepřeplácíte zbytečně i na regulovaných složkách?
 
 Při kontrole vyúčtování opakovaně vidím jeden a ten samý vzorec: domácnost se spotřebou kolem 1 MWh ročně a jističem 3×20 A má nastavenou sazbu **D02d** – a zbytečně tak přeplácí zhruba 1 000 Kč ročně. Přitom by stačila jednoduchá administrativní změna.
 
 ## D02d vs. D01d – v čem je rozdíl?
 
-Obě tyto sazby jsou tzv. jednotarifní, což znamená, že cena za elektřinu je stejná po celých 24 hodin. Rozdíl je však v jejich konstrukci:
+* **Sazba D02d** je navržena pro střední spotřebu. Má o něco nižší cenu za každou spotřebovanou kilowatthodinu, ale je vykoupena vyšším měsíčním poplatkem za jistič.
+* **Sazba D01d** je určena pro nízkou spotřebu. Cena za kilowatthodinu je sice o něco vyšší, ale stálý měsíční plat za jistič je výrazně nižší.
 
-* **Sazba D02d** je navržena pro střední spotřebu. Má o něco nižší cenu za každou spotřebovanou kilowatthodinu, ale je vykoupena **vysokým měsíčním poplatkem** za jistič.
-* **Sazba D01d** je určena pro nízkou spotřebu. Cena za kilowatthodinu je sice o něco vyšší, ale **stálý měsíční plat za jistič je výrazně nižší**.
-
-## Kdy se D02d nevyplatí?
-
-Typický příklad, na který často narážím: domácnost v bytě s jističem 3×20 A a roční spotřebou kolem 1 MWh. Pokud elektřinou neohříváte vodu ani netopíte a většinu spotřeby tvoří běžné spotřebiče (lednice, TV, osvětlení), je pravděpodobné, že na sazbě D02d **přeplácíte řádově 1 000 Kč ročně** oproti sazbě D01d. 
-
-Tisíc korun za rok platíte v podstatě „za nic“ – jen kvůli tomu, že máte tarif nastavený na vyšší odběr, který reálně nevyužíváte.
-
-## Co s tím?
-
-Změna distribuční sazby je jednoduchý administrativní úkon. Nemusíte měnit jistič, nemusíte volat elektrikáře ani měnit dodavatele. Stačí požádat svého distributora o přeřazení na jinou sazbu. Změna se obvykle projeví v dalším vyúčtování a pomůže vám okamžitě srazit fixní náklady na minimum.
-
-## Shrnutí
-
-Pokud máte nízkou spotřebu, ověřte si, zda se vám sazba D02d opravdu vyplatí. Někdy stačí jedna administrativní změna a ročně ušetříte zajímavou částku – bez jakýchkoliv investic nebo omezení vašeho komfortu.
+Pokud elektřinou neohříváte vodu ani netopíte, je pravděpodobné, že na sazbě D02d přeplácíte „za nic“ – jen kvůli tomu, že máte tarif nastavený na vyšší odběr, který reálně nevyužíváte.
 
 ---
 
-**Nejste si jistí svým vyúčtováním?** Pokud chcete mít klid, že neplatíte víc, než musíte, rád se na vaše vyúčtování podívám. Stačí mi ho nahrát v PDF a já vám napíšu svůj pohled.
-
-*Poznámka: Veškeré příklady a výpočty vycházejí z cen a podmínek pro rok 2026. Ceníky a podmínky distributorů se mohou v čase měnit.*`,
+**Chcete si nechat prověřit svou sazbu?** Nahrajte mi svou poslední fakturu za elektřinu a já vám napíšu svůj pohled.`,
   },
   {
     slug: "ceska-pokuta-za-vernost",
-    title: 'Česká „pokuta za věrnost": Proč se dlouhodobým zákazníkům energie často prodražují?',
+    title: 'Česká „pokuta za věrnost": Proč se dlouhodobým zákazníkům energie prodražují?',
     excerpt: "Proč loajální klienti často platí víc než ti noví a jak se tomu bránit.",
     date: "2026-04-08",
     content: `## Věrnost se u energií netrestá náhodou
 
-Znáte to – už léta odebíráte elektřinu nebo plyn od stejného dodavatele. Žádné problémy, žádné starosti. Jenže jednoho dne zjistíte, že váš soused, který právě přešel k témuž dodavateli, platí výrazně méně. Jak je to možné?
+Většina dodavatelů energií nabízí novým zákazníkům **akční ceny**. Po skončení fixace se však cena automaticky prodlouží, a to často za podmínek, které jsou výrazně méně výhodné. Tento mechanismus se někdy nazývá „pokuta za věrnost".
 
-## Jak to funguje v praxi?
-
-Většina dodavatelů energií nabízí novým zákazníkům **akční ceny** – výhodné tarify na první rok nebo dva. Po skončení fixace se však cena automaticky prodlouží, a to často za podmínek, které jsou výrazně méně výhodné. Tento mechanismus se někdy nazývá „pokuta za věrnost" (*loyalty penalty*).
-
-Dodavatelé spoléhají na to, že stávající zákazník:
-- si nevšimne konce fixace a automatické prolongace,
-- nečte „speciální nabídky" zasílané e-mailem, které často nejsou vůbec výhodné,
-- považuje přechod k jinému dodavateli za složitý.
-
-## Automatická prolongace a „speciální" e-mailové nabídky
-
-Řada smluv obsahuje klauzuli o automatickém prodloužení. Pokud smlouvu nevypovíte ve stanovené lhůtě, prodlouží se na další období – často za vyšší cenu, než jakou byste získali jako nový zákazník.
+Dodavatelé spoléhají na to, že stávající zákazník si nevšimne konce fixace nebo považuje přechod k jinému dodavateli za složitý.
 
 ## Jak se bránit?
 
@@ -125,52 +103,31 @@ Dodavatelé spoléhají na to, že stávající zákazník:
 2. **Porovnávejte nabídky.** Před koncem fixace si zjistěte aktuální ceny na trhu.
 3. **Nebojte se změny.** Přechod k novému dodavateli je dnes jednoduchý a bezbolestný.
 
-## Shrnutí
-
-Věrnost dodavateli energií se v Česku bohužel často nevyplácí. Pravidelná kontrola smlouvy a srovnání s trhem vám může ušetřit tisíce korun ročně. Nebojte se ptát a porovnávat – praktický pohled zvenčí vám může odhalit, kolik zbytečně přeplácíte.
-
 ---
 
-**Nejste si jistí svým vyúčtováním?** Pokud chcete mít klid, že neplatíte víc, než musíte, rád se na vaše vyúčtování podívám. Stačí mi ho nahrát v PDF a já vám napíšu svůj pohled.
-
-*Poznámka: Veškeré příklady a výpočty vycházejí z cen a podmínek pro rok 2026. Ceníky a podmínky distributorů se mohou v čase měnit.*`,
+**Nejste si jistí svou aktuální cenou?** Nahrajte mi svou poslední fakturu za elektřinu a já prověřím, zda odpovídá aktuálním možnostem trhu.`,
   },
   {
-    slug: "uspora-pro-firmy-obce-a-zivnostniky",
-    title: "Firmy, obce i živnostníci: Neplatíte za energie víc, než vaše budovy skutečně vyžadují?",
-    excerpt: "U firemních a obecních odběrů kategorie C se nevhodná sazba a naddimenzovaný jistič mohou prodražit o desítky tisíc korun ročně.",
-    date: "2026-04-12",
-    content: `# Firmy, obce i živnostníci: Neplatíte za energie víc, než vaše budovy skutečně vyžadují?
+    slug: "jak-se-vyznat-ve-vyuctovani",
+    title: "Jak se vyznat ve vyúčtování energií a proč se v něm snadno přehlédne chyba?",
+    excerpt: "Vyúčtování je hromada čísel a zkratek. Zjistěte, proč je někdy těžké v něm najít skryté poplatky.",
+    date: "2026-04-05",
+    content: `## Proč je vyúčtování tak nepřehledné?
 
-V podnikání i ve správě veřejného majetku se počítá každá koruna nákladů. Zatímco v provozu řešíte marži a v obcích rozpočet, na faktuře za elektřinu vám možná utíká částka, která by zaplatila nové vybavení nebo důležité investice. U odběrů kategorie C (podnikatelské a obecní sazby) je prostor pro chybu v nastavení mnohem větší než u domácností.
+Vyúčtování za elektřinu nebo plyn je dokument, který většina lidí letmo prohlédne, podívá se na konečnou částku – a odloží. Právě v tomto dokumentu se mohou skrývat chyby nebo zbytečné náklady, které vás stojí stovky až tisíce korun ročně.
 
-## Obchodní cena a technická optimalizace
+## Z čeho se vyúčtování skládá?
 
-U firem a obcí není úspora jen o hledání nejlevnější „silovky“. Skutečně zajímavé částky leží v kombinaci **obchodní strategie** a **technické optimalizace** odběrného místa. Mezi sazbami **C01d, C02d a C03d** jsou zásadní rozdíly, které se při nesprávném nastavení projevují zbytečně vysokými paušály nebo naopak příliš drahou distribucí.
+Celková cena za elektřinu se skládá ze dvou hlavních částí:
 
-## Jistič jako tichý žrout rozpočtu
+### 1. Neregulovaná (silová) složka
+To je cena samotné elektřiny, kterou určuje váš dodavatel. Zahrnuje cenu za odebranou energii a stálý měsíční poplatek dodavateli.
 
-Mnoho budov, úřadů či dílen sídlí v prostorech s naddimenzovaným jističem z dob, kdy měly objekty jiný účel. Přestože dnes využíváte úspornější technologie, za historicky silný jistič stále platíte distributorovi paušál v řádech tisíců korun měsíčně.
-
-Zde je však důležité rozlišit dvě roviny:
-1. **Analýza a odhad:** Na základě vaší faktury dokážu identifikovat, zda parametry jističe a sazby zjevně neodpovídají vaší spotřebě. Je to první krok k nalezení úspor.
-2. **Technické posouzení:** Pokud moje analýza ukáže prostor pro úsporu, je dalším nezbytným krokem revizní technik. Ten musí přímo na místě spočítat aktuální špičkovou potřebu a potvrdit, že snížení jističe je bezpečné a nebude vás omezovat v provozu.
-
-## Proč chtít praktický pohled na fakturu za IČO?
-
-Moje role spočívá v odhalení skrytého potenciálu úspor v těchto třech oblastech:
-- **Obchodní ceny:** Zda vaše fixace nebo aktuální ceník odpovídá trhu v roce 2026.
-- **Distribuční sazby:** Zda zvolená sazba (C01d–C03d) dává ekonomický smysl.
-- **Hodnota jističe:** Zda neplatíte za „rezervovaný příkon“, který s největší pravděpodobností nikdy nevyužijete.
-
-## Shrnutí
-
-U firem, živnostníků i obcí může správné nastavení parametrů přinést úspory v řádech desítek tisíc korun ročně. Prvním krokem je kontrola faktury, která ukáže, zda má smysl volat revizního technika a začít s technickou úpravou.
+### 2. Regulovaná složka
+Tyto poplatky stanovuje Energetický regulační úřad (ERÚ) a platíte je distributorovi. Zahrnuje poplatek za distribuci, stálý plat za příkon a další systémové poplatky.
 
 ---
 
-**Řídíte firmu nebo obec a chcete platit méně?** Pošlete mi své vyúčtování v PDF. Podívám se na vaše nastavení a odhadnu, zda se vaše objekty dají provozovat levněji.
-
-*Poznámka: Veškeré příklady a výpočty vycházejí z cen a podmínek pro rok 2026. Ceníky a podmínky distributorů se mohou v čase měnit.*`,
+**Nejste si jistí svým vyúčtováním?** Pokud chcete mít klid, že neplatíte víc, než musíte, rád se na vaše vyúčtování podívám. Stačí mi nahrát poslední fakturu za elektřinu v PDF přes formulář níže.`,
   },
 ];
