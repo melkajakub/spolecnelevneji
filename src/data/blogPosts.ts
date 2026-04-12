@@ -54,4 +54,58 @@ V podnikání i ve správě veřejného majetku se počítá každá koruna. U p
 
 ---
 
-**Řídíte firmu nebo obec?** Nahrajte mi poslední fakturu za elektřinu v PDF
+**Řídíte firmu nebo obec?** Nahrajte mi poslední fakturu za elektřinu v PDF. Podívám se na vaše nastavení a odhadnu potenciál vašich úspor.`,
+  },
+  {
+    slug: "sazba-d02d-zbytecne-draha",
+    title: "Máte správně nastavenou distribuční sazbu?",
+    excerpt: "Zjistěte, jak prostá změna tarifu může domácnosti ušetřit i přes tisíc korun ročně.",
+    date: "2026-04-10",
+    content: `# Nepřeplácíte zbytečně na poplatcích?
+
+Při kontrole vyúčtování u domácností opakovaně vidím jeden a ten samý vzorec: nízká spotřeba, ale nevhodně zvolený tarif. To vede k tomu, že platíte zbytečně vysoké fixní poplatky každý měsíc.
+
+## Malá změna, reálná úspora
+
+Pokud elektřinou neohříváte vodu ani netopíte, existují tarify určené přímo pro vás. Přechod na vhodnější variantu nevyžaduje technické zásahy, ale v peněžence ji uvidíte okamžitě. Pomohu vám zjistit, zda se to týká i vás.
+
+---
+
+**Chcete si nechat prověřit svou sazbu?** Nahrajte mi svou poslední fakturu za elektřinu a já vám napíšu, zda je vaše nastavení optimální.`,
+  },
+  {
+    slug: "ceska-pokuta-za-vernost",
+    title: 'Česká „pokuta za věrnost": Proč se energie prodražují?',
+    excerpt: "Proč loajální klienti často platí víc než ti noví a jak se tomu bránit.",
+    date: "2026-04-08",
+    content: `## Věrnost se u energií často nevyplácí
+
+Většina dodavatelů energií nabízí novým zákazníkům lákavé ceny. Problém nastává po skončení fixace – smlouva se často automaticky prodlouží za podmínek, které už nejsou výhodné. 
+
+## Dlouhodobě férový přístup
+
+Cílem mé analýzy je najít pro vás partnera, který se k vám bude chovat fér nejen první rok, ale dlouhodobě. Stabilita a transparentnost jsou v energetice důležitější než krátkodobé akční nabídky.
+
+---
+
+**Nejste si jistí svou aktuální cenou?** Nahrajte mi svou poslední fakturu a já prověřím, zda odpovídá aktuálním možnostem trhu.`,
+  },
+  {
+    slug: "jak-se-vyznat-ve-vyuctovani",
+    title: "Jak se vyznat ve vyúčtování energií?",
+    excerpt: "Vyúčtování je hromada čísel. Zjistěte, proč je v něm snadné přehlédnout chybu.",
+    date: "2026-04-05",
+    content: `## Proč je vyúčtování tak složité?
+
+Vyúčtování za elektřinu je dokument, který většina lidí jen letmo prohlédne. Právě v té záplavě čísel a zkratek se ale mohou skrývat zbytečné náklady.
+
+## Co sledovat:
+
+1. **Obchodní cena:** Částka dodavateli. Zde je největší prostor pro úsporu výběrem férového partnera.
+2. **Distribuční část:** Poplatky státu, které lze snížit správnou volbou tarifu.
+
+---
+
+**Chcete mít klid?** Nahrajte mi poslední fakturu v PDF přes formulář níže. Rád se na ni podívám.`,
+  },
+];
