@@ -153,12 +153,14 @@ const BlogPost = () => {
               Nejste si jistí svým vyúčtováním?
             </h3>
             <p className="text-muted-foreground">
-              Nahrajte mi ho k nezávazné kontrole.
+              Pokud chcete mít klid, že neplatíte víc, než musíte, rád se na
+              vaše vyúčtování podívám. Stačí mi ho nahrát v PDF a já vám napíšu
+              svůj pohled.
             </p>
             <Button size="lg" className="text-base" asChild>
               <Link to="/#formular">
                 <Upload className="mr-2 h-4 w-4" />
-                NAHRÁT VYÚČTOVÁNÍ
+                NAHRÁT VYÚČTOVÁNÍ KE KONTROLE
               </Link>
             </Button>
           </div>
