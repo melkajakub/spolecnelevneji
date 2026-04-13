@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { blogPosts } from "@/data/blogPosts";
@@ -7,9 +8,21 @@ const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = blogPosts.find((p) => p.slug === slug);
 
+  useEffect(() => {
+    if (post) {
+      document.title = `${post.title} | Nepřeplácejme.cz`;
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute("content", post.excerpt);
+    }
+    return () => {
+      document.title = "Nepřeplácejme.cz | Kontrola a úspora na energiích";
+    };
+  }, [post]);
+
   if (!post) return <Navigate to="/blog" replace />;
 
-  // Simple markdown-like rendering for ## headers, ### headers, **bold**, and *italic*
+  const isVietnamese = slug === "uspora-pro-vecerky-bistra-kinh-doanh-tiem-tap-hoa-quan-an";
+
   const renderContent = (content: string) => {
     return content.split("\n").map((line, i) => {
       const trimmed = line.trim();
@@ -17,20 +30,14 @@ const BlogPost = () => {
 
       if (trimmed.startsWith("### ")) {
         return (
-          <h3
-            key={i}
-            className="text-lg font-semibold text-foreground mt-8 mb-3"
-          >
+          <h3 key={i} className="text-lg font-semibold text-foreground mt-8 mb-3">
             {trimmed.slice(4)}
           </h3>
         );
       }
       if (trimmed.startsWith("## ")) {
         return (
-          <h2
-            key={i}
-            className="text-xl md:text-2xl font-bold text-foreground mt-10 mb-4"
-          >
+          <h2 key={i} className="text-xl md:text-2xl font-bold text-foreground mt-10 mb-4">
             {trimmed.slice(3)}
           </h2>
         );
@@ -44,20 +51,14 @@ const BlogPost = () => {
       }
       if (trimmed.match(/^\d+\.\s/)) {
         return (
-          <li
-            key={i}
-            className="text-muted-foreground leading-relaxed ml-4 list-decimal"
-          >
+          <li key={i} className="text-muted-foreground leading-relaxed ml-4 list-decimal">
             {renderInline(trimmed.replace(/^\d+\.\s/, ""))}
           </li>
         );
       }
       if (trimmed.startsWith("*Poznámka:")) {
         return (
-          <p
-            key={i}
-            className="text-sm text-muted-foreground/70 mt-8 pt-4 border-t border-border italic"
-          >
+          <p key={i} className="text-sm text-muted-foreground/70 mt-8 pt-4 border-t border-border italic">
             {trimmed.replace(/^\*/, "").replace(/\*$/, "")}
           </p>
         );
@@ -72,7 +73,6 @@ const BlogPost = () => {
   };
 
   const renderInline = (text: string) => {
-    // Handle **bold** and *italic*
     const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g);
     return parts.map((part, i) => {
       if (part.startsWith("**") && part.endsWith("**")) {
@@ -89,9 +89,14 @@ const BlogPost = () => {
     });
   };
 
+  const handleCtaClick = () => {
+    if (typeof (window as any).posthog !== "undefined") {
+      (window as any).posthog.capture("invoice_upload_started", { source: "blog_post", slug });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
       <header className="border-b border-border bg-background/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link to="/" className="flex items-center gap-3">
@@ -107,16 +112,10 @@ const BlogPost = () => {
             </span>
           </Link>
           <nav className="flex items-center gap-6">
-            <Link
-              to="/blog"
-              className="text-sm font-medium text-primary hover:text-primary-glow transition-colors"
-            >
+            <Link to="/blog" className="text-sm font-medium text-primary hover:text-primary-glow transition-colors">
               Blog
             </Link>
-            <Link
-              to="/#formular"
-              className="text-sm font-medium text-primary hover:text-primary-glow transition-colors"
-            >
+            <Link to="/#formular" className="text-sm font-medium text-primary hover:text-primary-glow transition-colors">
               Poslat vyúčtování
             </Link>
           </nav>
@@ -150,37 +149,32 @@ const BlogPost = () => {
           {/* CTA */}
           <div className="mt-16 p-8 rounded-lg bg-secondary text-center space-y-4">
             <h3 className="text-xl font-bold text-foreground">
-              Nejste si jistí svým vyúčtováním?
+              {isVietnamese
+                ? "Chcete prověřit, zda zbytečně nepřeplácíte? / Bạn có muốn kiểm tra xem mình có đang trả thừa không?"
+                : "Nejste si jistí svým vyúčtováním?"}
             </h3>
             <p className="text-muted-foreground">
-              Pokud chcete mít klid, že neplatíte víc, než musíte, rád se na
-              vaše vyúčtování podívám. Stačí mi ho nahrát v PDF a já vám napíšu
-              svůj pohled.
+              {isVietnamese
+                ? "Nahrajte mi poslední fakturu za elektřinu v PDF. Spočítám vám úsporu a navrhnu stabilní a výhodné řešení. / Hãy gửi cho tôi hóa đơn tiền điện mới nhất của bạn qua định dạng PDF. Tôi sẽ tính toán mức tiết kiệm và đề xuất giải pháp ổn định và có lợi cho bạn."
+                : "Pokud chcete mít klid, že neplatíte víc, než musíte, rád se na vaše vyúčtování podívám. Stačí mi ho nahrát v PDF a já vám napíšu svůj pohled."}
             </p>
             <Button size="lg" className="text-base" asChild>
-              <Link to="/#formular">
+              <Link to="/#formular" onClick={handleCtaClick}>
                 <Upload className="mr-2 h-4 w-4" />
-                NAHRÁT VYÚČTOVÁNÍ KE KONTROLE
+                {isVietnamese ? "NAHRÁT FAKTURU / TẢI HÓA ĐƠN LÊN" : "NAHRÁT VYÚČTOVÁNÍ KE KONTROLE"}
               </Link>
             </Button>
           </div>
         </article>
       </main>
 
-      {/* Footer */}
       <footer className="border-t border-border py-10 px-4">
         <div className="container mx-auto max-w-2xl text-center space-y-3">
           <div className="flex justify-center gap-6 mb-4">
-            <Link
-              to="/blog"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
+            <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Blog
             </Link>
-            <Link
-              to="/#formular"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
+            <Link to="/#formular" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Poslat vyúčtování
             </Link>
           </div>
