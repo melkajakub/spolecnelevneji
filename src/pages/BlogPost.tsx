@@ -162,9 +162,9 @@ const BlogPost = () => {
                 ? "Nahrajte mi poslední fakturu za elektřinu v PDF. Spočítám vám úsporu a navrhnu stabilní a výhodné řešení. / Hãy gửi cho tôi hóa đơn tiền điện mới nhất của bạn qua định dạng PDF. Tôi sẽ tính toán mức tiết kiệm và đề xuất giải pháp ổn định và có lợi cho bạn."
                 : "Pokud chcete mít klid, že neplatíte víc, než musíte, rád se na vaše vyúčtování podívám. Stačí mi ho nahrát v PDF a já vám napíšu svůj pohled."}
             </p>
-            <Button size="lg" className="text-sm md:text-base px-6 md:px-8 w-full sm:w-auto" asChild>
+            <Button size="lg" className="text-xs sm:text-sm md:text-base px-5 py-3 md:px-8 w-full sm:w-auto whitespace-normal text-center" asChild>
               <Link to="/#formular" onClick={handleCtaClick}>
-                <Upload className="mr-2 h-4 w-4" />
+                <Upload className="mr-2 h-4 w-4 shrink-0" />
                 {isVietnamese ? "NAHRÁT FAKTURU / TẢI HÓA ĐƠN LÊN" : "NAHRÁT VYÚČTOVÁNÍ KE KONTROLE"}
               </Link>
             </Button>
