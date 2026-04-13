@@ -9,6 +9,10 @@ const BlogPost = () => {
   const post = blogPosts.find((p) => p.slug === slug);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
+
+  useEffect(() => {
     if (post) {
       document.title = `${post.title} | Nepřeplácejme.cz`;
       const metaDesc = document.querySelector('meta[name="description"]');
@@ -147,7 +151,7 @@ const BlogPost = () => {
           <div className="prose-custom">{renderContent(post.content)}</div>
 
           {/* CTA */}
-          <div className="mt-16 p-8 rounded-lg bg-secondary text-center space-y-4">
+          <div className="mt-20 mb-8 p-6 md:p-8 rounded-lg bg-secondary text-center space-y-4">
             <h3 className="text-xl font-bold text-foreground">
               {isVietnamese
                 ? "Chcete prověřit, zda zbytečně nepřeplácíte? / Bạn có muốn kiểm tra xem mình có đang trả thừa không?"
@@ -158,7 +162,7 @@ const BlogPost = () => {
                 ? "Nahrajte mi poslední fakturu za elektřinu v PDF. Spočítám vám úsporu a navrhnu stabilní a výhodné řešení. / Hãy gửi cho tôi hóa đơn tiền điện mới nhất của bạn qua định dạng PDF. Tôi sẽ tính toán mức tiết kiệm và đề xuất giải pháp ổn định và có lợi cho bạn."
                 : "Pokud chcete mít klid, že neplatíte víc, než musíte, rád se na vaše vyúčtování podívám. Stačí mi ho nahrát v PDF a já vám napíšu svůj pohled."}
             </p>
-            <Button size="lg" className="text-base" asChild>
+            <Button size="lg" className="text-sm md:text-base px-6 md:px-8 w-full sm:w-auto" asChild>
               <Link to="/#formular" onClick={handleCtaClick}>
                 <Upload className="mr-2 h-4 w-4" />
                 {isVietnamese ? "NAHRÁT FAKTURU / TẢI HÓA ĐƠN LÊN" : "NAHRÁT VYÚČTOVÁNÍ KE KONTROLE"}
