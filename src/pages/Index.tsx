@@ -144,7 +144,7 @@ const Index = () => {
             </a>
           </div>
           <p className="text-sm text-muted-foreground">
-            Nepřeplácejme · Jakub Melka · IČO: 22516280 · Nepřeplácejme · Jakub Melka · IČO: 22516280 · info@nepreplacejme.cz
+            Nepřeplácejme · Jakub Melka · IČO: 22516280 · info@nepreplacejme.cz
           </p>
           <p className="text-xs text-muted-foreground/70 max-w-lg mx-auto leading-relaxed">
             Odesláním formuláře nedochází k uzavření smlouvy ani k zahájení
