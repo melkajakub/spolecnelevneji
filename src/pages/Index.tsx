@@ -144,11 +144,20 @@ const Index = () => {
             </a>
           </div>
           <p className="text-sm text-muted-foreground">
-            Nepřeplácejme · Jakub Melka · IČO: 22516280 · info@nepreplacejme.cz
+            Nepřeplácejme · Jakub Melka · IČO: 22516280 ·{" "}
+            <a href="mailto:info@nepreplacejme.cz" className="hover:text-foreground transition-colors">
+              info@nepreplacejme.cz
+            </a>
           </p>
           <p className="text-xs text-muted-foreground/70 max-w-lg mx-auto leading-relaxed">
             Odesláním formuláře nedochází k uzavření smlouvy ani k zahájení
             zprostředkovatelské činnosti. Jedná se o nezávaznou konzultaci.
+          </p>
+          <p className="text-xs text-muted-foreground/60 max-w-lg mx-auto leading-relaxed mt-3">
+            Analýzu faktur a zprostředkování služeb provádí Jakub Melka jako
+            obchodní zástupce společnosti IKAS GROUP s.r.o. (zapsané v registru
+            zprostředkovatelů Energetického regulačního úřadu pod číslem
+            742543078).
           </p>
           <p className="text-xs text-muted-foreground/60">
             © {new Date().getFullYear()}
