@@ -62,7 +62,7 @@ const Blog = () => {
               <div>
                 <strong className="text-foreground">Dlouhodobý klid místo honění za každou korunou</strong>
                 <p className="mt-1">
-                  Mým cílem není pravidelně měnit vašeho dodavatele energií. Naopak. Chci pro vás vyjednat takové podmínky, abyste mohli dlouhodobě a pohodlně odebírat za férové ceny. Pomáhám vám vyhnout se pastem v podobě nevýhodných automatických prodloužení a hlídám termíny i trh za vás.
+                  Mým cílem není pravidelně měnit vašeho dodavatele energií. Naopak. Chci pro vás vyjednat takové podmínky, abyste mohli dlouhodobě a pohodlně odebírat za férové ceny. Pomáhám vám vyhnout se pastem v podobě nevýhodných automatických prolongací nebo nevýhodných nabídek dodavatele a hlídám termíny i trh za vás.
                 </p>
               </div>
               <div>
