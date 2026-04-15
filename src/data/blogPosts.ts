@@ -93,19 +93,27 @@ Cílem mé analýzy je prověřit, zda zbytečně nepřeplácíte a najít pro v
   {
     slug: "jak-se-vyznat-ve-vyuctovani",
     title: "Jak se vyznat ve vyúčtování energií?",
-    excerpt: "Vyúčtování je hromada čísel. Zjistěte, proč je v něm snadné přehlédnout chybu.",
+    excerpt: "Vyúčtování je přehledné, ale srovnání nabídek už méně. Naučte se, proč sledovat výhradně obchodní složku bez DPH.",
     date: "2026-04-05",
-    content: `## Proč je vyúčtování tak složité?
+    content: `## Proč srovnávat ceny bez DPH?
 
-Vyúčtování za elektřinu je dokument, který většina lidí jen letmo prohlédne. Právě v té záplavě čísel a zkratek se ale mohou skrývat zbytečné náklady.
+Samotné vyúčtování je jako dokument jasné – máte v něm srozumitelně oddělené položky s DPH i bez DPH. Problém nastává ve chvíli, kdy chcete srovnat svou stávající cenu s novou nabídkou nebo s tím, co platí soused. Jeden dodavatel se prezentuje cenou s daní, druhý bez daně, a někdo do toho zaplete i poplatky za distribuci.
 
-## Co sledovat:
+**Aby bylo vaše srovnání objektivní, naučte se sledovat výhradně obchodní složku bez DPH.**
 
-1. **Obchodní cena:** Částka dodavateli. Zde je největší prostor pro úsporu výběrem férového partnera.
-2. **Distribuční část:** Poplatky státu, které lze snížit správnou volbou tarifu. Prověřím vaši fakturu a zjistím, zda zbytečně nepřeplácíte.
+## Proč je to jediný správný metr?
+
+DPH je pro všechny stejné a určuje ho stát. Distribuce je také pevně daná a u každého dodavatele v daném regionu bude identická. Pokud chcete zjistit, kdo vám dává lepší nabídku, musíte porovnávat „motor“ celého vyúčtování – tedy čistou cenu od dodavatele.
+
+## Na co se zaměřit při srovnávání:
+
+1. **Obchodní cena za silovou elektřinu (bez DPH):** To je částka za každou odebranou MWh. Porovnáváním této ceny bez daně získáte okamžitý přehled o férovosti nabídky.
+2. **Stálý měsíční plat (bez DPH):** Fixní poplatek, který platíte dodavateli bez ohledu na spotřebu. Je důležité ho srovnávat opět v ceně bez DPH, abyste viděli reálný rozdíl v nákladech na správu vašeho odběrného místa.
+
+Tím, že si zvyknete pracovat s cenami bez DPH, získáte jistotu, že porovnáváte vždy stejné a objektivní údaje, ať už máte v ruce fakturu od kohokoliv.
 
 ---
 
-**Chcete mít klid?** Nahrajte mi poslední fakturu v PDF přes formulář níže. Rád se na ni podívám.`,
+**Chcete mít ve srovnání jasno?** Nahrajte mi poslední fakturu v PDF přes formulář níže. Já z ní vytáhnu čistou obchodní složku i stálý plat bez DPH a narovinu vám řeknu, jak si stojíte oproti trhu.`,
   },
 ];
