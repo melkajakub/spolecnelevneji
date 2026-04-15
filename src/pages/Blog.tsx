@@ -79,9 +79,9 @@ const Blog = () => {
               </div>
             </div>
             <Button asChild className="mt-4">
-              <Link to="/#formular">
+              <a href="#top" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
                 Chci prověřit fakturu v klidu přes e-mail <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              </a>
             </Button>
           </div>
 
