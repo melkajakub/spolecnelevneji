@@ -59,7 +59,7 @@ const Index = () => {
         <section className="py-20 md:py-32 px-4">
           <div className="container mx-auto max-w-2xl text-center space-y-8">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-relaxed tracking-tight">
-              Nepřeplácejme už dál zbytečně za energie.
+              Nepřeplácejme zbytečně za energie.
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl mx-auto">
